@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitHive Gym Wear</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">FitHive</a>
+        <ul class="navlist">
+            <li><a href="#home">Home</a></li>
+            <li><a href="featured.html">Featured</a></li>
+           
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Log in</a></li>
+        </ul>
+        <div class="header-icon">
+
+           <a id="shopping-bag" href="checkout.html">
+                <i class='bx bx-shopping-bag'></i>
+                <span id="cart-item-count" style="display: none; background: red; color: white; border-radius: 50%; padding: 2px 6px; position: relative; top: -10px; left: -10px;">0</span>
+            </a>    
+        </div>
+    </header>
+
+    <!-- Home / Carousel -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://wallpaperaccess.com/full/2465431.jpg" class="d-block w-100" alt="Comfortable gym wear">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Build Up<br><span>Your Life</span></h1>
+                    <p>With comfortable wears</p>
+                    <a href="shop.html"><button class="b-btn">Shop Now</button></a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://cdn.shopify.com/s/files/1/0098/8822/files/womens_t-shirt_and_tops_1900x.jpg?v=1511184257"
+                    class="d-block w-100" alt="Men's new arrival">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Women's New<br><span>Arrivals</span></h1>
+                    <p>New colors, now also available in women sizing</p>
+                    <a href="shop.html"><button class="b-btn">Shop Now</button></a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://wallpapercave.com/wp/wp2483004.jpg" class="d-block w-100" alt="Women's new arrival">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Men's New<br><span>Arrivals</span></h1>
+                    <p>New colors, now also available in men's sizing</p>
+                    <a href="shop.html"><button class="b-btn">Shop Now</button></a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <br>
+
+    <!-- On Sale Section -->
+    <div class="section_container sale_container">
+        <h2 class="section__title">On Sale</h2>
+        <div class="sale__grid">
+            <div class="sale__card">
+                <img src="https://i.pinimg.com/enabled/564x/98/54/63/985463bc04d52c7ee1b162a631482920.jpg" alt="Man T-shirt" />
+                <div class="sale__content">
+                    <p class="sale__subtitle">MAN T-shirts</p>
+                    <h4 class="sale__title">Sale <span>40%</span> Off</h4>
+                    <p class="sale__subtitle">- DON'T MISS -</p>
+                    <a href="man_outwears.html"><button class="btn sale__btn">SHOP NOW</button></a>
+                </div>
+            </div>
+            <div class="sale__card">
+                <img src="https://i.pinimg.com/564x/69/a4/2c/69a42c48e00ceadd4382e246f2354185.jpg" alt="Woman Bottoms" />
+                <div class="sale__content">
+                    <p class="sale__subtitle">WOMAN BOTTOMS</p>
+                    <h4 class="sale__title">Sale <span>25%</span> Off</h4>
+                    <p class="sale__subtitle">- DON'T MISS -</p>
+                    <a href="woman_bottoms.html"><button class="btn sale__btn">SHOP NOW</button></a>
+                </div>
+            </div>
+            <div class="sale__card">
+                <img src="https://i.pinimg.com/564x/c1/bf/48/c1bf48e1ddd1b9b5ed677f6f6aa1899a.jpg" alt="shoes" />
+                <div class="sale__content" >
+                    <p class="sale__subtitle">SHOES</p>
+                    <h4 class="sale__title">Sale <span>20%</span> Off</h4>
+                    <p class="sale__subtitle">- DON'T MISS -</p>
+                    <a href="acc.html"><button class="btn sale__btn">SHOP NOW</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="video-section">
+        <h2>Watch Our Latest Promo</h2>
+        <video width="100%" height="auto" autoplay loop muted>
+            <source src="https://videos.pexels.com/video-files/3209241/3209241-uhd_2560_1440_25fps.mp4" type="video/mp4">
+        </video>
+        <p>Join the FitHive community and elevate your workout!</p>
+    </div>
+
+    <br>
+
+    <!-- Must Have Section -->
+    <section class="section__container musthave__container">
+        <h2 class="section__title text-center">Must Have</h2>
+        <div class="musthave__grid">
+            <div class="musthave__card">
+       
+                    <img src="https://i.pinimg.com/564x/cc/5f/69/cc5f69945be715979f604d78e333a310.jpg" class="card-img-top" alt="Training Set">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Training Hoodie & Short Set</h5>
+                        <p>Price: Rs.899</p>
+                        <span>available in  free size or <a href="featured.html">customize it</a></span>
+
+
+<input type="number" id="quantity-training-set" min="1" value="1" class="form-control mb-2">
+<button class="btn btn-success" onclick="addToCartWithQuantity('Training Set', 899, 'quantity-training-set')">Add to Cart</button>
+
+
+                      
+                    </div>
+            </div>
+               
+                    <div class="musthave__card">
+                    <img src="https://i.pinimg.com/564x/b4/96/78/b496788557d9e982417fad426337cda3.jpg" class="card-img-top" alt="Black Gym Legging">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Black Gym Legging</h5>
+                        <p>Price: Rs.699</p>
+                        <span>available in free size or <a href="featured.html">customize it</a></span>
+
+<input type="number" id="quantity-training-set1" min="1" value="1" class="form-control mb-2">
+<button class="btn btn-success" onclick="addToCartWithQuantity('gym legging', 899, 'quantity-training-set1')">Add to Cart</button>
+
+
+
+                    </div>
+                </div>
+            
+            <div class="musthave__card">
+                    <img src="https://i.pinimg.com/564x/20/a2/b6/20a2b6388f904e1a6d77d3154dd4acce.jpg" class="card-img-top" alt="Oversized T-shirt">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Oversized Slogan T-shirt</h5>
+                        <p>Price: Rs.725</p>
+                        <span>available in free size or <a href="featured.html">customize it</a></span>
+
+<input type="number" id="quantity-training-set2" min="1" value="1" class="form-control mb-2">
+<button class="btn btn-success" onclick="addToCartWithQuantity('slogan t-shirt', 899, 'quantity-training-set2')">Add to Cart</button>
+
+
+                      
+                    </div>
+                </div>
+          
+            <div class="musthave__card">
+                    <img src="https://i.pinimg.com/564x/05/54/d3/0554d3a1c49b45fbf26d4718ab7f92da.jpg" class="card-img-top" alt="Woman 3pcs Set">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Women's 3pcs Set</h5>
+                        <p>Price: Rs.1020</p>
+                     <span>available in free size or <a href="featured.html">customize it</a></span>
+  
+<input type="number" id="quantity-training-set3" min="1" value="1" class="form-control mb-2">
+<button class="btn btn-success" onclick="addToCartWithQuantity('3pcs set', 899, 'quantity-training-set3')">Add to Cart</button>
+
+
+                    </div>
+            </div>
+                </div>
+            </div>
+       
+    </section>
+
+    
+                
+           
+   
+    <br><br>
+
+    <!-- Notifications Pop-up -->
+    <div id="notification-popup" class="modal fade" tabindex="-1" aria-labelledby="notificationLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="notificationLabel">Get Notifications</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            <div class="modal-body">
+                    <p>Do you want to receive notifications about the latest offers and updates?</p>
+                </div>
+              <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="declineNotifications()">No, Thanks</button>
+                    <button type="button" class="btn btn-primary" onclick="subscribe()">Yes, Allow!</button>
+               </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 FitHive. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="cond.html">Terms and Conditions</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+    
+
+</body>
+
+</html> 
