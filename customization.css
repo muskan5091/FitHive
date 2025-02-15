@@ -1,0 +1,241 @@
+
+* {
+    padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans',sans-serif;
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  }
+  
+ 
+  body {
+    background-image:url(https://wallpapercave.com/wp/Ls3QsJ1.jpg); /* Replace with the actualpath to your image */
+    background-size: cover; /* Cover ensures the image takes up the full background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; 
+    color: #333;
+  }
+  
+  .customization-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Adds a slight opacity for readability */
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+  }
+  
+  
+  header {
+    background-color: black;
+    color: #fff;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+
+  .logo{
+    font-size: 28px;
+    font-family: 700;
+    letter-spacing: 1px;
+    color: var(--text-color);
+  }  
+
+
+  nav a {
+    color: #fff;
+    margin-left: 1em;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Main Content */
+  main {
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+  }
+  
+  .customization-container {
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+  }
+  
+  .customization-container h2 {
+    color: #555;
+  }
+  
+  .customization-container p {
+    color: #777;
+    margin-bottom: 1.5em;
+  }
+  
+  /* Customization Card */
+  .customization-card {
+    background-color: #f9f9f9;
+    padding: 1.5em;
+    border-radius: 8px;
+    margin-bottom: 1.5em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .customization-card h3 {
+    color: #555;
+    margin-bottom: 0.5em;
+  }
+  
+  .customization-card input {
+    width: 80%;
+    padding: 0.75em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  .fabric-select {
+    width: 100%;
+    padding: 0.75em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 1em;
+  }
+  
+  .fabric-select:focus {
+    outline: none;
+    border-color: #555;
+  }
+  
+  /* Submit Button */
+  .submit-button {
+    width: 100%;
+    padding: 1em;
+    margin-top: 2em;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .submit-button:hover {
+    background-color: #555;
+  }
+  
+  .footer-container {
+    background-color: black;
+    font-size: larger;
+    padding: 10px;
+    text-align: center;
+    text-decoration: double;
+    color: #fff;
+   /*position: fixed;Fix the footer at the bottom */
+   position: relative;
+    width: 100%;
+  
+    z-index: 9999; /* Ensure it overlays other elements */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    color: white;
+  }
+  
+  .footer-links li {
+    margin-right: 20px;
+    color: #fff;
+  }
+  
+  .footer-links a {
+    color: black;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .footer-links a:hover {
+    color: grey;
+  }  
+  
+  
+  /* Responsive Styles */
+  @media (max-width: 600px) {
+    .customization-container {
+      padding: 1em;
+    }
+  } 
+
+  
+  /* Cat Animation */
+.cat-animation {
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom of the page */
+    right: 20px; /* Distance from the right side of the page */
+    width: 40px;
+    height: 40px;
+    background-color: #333; /* Color for the cat body */
+    border-radius: 50%; /* Round shape for the cat body */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: bounce 2s ease-in-out infinite; /* Bouncing animation */
+  }
+  
+  /* Cat Ears */
+  .cat-ears {
+    position: absolute;
+    top: -10px; /* Position ears above the body */
+    width: 40px;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Left Ear */
+  .cat-ears::before,
+  .cat-ears::after {
+    content: '';
+    width: 10px;
+    height: 20px;
+    background-color: #333;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Triangular ears */
+  }
+  
+  /* Cat Body */
+  .cat-body {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+  }
+  
+  /* Bouncing Animation */
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
