@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-commerce site</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+</head>
+<body>
+    <!--header-->
+    <header>
+        <a href="#" class="logo">FitHive</a>
+        <ul class="navlist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="featured.html">Featured</a></li>
+           
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Log in</a></li>
+        </ul>
+        <div class="header-icon">
+
+           <a id="shopping-bag" href="checkout.html">
+                <i class='bx bx-shopping-bag'></i>
+                <span id="cart-item-count" style="display: none; background: red; color: white; border-radius: 50%; padding: 2px 6px; position: relative; top: -10px; left: -10px;">0</span>
+            </a>    
+        </div>
+    </header>
+
+    <body>
+         
+    <!-- Mens Sale Section -->
+   
+        <h2 class="section__title"> Sales on Men's Products</h2>
+        <div class="accessories__grid">
+            <div class="accessory__card">
+                <img src="https://fuaark.com/cdn/shop/files/IMG_2309.jpg?v=1712296397&width=1&width=400" alt="Tee" />
+                <br>
+               
+                <h4> Neck Tee Dusk Purple</h4>
+                    <div class="price-container">
+                    <span class="discounted-price">Rs. 799</span>
+                    <span class="original-price" style="text-decoration: line-through;">Rs. 849</span>
+                    <span class="discount-percentage" style="color: red;">-6%</span>
+                    
+                    
+                </div>
+                <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set56" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 799, 'quantity-training-set56')">Add to Cart</button><br>
+            
+            </div>
+            <div class="accessory__card">
+                <img src="https://fuaark.com/cdn/shop/files/Fuaark-Legacy-Stringer-Peach-_6.jpg?v=1718954583&width=1&width=400" alt="legacy stringer" />
+                
+                    <h4>Legacy Stringer Peach</h4>
+                    
+                    <div class="price-container">
+                        <span class="discounted-price">Rs. 649</span>
+                        <span class="original-price" style="text-decoration: line-through;">Rs. 749</span>
+                        <span class="discount-percentage" style="color: red;">-13%</span>
+                    </div>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set57" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 649, 'quantity-training-set57')">Add to Cart</button><br>
+                    
+                
+            </div>
+            <div class="accessory__card">
+                <img src="https://fuaark.com/cdn/shop/files/fuaark-venture-shorts-black-5.jpg?v=1692299504&width=1&width=400" alt="Shorts" />
+               
+                    <h4>Venture Shorts Black</h4>
+                    <div class="price-container">
+                        <span class="discounted-price">Rs. 649</span>
+                        <span class="original-price" style="text-decoration: line-through;">Rs. 1049</span>
+                        <span class="discount-percentage" style="color: red;">-38%</span>
+                        
+                        
+                    </div>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set58" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 649, 'quantity-training-set58')">Add to Cart</button><br>
+            
+               
+            </div>
+            <div class="accessory__card">
+                <img src="https://fuaark.com/cdn/shop/files/NylonCompressionTshirtgreenhalf_1.jpg?v=1701146819&width=1&width=400" alt="Tee" />
+                
+                    <h4>T-shirt Sea Green</h4>
+                    <div class="price-container">
+                        <span class="discounted-price">Rs. 899</span>
+                        <span class="original-price" style="text-decoration: line-through;">Rs. 1349</span>
+                        <span class="discount-percentage" style="color: red;">-33%</span>
+                    </div>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set59" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 899, 'quantity-training-set59')">Add to Cart</button><br>
+            
+                
+            </div>
+            <div class="accessory__card">
+                <img src="https://fuaark.com/cdn/shop/products/fuaark-oversize-shorts-green-2_e222ea49-bae2-4e58-ab6f-4fba5a9f3924.jpg?v=1688460659&width=1&width=400" alt="Shorts" />
+               
+                    <h4>Oversized Shorts Green </h4>
+                    <div class="price-container">
+                        <span class="discounted-price">Rs. 449</span>
+                        <span class="original-price" style="text-decoration: line-through;">Rs. 849</span>
+                        <span class="discount-percentage" style="color: red;">-47%</span>
+                    </div>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set60" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 449, 'quantity-training-set60')">Add to Cart</button><br>
+            
+            </div>
+            <div class="accessory__card">
+                <img src="https://fuaark.com/cdn/shop/products/fuaark-ultra-track-pant-grey-1.jpg?crop=center&height=1557&v=1688464198&width=1038" alt="tracks grey" />
+               
+                    <h4>Ultra Tracks Black </h4>
+                    <div class="price-container">
+                        <span class="discounted-price">Rs. 799</span>
+                        <span class="original-price" style="text-decoration: line-through;">Rs. 1149</span>
+                        <span class="discount-percentage" style="color: red;">-30%</span>
+                    </div>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set61" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 799, 'quantity-training-set61')">Add to Cart</button><br>
+            
+            </div><div class="accessory__card">
+                <img src="https://image.made-in-china.com/2f0j00vfZRHUyhYTgO/Mens-Signature-Embroidered-Oversized-Hoodie-in-Black.jpg" alt="hoodie" />
+               
+                    <h4>Oversized Hoodie</h4>
+                    <div class="price-container">
+                        <span class="discounted-price">Rs. 1071</span>
+                        <span class="original-price" style="text-decoration: line-through;">Rs. 1949</span>
+                        <span class="discount-percentage" style="color: red;">-45%</span>
+                    </div>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set62" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 1071, 'quantity-training-set62')">Add to Cart</button><br>
+            
+            </div>
+        </div>
+        <br><br>
+        
+
+
+        <footer>
+            <div class="footer-container">
+                <p>&copy; 2024 FitHive. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="cond.html">Terms and Conditions</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+     
+  
+     
+</body>
+</html>
