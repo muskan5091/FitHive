@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logging Out...</title>
+    <script>
+        // Automatically log the user out when this page loads
+        window.onload = function() {
+            // Clear login status from localStorage
+            localStorage.removeItem('loggedIn');
+
+            // Redirect to login page or homepage after logout
+            window.location.href = "login.html";  // Redirect to login or homepage
+        }
+
+       
+    </script>
+</head>
+<body>
+    <h1>Logging out...</h1>
+    <p>You are being redirected. Please wait...</p>
+</body>
+</html>
