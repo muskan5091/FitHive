@@ -1,0 +1,733 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans',sans-serif;
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+header {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+:root{
+  --bg-color: #fffff;
+  --text-color: #11111;
+  --main-color: #c8815f;
+  --big-font: 4.5rem;
+  --h2-font: 3.3rem;
+  --h3-font: 2rem;
+  --normal-font: 1 rem;
+
+}
+
+body{
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+
+.logo{
+  font-size: 28px;
+  font-family: 700;
+  letter-spacing: 1px;
+  color: var(--text-color);
+}
+.navlist{
+  display: flex;
+}
+.navlist a{
+  color: var(--text-color);
+  font-weight: 600;
+  padding: 10px 25px;
+  font-size: var(--normal-font);
+  transition: all .36s ease;
+}
+
+.navlist a:hover{
+  color: var(--main-color);
+}
+
+.bx{
+color: #ddd;
+font-size: 32px ;
+z-index:10001;
+}
+
+.header-icons i{
+  font-size: 32px;
+  color: white;
+  margin-right: 20px;
+  transition: all .36s ease;
+}
+.header-icons i:hover{
+  color: var(--main-color);
+}
+#menu-icon{
+  font-size: 34px;
+  color: white;
+  z-index:10001;
+  margin-right:25px;
+  padding:auto ;
+  ;
+  
+}
+
+section{
+  padding: 100px 14%;
+  padding-bottom: 0px;
+}
+.home{
+  min-height:100svh;
+  width:100%;
+ /* background-image: url(https://www.pursuefitness.com/cdn/shop/articles/7cb913cdfb27fcad6f13af48bcf0b545_1200x1200.jpg?v=1592907488);*/
+  background-size: cover;
+  background-position: center top ;
+  position:relative;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: center;
+}
+.carousel-caption{
+  color:#fff;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ padding:100px;
+ /*padding-bottom: 0%;*/
+ padding-top: 0%;
+}
+
+.carousel-caption h1{
+  font-weight: 500;
+  /*padding: 100px;
+  padding-bottom: 0%;*/
+  
+}
+.carousel-caption p{
+  /*padding: 100px;
+  padding-top: 0%;*/
+  font-weight: 500;
+}
+
+
+.b-btn{
+color: black;
+background:#c8815f;
+min-width: 300px;
+font-size:xx-large;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
+border-radius: 5px ;
+
+border-style:groove;
+transition: all .35s ease;
+
+
+
+}
+
+.b-btn:hover{
+  background-color: #666;
+  transform: translate(-5px);
+}
+
+
+
+
+
+
+.carousel-inner{
+/*background-size: cover;*/
+height:900px;
+width:100%;
+}
+.carousel-item h1{
+
+  font-size: var(--big-font);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: .6rem;
+  margin-bottom: 1.4rem ;
+}
+.carousel-item span{
+font-size: var(--h2-font);  
+}
+.carousel-item p{
+  font-size: var(--normal-font);
+  font-weight: 500;
+  margin-bottom: 3rem;
+  letter-spacing: .2rem;
+  
+}
+.btn{
+display: inline-block;
+padding: 13px 25px;
+background: #c8815f;
+color: var(--bg-color);
+font-size: 15px;
+letter-spacing: 1px;
+font-weight:600;
+border-radius: 5px;
+transition: all .35s ease;
+}
+.btn:hover{
+  transform: translate(-5px);
+  background: grey;
+}
+header.sticky{
+  background: var(--main-color);
+  padding: 14px 14%;
+  box-shadow: 0px 0px 10px rgb(0 0 0);
+}
+
+.carousel-control-prev{
+ 
+ transition:  0.5ms ease;
+}
+
+.carousel-control-next{
+  transition:  0.5ms ease;
+
+}
+
+
+* {
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+
+.section__container {
+max-width: var(--max-width);
+margin: auto;
+padding: 5rem 1rem;
+}
+
+.section__title {
+padding-bottom: 0.5rem;
+margin-bottom: 4rem;
+text-align: center;
+font-size: 2rem;
+font-weight: 600;
+color: var(--text-dark);
+position: relative;
+}
+
+.section__title::after {
+content: "";
+position: absolute;
+left: 50%;
+bottom: 0;
+transform: translateX(-50%);
+height: 3px;
+width: 75px;
+background-color: var(--text-dark);
+}
+
+.btn {
+padding: 0.75rem 2rem;
+font-size: 0.8rem;
+outline: none;
+border: none;
+cursor: pointer;
+transition: 0.3s;
+}
+
+a {
+text-decoration: none;
+}
+
+img {
+/*background-size:cover;*/
+width:100%;
+}
+
+body {
+font-family: "Montserrat", sans-serif;
+}
+
+
+.sale__grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 2rem;
+}
+
+.sale__card {
+position: relative;
+overflow: hidden;
+}
+
+.sale__content {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 100%;
+color: var(--white);
+text-align: center;
+}
+
+.sale__title {
+font-size: 2rem;
+font-weight: 600;
+color: #fff;
+}
+
+.sale__title span {
+font-size: 2.5rem;
+color: #fff;
+}
+
+.sale__subtitle {
+font-size: 1rem;
+color: #fff;
+}
+
+.sale__btn {
+margin-top: 2rem;
+color: gray;
+background-color: var(--text-dark);
+
+}
+
+.sale__card::before {
+position: absolute;
+content: "";
+height: 100%;
+width: 100%;
+top: -100%;
+left: 0;
+background-color: rgba(0, 0, 0, 0.5);
+transition: 0.5s;
+}
+
+.sale__card:hover::before {
+top: 0;
+}
+
+.sale__card:hover .sale__btn {
+color: var(--text-dark);
+background-color: var(--white);
+}
+
+nav a:hover {
+color: var(--text-dark);
+}
+
+
+
+.musthave__grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 2rem;
+}
+
+.musthave__card {
+display: grid;
+gap: 0.5rem;
+color: var(--text-dark);
+}
+
+.musthave__card h4 {
+font-size: 1rem;
+font-weight: 600;
+}
+
+.musthave__card p {
+font-size: 0.9rem;
+font-weight: 500;
+margin-bottom: 1rem;
+}
+
+.musthave__card p del {
+font-weight: 400;
+color: var(--text-light);
+}*/
+
+
+
+
+.musthave__nav {
+display: flex;
+justify-content: space-between;
+margin-bottom: 20px;
+}
+
+.musthave__nav a {
+margin-right: 20px;
+font-size: 16px;
+font-weight: bold;
+color: #337ab7;
+}
+
+.musthave__nav a:hover {
+color: #23527c;
+}
+
+.musthave__grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-gap: 20px;
+}
+
+.musthave__card {
+background-color: #fff;
+border: 1px solid #ddd;
+padding: 20px;
+transition: transform 0.3s ease-in-out;
+}
+
+.musthave__card:hover {
+transform: scale(1.05);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.musthave__card img {
+width: 100%;
+height: 245px;
+object-fit: cover;
+margin-bottom: 20px;
+}
+
+.musthave__card h4 {
+font-size: 18px;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+.musthave__card p {
+font-size: 16px;
+color: #666;
+}
+
+.musthave__card p del {
+font-size: 14px;
+color: #999;
+text-decoration: line-through;
+}
+
+
+/*.musthave__grid1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  }
+  
+  .musthave__card1 {
+  display: grid;
+  gap: 0.5rem;
+  color: var(--text-dark);
+  }
+  
+  .musthave__card1 h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  }
+  
+  .musthave__card1 p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  }
+
+  .musthave__card1 p del {
+    font-weight: 400;
+    color: var(--text-light);
+    }*/
+    
+/* Accessories Section */
+.section__title {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.accessories__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.accessory__card {
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.accessory__card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.accessory__card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+
+}
+
+.accessory__content {
+  padding: 1.5rem;
+}
+
+.accessory__content h4 {
+  font-size: 1.5rem;
+  color: #111;
+  font-weight: bold;
+}
+
+.accessory__content p {
+  font-size: 1rem;
+  color: #777;
+  
+}
+
+.accessory__content span{
+  text-decoration: line-through;
+  color: grey;
+}
+
+.price-container {
+display: flex;
+height: 100px;
+padding:30px;
+gap: 10px;
+align-items: center; /* Aligns the prices vertically in the center */
+}
+
+.discounted-price {
+font-weight: bold;
+color: #000; /* Color for discounted price */
+}
+
+.original-price {
+text-decoration: line-through;
+color: #777; /* Faded color for original price */
+}
+
+.discount-percentage {
+color: red;
+font-weight: bold;
+}
+
+.accessory__card h4{
+font-weight: bold;
+padding-top: 30px;;
+}
+
+.container h1{
+  font-weight: bold;
+  color: black;
+}
+
+/* Star rating icons */
+.star {
+  margin-bottom: 10px;
+}
+
+.star i {
+  color: #ff9f00;
+  margin-right: 2px;
+}
+
+.form-control {
+  max-width:fit-content;
+  max-height:fit-content;
+
+}
+
+/* Add to Cart button styling */
+.btn-success{
+  background-color: #c8815f; /* Primary color */
+  color: #fff; /* Text color */
+  font-size: 1.1rem; /* Larger text */
+  padding: 12px 24px; /* Adequate padding */
+  border: none; /* Remove default border */
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  width: 100%; /* Full width for consistency */
+  display: block; /* Block element to take full width */
+  text-align: center; /* Center the text inside the button */
+  max-width: max-content;
+  max-height: max-content;
+}
+
+/* Hover effect for button */
+.btn-success:hover {
+  background-color: grey; /* Darker shade of primary color */
+  transform: scale(1.05); /* Slightly enlarge button */
+}
+
+/* Focus effect for accessibility */
+.btn-success:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 5px #c8815f; /* Add a glowing effect */
+}
+
+/* Disabled state for the button */
+.btn-success:disabled {
+  background-color: #ccc; /* Grey out button */
+  color: #666; /* Dim the text */
+  cursor: not-allowed; /* Change cursor to indicate it's not clickable */
+}
+
+
+
+    
+.musthave__nav1 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  }
+  
+  .musthave__nav1 a {
+  margin-right: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #337ab7;
+  }
+
+  .musthave__grid1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    }
+    
+    .musthave__card1 {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    /*transition: transform 0.3s ease-in-out;*/
+    }
+  
+    
+    .musthave__card1 img {
+      width: 100%;
+      height: 245px;
+      object-fit: cover;
+      margin-bottom: 20px;
+      }
+      
+      .musthave__card1 h4 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      }
+      
+      .musthave__card1 p {
+      font-size: 16px;
+      color: #666;
+      }
+      
+      .musthave__card1 p del {
+      font-size: 14px;
+      color: #999;
+      text-decoration: line-through;
+      }
+      
+  .mens__category h3{
+  color:#c8815f;
+  font-family:Arial, Helvetica, sans-serif
+  }
+
+.btn-seconday{
+ 
+  background: black;
+  color: var(--bg-color);
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-weight:600;
+  border-radius: 5px;
+  transition: all .35s ease;
+}
+
+.modal-content{
+  background-color: black;
+  border: 3px solid grey;
+
+}
+.modal-dialog{
+max-height: fit-content;
+max-width: fit-content;
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+color: #ddd;
+
+}
+.modal-footer{
+  max-height: fit-content;
+}
+.footer-container {
+  background-color: black;
+  font-size: larger;
+  padding: 10px;
+  text-align: center;
+  text-decoration: double;
+  color: #fff;
+ /*position: fixed;Fix the footer at the bottom */
+ position: relative;
+  width: 100%;
+
+  z-index: 9999; /* Ensure it overlays other elements */
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.footer-links li {
+  margin-right: 20px;
+  color: #fff;
+}
+
+.footer-links a {
+  color: black;
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer-links a:hover {
+  color: grey;
+}  
+
+
+.container {
+  width: 40%;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  text-align: center;
+}
+
+
+.container  h1, h2 {
+  color: brown;
+  text-align: left;
+  margin-bottom: 20px;
+ text-align: center;
+
+}
