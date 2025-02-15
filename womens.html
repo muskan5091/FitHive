@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Wear | FitHive</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo">FitHive</a>
+        <ul class="navlist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="featured.html">Featured</a></li>
+           
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Log in</a></li>
+        </ul>
+        <div class="header-icon">
+
+           <a id="shopping-bag" href="checkout.html">
+                <i class='bx bx-shopping-bag'></i>
+                <span id="cart-item-count" style="display: none; background: red; color: white; border-radius: 50%; padding: 2px 6px; position: relative; top: -10px; left: -10px;">0</span>
+            </a>    
+        </div>
+    </header>
+
+
+
+    <section class="section__container mens__container">
+        <h2 class="section__title">Women's Wear</h2>
+        <div class="musthave__nav">
+            <a href="#topwear">Topwear</a>
+            <a href="#bottomwear">Bottomwear</a>
+            <a href="#footwear">Footwear</a>
+            <a href="#accessories">Accessories</a>
+        </div>
+        <br>
+        <br>
+
+        <!-- Topwear Section -->
+        <div id="topwear" class="womens__category">
+            <h3>Topwear</h3>
+            <div class="musthave__grid">
+                <div class="musthave__card">
+                    <img src="https://th.bing.com/th/id/OIP.Z8E3cWjdyTTaZpD1-6ooRgHaNK?w=187&h=333&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="T-shirt">
+                    <h4>Women's T-shirt</h4>
+                    <p>Price: Rs.599</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set34" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 599, 'quantity-training-set34')">Add to Cart</button>
+                    
+                </div>
+                <div class="musthave__card">
+                    <img src="https://th.bing.com/th/id/OIP.-u_P_qeDXIOOvL734n-pAAHaLz?w=198&h=315&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="zipper">
+                    <h4>Zipper  top</h4>
+                    <p>Price: Rs.799</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set35" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 799, 'quantity-training-set35')">Add to Cart</button>
+                    
+                </div>
+                <!-- Add more topwear items here -->
+                <div class="musthave__card">
+                    <img src="https://th.bing.com/th/id/OIP.Gg7r7BKptI-8sGCSXQCa1gHaIl?pid=ImgDet&w=178&h=206&c=7&dpr=1.5" alt="tank top">
+                    <h4>Top tanks</h4>
+                    <p>Price: Rs.800</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set36" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 800, 'quantity-training-set36')">Add to Cart</button>
+                    
+                </div>
+                <div class="musthave__card">
+                    <img src="https://th.bing.com/th/id/OIP.qIsS4tFl3sVNgk2WOEx4_AHaHa?w=192&h=192&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Shirt">
+                    <h4>Long Sleeve Fitness Suit</h4>
+                    <p>Price: Rs.1000</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set37" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 1000, 'quantity-training-set37')">Add to Cart</button>
+                    
+                </div>
+                <div class="musthave__card">
+                    <img src="data:image/jpeg;base64,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" alt="t-hoodies">
+                    <h4>Sleeveless Zipper top</h4>
+                    <p>Price: Rs.875</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set38" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 875, 'quantity-training-set38')">Add to Cart</button>
+                    
+                </div>
+                <div class="musthave__card">
+                    <img src="https://th.bing.com/th/id/OIP.sIezu6TOREo4Qq_b-cV48wAAAA?w=187&h=333&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="hoodie">
+                    <h4>Training top</h4>
+                    <p>Price: Rs.1255</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set39" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 1255, 'quantity-training-set39')">Add to Cart</button>
+                    
+                </div>
+
+            </div>
+        </div>
+<br><br>
+        <!-- Bottomwear Section -->
+        <div id="bottomwear" class="womens__category">
+            <h3>Bottomwear</h3>
+            <div class="musthave__grid">
+                <div class="musthave__card">
+                    <img src="https://th.bing.com/th/id/OIP.U-xj2mm0F5t7UWmJtsGyoAHaHa?w=202&h=202&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Jeans">
+                    <h4>Sweat Pants</h4>
+                    <p>Price: Rs.799</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set40" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 799, 'quantity-training-set40')">Add to Cart</button>
+                    
+                </div>
+                <div class="musthave__card">
+                    <img src="https://th.bing.com/th/id/OIP.YYdj-EEnjqt02o7SC9QqBQAAAA?w=202&h=269&c=7&r=0&o=5&dpr=1.5&pid=1.7"  alt="Shorts">
+                    <h4>Women's Shorts</h4>
+                    <p>Price: Rs.699</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set41" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 699, 'quantity-training-set41')">Add to Cart</button>
+                    
+                </div>
+                <!-- Add more bottomwear items here -->
+                <div class="musthave__card">
+                    <img src="https://th.bing.com/th/id/OIP.790BHKGC4Xdv8qO8pjYSsgAAAA?w=202&h=269&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="pants">
+                    <h4>Track Pants</h4>
+                    <p>Price: Rs.500</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set42" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 500, 'quantity-training-set42')">Add to Cart</button>
+                    
+                </div>
+                 <div class="musthave__card">
+                    <img src="https://th.bing.com/th/id/OIP.QNV_lggJCOvgpaj5Cdp61gHaI7?w=202&h=244&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="legging">
+                    <h4>2 in one legging</h4>
+                    <p>Price: Rs.956</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set43" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 956, 'quantity-training-set43')">Add to Cart</button>
+                    
+                </div> 
+                <div class="musthave__card">
+                    <img src="https://th.bing.com/th/id/OIP.ZwYLS0lvy_Ljq5dilx3UqwAAAA?w=202&h=303&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Grey Bottoms" />
+                    <h4>Fleece Short- Black</h4>
+                    <p>Price: Rs.1259</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set44" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 1259, 'quantity-training-set44')">Add to Cart</button>
+                    
+                </div>
+                <div class="musthave__card">
+                    <img src="https://th.bing.com/th/id/OIP.KXfI03bMUJ_WfvaecRDaHQHaJ4?w=202&h=269&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="tights">
+                    <h4>Sports Tight with Phone Pocket</h4>
+                    <p>Price: Rs.788</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set45" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 788, 'quantity-training-set45')">Add to Cart</button>
+                    
+                </div>
+
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <!-- Footwear Section -->
+        <div id="footwear" class="mens__category">
+            <h3>Footwear</h3>
+            <div class="musthave__grid">
+                <div class="musthave__card">
+                    <img src="https://th.bing.com/th/id/OIP.Vacornwz-tgoiW2BQkAH4AHaHa?w=164&h=180&c=7&r=0&o=5&dpr=1.5&pid=1."alt="Training Shoes">
+                    <h4>Training Shoes</h4>
+                    <p>Price: Rs.899</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set46" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 899, 'quantity-training-set46')">Add to Cart</button>
+                    
+                </div>
+                <div class="musthave__card">
+                    <img src="https://th.bing.com/th/id/OIP.vhKQFHiAHFHFBSoHQuWAoAHaHa?w=180&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Running Shoes">
+                    <h4>Running Shoes</h4>
+                    <p>Price: Rs.1995</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set47" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 1995, 'quantity-training-set47')">Add to Cart</button>
+                    
+                </div>
+                <div class="musthave__card">
+                    <img src="https://th.bing.com/th/id/OIP.YOK9sC_ig2kCjFE2BcieSgAAAA?w=202&h=202&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Minimalist Shoes">
+                    <h4>Minimalist Shoes</h4>
+                    <p>Price: Rs.2999</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set48" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 2999, 'quantity-training-set48')">Add to Cart</button>
+                    
+                </div>
+                <div class="musthave__card">
+                    <img src="http://ts4.mm.bing.net/th?id=OIP.pVpnDNrkhPKZF7zqdLy7IQHaHa&pid=15.1" alt="Weightlifting Shoes">
+                    <h4>Weightlifting Shoes</h4>
+                    <p>Price: Rs.1899</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set49" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 1899, 'quantity-training-set49')">Add to Cart</button>
+                    
+                </div>
+                <div class="musthave__card">
+                    <img src="https://th.bing.com/th/id/OIP.Yqg9OOhn5gIR41YMTOmz-wHaHa?w=176&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Cycling Shoes">
+                    <h4>Cycling Shoes</h4>
+                    <p>Price: Rs.2999</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set50" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 2999, 'quantity-training-set50')">Add to Cart</button>
+                    
+                </div>
+                <div class="musthave__card">
+                    <img src="https://th.bing.com/th/id/OIP.IWF3lakTXKfzNqN0WwqM9wHaHa?w=191&h=191&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Walking Shoes">
+                    <h4>Walking Shoes</h4>
+                    <p>Price: Rs.899</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set51" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 899, 'quantity-training-set51')">Add to Cart</button>
+                    
+                </div>
+                <!-- Add more footwear items here -->
+            </div>
+        </div>
+<br>
+<br>
+
+        <!-- Accessories Section -->
+        <div id="accessories" class="mens__category">
+            <h3>Accessories</h3>
+            <div class="musthave__grid">
+                <div class="musthave__card">
+                    <img src="https://th.bing.com/th/id/OIP.kXQFDNWRRM7zpHWuZ5_UyQHaHa?w=177&h=185&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Gym Bag">
+                    <h4>Gym Bag</h4>
+                    <p>Price: Rs.725</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set52" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 725, 'quantity-training-set52')">Add to Cart</button>
+                    
+                </div>
+                <div class="musthave__card">
+                    <img src="https://th.bing.com/th/id/OIP.wWl9yJzeLEu7el3fMNRRSgHaHa?w=183&h=183&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Ankle Strap">
+                    <h4>Ankle Strap</h4>
+                    <p>Price: Rs.699</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set53" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 699, 'quantity-training-set53')">Add to Cart</button>
+                    
+                </div>
+                <!-- Add more accessories here -->
+
+                <div class="musthave__card">
+                <img src="https://th.bing.com/th/id/OIP.PjK6ABeZb7uT1C-_wpZcKQHaHa?w=189&h=189&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Sling Bag" />
+                   
+                    <h4>Sling Bag</h4>
+                    <p>Price: Rs.599</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set54" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 599, 'quantity-training-set54')">Add to Cart</button>
+                    
+                </div>
+                <div class="musthave__card">
+                    
+                        <img src="https://th.bing.com/th/id/OIP.o7QheqcuJ9HirjS3dMYjSwHaHa?w=183&h=183&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Water Bottle" />
+                            <h4>Water Bottle</h4>
+                        <p>Price: Rs.599</p>
+                        <span>available in  free size or <a href="featured.html">customize it</a></span>
+                        <input type="number" id="quantity-training-set55" min="1" value="1" class="form-control mb-2">
+                        <button class="btn btn-success" onclick="addToCartWithQuantity('item', 599, 'quantity-training-set55')">Add to Cart</button>
+                        
+                    </div>
+
+            </div>
+        </div>
+        <br>
+        <br>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 FitHive. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="cond.html">Terms and Conditions</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+</body>
+</html>
+

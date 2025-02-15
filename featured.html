@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitHive Customization</title>
+  <link rel="stylesheet" href="customization.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="#" class="logo">FitHive</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="featured.html">Custom Fit</a>
+      <a href="contact.html">Support</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="customization-container">
+      <h2>Customize Your Fit</h2>
+      <p>Enter your measurements and choose your ideal fabric for the perfect fit.</p>
+
+      <!-- Form for Customization -->
+      <form id="customFitForm">
+        <div class="customization-card">
+          <h3>Height</h3>
+          <input type="number" id="height" name="height" placeholder="Enter height in cm" min="0" required>
+        </div>
+
+        <div class="customization-card">
+          <h3>Chest</h3>
+          <input type="number" id="chest" name="chest" placeholder="Enter chest measurement in cm" min="0" required>
+        </div>
+
+        <div class="customization-card">
+          <h3>Hip</h3>
+          <input type="number" id="hip" name="hip" placeholder="Enter hip measurement in cm" min="0" required>
+        </div>
+
+        <div class="customization-card">
+          <h3>Shoulder</h3>
+          <input type="number" id="shoulder" name="shoulder" placeholder="Enter shoulder measurement in cm" min="0" required>
+        </div>
+
+        <div class="customization-card">
+          <h3>Waist</h3>
+          <input type="number" id="waist" name="waist" placeholder="Enter waist measurement in cm" min="0" required>
+        </div>
+
+        <div class="customization-card">
+          <h3>Fabric Material</h3>
+          <select id="fabric" name="fabric" class="fabric-select" required>
+            <option value="" disabled selected>Select fabric material</option>
+            <option value="Cotton Blend">Cotton Blend</option>
+            <option value="Polyester Spandex">Polyester Spandex</option>
+            <option value="Bamboo">Bamboo</option>
+            <option value="Organic Cotton">Organic Cotton</option>
+            <option value="Recycled Material">Recycled Material</option>
+          </select>
+        </div>
+
+        <button type="submit" class="submit-button">Get My Custom Fit</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+        <p>&copy; 2024 FitHive. All rights reserved.</p>
+        <br>
+        <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="cond.html">Terms and Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+    </div>
+</footer>
+
+  <div class="cat-animation">
+    <div class="cat-ears"></div>
+    <div class="cat-body"></div>
+  </div>
+
+  
+  <script>
+    // Validate input to prevent non-numeric and negative values
+    document.querySelectorAll('input[type="number"]').forEach(input => {
+      input.addEventListener('input', () => {
+        // Remove non-numeric characters
+        input.value = input.value.replace(/[^0-9]/g, '');
+        // Remove negative values
+        if (input.value < 0) {
+          input.value = '';
+        }
+      });
+    });
+
+    // Add form submit event listener
+    document.getElementById("customFitForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const height = document.getElementById("height").value;
+      const chest = document.getElementById("chest").value;
+      const hip = document.getElementById("hip").value;
+      const shoulder = document.getElementById("shoulder").value;
+      const waist = document.getElementById("waist").value;
+      const fabric = document.getElementById("fabric").value;
+
+      if (height && chest && hip && shoulder && waist && fabric) {
+        alert(`Your custom fit has been submitted!`);
+        event.target.submit(); // Submit the form
+      } else {
+        alert("Please fill in all fields before submitting.");
+      }
+    });
+  </script>
+
+</body>
+</html>

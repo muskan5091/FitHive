@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Wear | FitHive</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo">FitHive</a>
+        <ul class="navlist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="featured.html">Featured</a></li>
+           
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Log in</a></li>
+        </ul>
+        <div class="header-icon">
+
+           <a id="shopping-bag" href="checkout.html">
+                <i class='bx bx-shopping-bag'></i>
+                <span id="cart-item-count" style="display: none; background: red; color: white; border-radius: 50%; padding: 2px 6px; position: relative; top: -10px; left: -10px;">0</span>
+            </a>    
+        </div>
+    </header>
+
+
+
+    <section class="section__container mens__container">
+        <h2 class="section__title">Men's Wear</h2>
+        <div class="musthave__nav">
+            <a href="#topwear">Topwear</a>
+            <a href="#bottomwear">Bottomwear</a>
+            <a href="#footwear">Footwear</a>
+            <a href="#accessories">Accessories</a>
+        </div>
+        <br>
+        <br>
+
+        <!-- Topwear Section -->
+        <div id="topwear" class="mens__category">
+            <h3>Topwear</h3>
+            <div class="musthave__grid">
+                <div class="musthave__card">
+                    <img src="https://i.pinimg.com/564x/d0/be/26/d0be26edbc469cc2d2bc79d0087d8e16.jpg" alt="T-shirt">
+                    <h4>Men's T-shirt</h4>
+                    <p>Price: Rs.899</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set12" min="1" value="1" class="form-control mb-2">
+<button class="btn btn-success" onclick="addToCartWithQuantity('Men t-shirt', 899, 'quantity-training-set12')">Add to Cart</button>
+
+                </div>
+                <div class="musthave__card">
+                    <img src="https://i.pinimg.com/736x/ab/4e/a3/ab4ea3904a3509f21742fd3d8c47e20c.jpg" alt="zipper">
+                    <h4>1/4 Zip Funnel Neck</h4>
+                    <p>Price: Rs.999</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set13" min="1" value="1" class="form-control mb-2">
+<button class="btn btn-success" onclick="addToCartWithQuantity('zip funnel', 999, 'quantity-training-set13')">Add to Cart</button>
+
+                </div>
+                <!-- Add more topwear items here -->
+                <div class="musthave__card">
+                    <img src="https://i.pinimg.com/736x/86/7e/ef/867eef88eed157a75f7da82659e621a2.jpg" alt="tank top">
+                    <h4>Top tanks</h4>
+                    <p>Price: Rs.600</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set14" min="1" value="1" class="form-control mb-2">
+<button class="btn btn-success" onclick="addToCartWithQuantity('top tanks', 600, 'quantity-training-set14')">Add to Cart</button>
+
+                </div>
+                <div class="musthave__card">
+                    <img src="https://i.pinimg.com/564x/57/0a/4f/570a4f1f6113add768e64249012d37ef.jpg" alt="Shirt">
+                    <h4>Long Sleeve Muscle Fit Top</h4>
+                    <p>Price: Rs.1000</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set15" min="1" value="1" class="form-control mb-2">
+<button class="btn btn-success" onclick="addToCartWithQuantity('long sleeve', 899, 'quantity-training-set15')">Add to Cart</button>
+
+                </div>
+                <div class="musthave__card">
+                    <img src="https://i.pinimg.com/564x/f9/f4/dd/f9f4dd0ff88a24baabfd016f79b71ca6.jpg" alt="t-hoodies">
+                    <h4>Sleeveless Hoodie</h4>
+                    <p>Price: Rs.875</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set16" min="1" value="1" class="form-control mb-2">
+<button class="btn btn-success" onclick="addToCartWithQuantity('sleevless hoodie', 875, 'quantity-training-set16')">Add to Cart</button>
+
+                </div>
+                <div class="musthave__card">
+                    <img src="https://i.pinimg.com/enabled/564x/cc/5f/69/cc5f69945be715979f604d78e333a310.jpg" alt="hoodie">
+                    <h4>Training Hoodie</h4>
+                    <p>Price: Rs.1255</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set17" min="1" value="1" class="form-control mb-2">
+<button class="btn btn-success" onclick="addToCartWithQuantity('training hoodie', 1255, 'quantity-training-set17')">Add to Cart</button>
+
+                </div>
+                <div class="musthave__card">
+                    <img src="https://i.pinimg.com/564x/20/a2/b6/20a2b6388f904e1a6d77d3154dd4acce.jpg" alt="Slogan T-shirt" />
+                    <h4>Jersey Tee-Black</h4>
+                    <p>Price: Rs.725</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set18" min="1" value="1" class="form-control mb-2">
+<button class="btn btn-success" onclick="addToCartWithQuantity('item', 725, 'quantity-training-set18')">Add to Cart</button>
+
+                </div>
+            </div>
+        </div>
+<br><br>
+        <!-- Bottomwear Section -->
+        <div id="bottomwear" class="mens__category">
+            <h3>Bottomwear</h3>
+            <div class="musthave__grid">
+                <div class="musthave__card">
+                    <img src="https://i.pinimg.com/564x/58/09/dd/5809dde4013f47cbecfb1e3bacf03dad.jpg" alt="Jeans">
+                    <h4>Sweat Pants</h4>
+                    <p>Price: Rs.799</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set19" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 799, 'quantity-training-set19')">Add to Cart</button>
+                    
+                </div>
+                <div class="musthave__card">
+                    <img src="https://i.pinimg.com/564x/5a/90/11/5a90118c5c10d2fe162a0e8487786f26.jpg"  alt="Shorts">
+                    <h4>Men's Shorts</h4>
+                    <p>Price: Rs.699</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set20" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 699, 'quantity-training-set20')">Add to Cart</button>
+                    
+                </div>
+                <!-- Add more bottomwear items here -->
+                <div class="musthave__card">
+                    <img src="https://i.pinimg.com/736x/08/23/76/082376bb10340f274e7fbdc4873bb4b8.jpg" alt="pants">
+                    <h4>Track Pants</h4>
+                    <p>Price: Rs.500</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set21" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 500, 'quantity-training-set21')">Add to Cart</button>
+                    
+                </div>
+                 <div class="musthave__card">
+                    <img src="https://i.pinimg.com/564x/66/8c/13/668c139663c78acef3f8a32dd32cd2a4.jpg" alt="legging">
+                    <h4>2 in one legging</h4>
+                    <p>Price: Rs.956</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set22" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 956, 'quantity-training-set22')">Add to Cart</button>
+                    
+                </div> 
+                <div class="musthave__card">
+                    <img src="https://i.pinimg.com/enabled/564x/ff/2f/45/ff2f4541ba268f844822d3b890e22383.jpg" alt="Grey Bottoms" />
+                    <h4>Fleece Short- Black</h4>
+                    <p>Price: Rs.1259</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set23" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 1259, 'quantity-training-set23')">Add to Cart</button>
+                    
+                </div>
+                <div class="musthave__card">
+                    <img src="https://i.pinimg.com/564x/f7/82/1a/f7821ab5d9584dfeb61e609e840bdab4.jpg" alt="tights">
+                    <h4>Sports Tight with Phone Pocket</h4>
+                    <p>Price: Rs.788</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set24" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 788, 'quantity-training-set24')">Add to Cart</button>
+                    
+                </div>
+
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <!-- Footwear Section -->
+        <div id="footwear" class="mens__category">
+            <h3>Footwear</h3>
+            <div class="musthave__grid">
+                <div class="musthave__card">
+                    <img src="https://i.pinimg.com/originals/60/73/1f/60731f919f3e37a8acacf73e27c48d10.jpg" alt="Training Shoes">
+                    <h4>Training Shoes</h4>
+                    <p>Price: Rs.899</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set25" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 899, 'quantity-training-set25')">Add to Cart</button>
+                    
+                </div>
+                <div class="musthave__card">
+                    <img src="https://shop.mynavyexchange.com/products/images/xlarge/13355569_023.jpg" alt="Running Shoes">
+                    <h4>Running Shoes</h4>
+                    <p>Price: Rs.1995</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set26" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 1995, 'quantity-training-set26')">Add to Cart</button>
+                    
+                </div>
+                <div class="musthave__card">
+                    <img src="https://i.pinimg.com/originals/6a/c4/a6/6ac4a62251b36bd29d0766d3f725f96a.jpg" alt="Minimalist Shoes">
+                    <h4>Minimalist Shoes</h4>
+                    <p>Price: Rs.2999</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set27" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 2999, 'quantity-training-set27')">Add to Cart</button>
+                    
+                </div>
+                <div class="musthave__card">
+                    <img src="https://images-na.ssl-images-amazon.com/images/I/91fk-0Y6VfL.jpg" alt="Weightlifting Shoes">
+                    <h4>Weightlifting Shoes</h4>
+                    <p>Price: Rs.1899</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set28" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 1899, 'quantity-training-set28')">Add to Cart</button>
+                    
+                </div>
+
+                <div class="musthave__card">
+                    <img src="https://best10choices.com/wp-content/uploads/2021/03/B08KXY3V5L.jpg" alt="Cycling Shoes">
+                    <h4>Cycling Shoes</h4>
+                    <p>Price: Rs.2999</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set29" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 2999, 'quantity-training-set29')">Add to Cart</button>
+                    
+                </div>
+                <div class="musthave__card">
+                    <img src="https://images.meesho.com/images/products/193680475/wpyrm_512.webp" alt="Walking Shoes">
+                    <h4>Walking Shoes</h4>
+                    <p>Price: Rs.899</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set30" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 899, 'quantity-training-set30')">Add to Cart</button>
+                    
+                </div>
+                <!-- Add more footwear items here -->
+            </div>
+        </div>
+<br>
+<br>
+
+        <!-- Accessories Section -->
+        <div id="accessories" class="mens__category">
+            <h3>Accessories</h3>
+            <div class="musthave__grid">
+                <div class="musthave__card">
+                    <img src="https://reviewed-com-res.cloudinary.com/image/fetch/s--hSDiiHFf--/b_white,c_fill,cs_srgb,f_auto,fl_progressive.strip_profile,g_auto,h_972,q_auto,w_972/https://reviewed-production.s3.amazonaws.com/1642193496000/DSC_2708.jpg" alt="Gym Bag">
+                    <h4>Gym Bag</h4>
+                    <p>Price: Rs.725</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set31" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 725, 'quantity-training-set31')">Add to Cart</button>
+                    
+                </div>
+                <div class="musthave__card">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.ZQ2d39Y2IatwrxxWiQFjKgHaE5&pid=Api&P=0&h=180" alt="Fitness Tracker">
+                    <h4>Fitness Tracker</h4>
+                    <p>Price: Rs.699</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set32" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 699, 'quantity-training-set32')">Add to Cart</button>
+                    
+                </div>
+                <!-- Add more accessories here -->
+
+                <div class="musthave__card">
+                <img src="https://img.ricardostatic.ch/t_1000x750/pl/1094872926/7/1/adidas-sport-fitness-cap.jpg" alt="Sports Cap" />
+                   
+                    <h4>Sports Cap</h4>
+                    <p>Price: Rs.599</p>
+                    <span>available in  free size or <a href="featured.html">customize it</a></span>
+                    <input type="number" id="quantity-training-set33" min="1" value="1" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="addToCartWithQuantity('item', 599, 'quantity-training-set33')">Add to Cart</button>
+                    
+                </div>
+
+            </div>
+        </div>
+        <br>
+        <br>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 FitHive. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="cond.html">Terms and Conditions</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+</html>
