@@ -1,0 +1,258 @@
+/* =======================
+   FitHive Checkout Theme — Qty Below Price
+========================== */
+.payment-body {
+  background: linear-gradient(to right, #fdf4ec, #f8eee7);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 0;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.checkout-container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 720px;
+  padding: 35px 40px;
+}
+
+.page-title {
+  text-align: center;
+  color: #c8815f;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+/* ------------------------
+   ORDER SUMMARY
+------------------------- */
+.order-summary {
+  background: #fafafa;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+  border: 1px solid #eee;
+}
+
+.order-summary h3 {
+  color: #444;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  border-bottom: 2px solid #f1e1d3;
+  padding-bottom: 8px;
+}
+
+.checkout-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ------------------------
+   PRODUCT ITEM
+------------------------- */
+.checkout-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 18px 0;
+  border-bottom: 1px solid #eee;
+  gap: 15px;
+}
+
+.item-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.item-left strong,
+.item-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+}
+
+.variant-info {
+  font-size: 14px;
+  color: #777;
+}
+
+/* ------------------------
+   PRICE + QTY SECTION (Right Side)
+------------------------- */
+.item-right {
+  min-width: 120px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.item-price {
+  font-weight: 600;
+  font-size: 16px;
+  color: #222;
+}
+
+/* --- Qty + Remove BELOW PRICE --- */
+.item-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 5px 8px;
+  width: fit-content;
+  margin-top: 4px;
+}
+
+.qty-btn {
+  background: #f6f6f6;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.qty-btn:hover {
+  background: #e6e6e6;
+  transform: scale(1.05);
+}
+
+.qty-input {
+  width: 34px;
+  text-align: center;
+  font-size: 15px;
+  border: none;
+  background: #fff;
+  outline: none;
+  pointer-events: none;
+}
+
+/* --- Remove (Trash) --- */
+.remove-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #d9534f;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+  margin-left: 4px;
+}
+
+.remove-btn:hover {
+  color: #b52b27;
+  transform: scale(1.1);
+}
+
+/* ------------------------
+   SUMMARY FOOTER
+------------------------- */
+.summary-footer {
+  margin-top: 20px;
+  border-top: 2px solid #eee;
+  padding-top: 12px;
+}
+
+.summary-footer p {
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+  color: #444;
+}
+
+.summary-footer .total {
+  color: #c8815f;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+/* ------------------------
+   PAYMENT FORM
+------------------------- */
+.payment-form label {
+  font-weight: 600;
+  color: #444;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.payment-form select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  font-size: 15px;
+  outline: none;
+  background: #fff;
+  color: #444;
+}
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-success {
+  background-color: #c8815f;
+  color: #fff;
+}
+
+.btn-success:hover {
+  background-color: grey;
+  transform: scale(1.02);
+}
+
+/* ------------------------
+   RESPONSIVENESS
+------------------------- */
+@media (max-width: 640px) {
+  .checkout-container {
+    padding: 25px 20px;
+  }
+
+  .checkout-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .item-right {
+    align-items: flex-start;
+    text-align: left;
+    margin-top: 6px;
+  }
+
+  .item-actions {
+    justify-content: flex-start;
+    margin-top: 6px;
+  }
+}

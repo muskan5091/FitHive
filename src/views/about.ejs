@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/about.css">
+  <title>About FitHive</title>
+</head>
+<body>
+
+  <!-- Header -->
+  <%- include('partials/header') %>
+
+  <!-- =========================
+       HERO SECTION
+  ========================== -->
+  
+  <section class="about-hero">
+    <div class="about-overlay"></div>
+    <div class="about-content-center">
+      <h1>Empower Your <span>Fitness Journey</span></h1>
+      <p>Designed for performance, driven by passion. FitHive — where fitness meets fashion.</p>
+      <a href="/shop" class="hero-btn">Explore Collection</a>
+    </div>
+  </section>
+
+  <!-- =========================
+       ABOUT SECTION
+  ========================== -->
+  <section class="about-section">
+    <div class="about-wrapper">
+      <div class="about-img" data-aos="fade-right">
+        <img src="https://cdn.shopify.com/s/files/1/0156/6146/products/Reversible_5_of_6_9d3e73bf-2717-47a5-81e3-be0624690e41_1024x1024.jpg?v=1519920498" alt="FitHive Gym Wear">
+      </div>
+      <div class="about-text" data-aos="fade-left">
+        <h2>About <span>FitHive</span></h2>
+        <p>
+          At FitHive, fitness isn’t just about workouts — it’s a way of life. We craft stylish, durable, 
+          and high-performance gym wear that fuels your motivation and moves with you.
+        </p>
+        <p>
+          Established in <strong>2024</strong>, we’ve grown into a trusted name among fitness enthusiasts 
+          by focusing on sustainability, innovation, and community. From seamless leggings to breathable tees — 
+          we make every rep count.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       VALUES SECTION
+  ========================== -->
+  <section class="values-section">
+    <h2 data-aos="fade-up">Our Core Values</h2>
+    <div class="values-grid">
+      <div class="value-card" data-aos="zoom-in" data-aos-delay="100">
+        <i class="bx bx-target-lock"></i>
+        <h4>Commitment</h4>
+        <p>We deliver premium-quality gym wear to support your fitness lifestyle with confidence.</p>
+      </div>
+      <div class="value-card" data-aos="zoom-in" data-aos-delay="200">
+        <i class="bx bx-recycle"></i>
+        <h4>Sustainability</h4>
+        <p>We minimize our impact using eco-friendly materials and ethical production processes.</p>
+      </div>
+      <div class="value-card" data-aos="zoom-in" data-aos-delay="300">
+        <i class="bx bx-heart"></i>
+        <h4>Community</h4>
+        <p>We’re more than a brand — we’re a supportive fitness family where everyone belongs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       TEAM SECTION
+  ========================== -->
+  <section class="team-section">
+    <h2 data-aos="fade-up">Meet Our Team</h2>
+    <div class="team-grid">
+      <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+        <img src="/assests/images/WhatsApp Image 2025-11-06 at 20.18.13.jpeg" alt="Muskan Rani">
+        <h4>Muskan Rani</h4>
+        <p>CEO & Founder</p>
+      </div>
+      <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+        <img src="/assests/images/f9f534ea-82ca-4372-98cc-f3f1ff137e41.jpg" alt="Khushi">
+        <h4>Khushi Rani</h4>
+        <p>Lead Designer</p>
+      </div>
+      <div class="team-member" data-aos="fade-up" data-aos-delay="300">
+        <img src="/assests/images/22525c5c-880e-4fed-8edb-33b8788c1b42.jpg" alt="Kamal">
+        <h4>Kamal</h4>
+        <p>Chief Financial Officer</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <%- include('partials/footer') %>
+
+  <!-- Scroll Animations -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({ duration: 900, offset: 120 });</script>
+</body>
+</html>

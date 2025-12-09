@@ -1,0 +1,84 @@
+[
+  {
+    "id": "fusion-tee",
+    "name": "Fusion Tee",
+    "price": 799,
+    "image": "/assests/images/IMG_2309.webp",
+    "desc": "Seamless comfort meets performance — lightweight and breathable training tee.",
+    "rating": 4.6,
+    "colors": ["Black", "Gray", "Olive", "Blue"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": false,
+    "type": "upper",
+    "fabric": "95% Polyester, 5% Spandex",
+    "sizeGuide": "Slim Fit",
+    "sizeChart": {
+      "S": { "chest": 88, "length": 66, "sleeve": 21 },
+      "M": { "chest": 94, "length": 68, "sleeve": 22 },
+      "L": { "chest": 100, "length": 70, "sleeve": 23 },
+      "XL": { "chest": 106, "length": 72, "sleeve": 24 }
+    }
+  },
+  {
+    "id": "fusion-shorts",
+    "name": "Fusion Shorts",
+    "price": 649,
+    "image": "/assests/images/fuaark-venture-shorts-black-5.webp",
+    "desc": "Engineered flexibility for any workout — 4-way stretch and quick-dry fabric.",
+    "rating": 4.7,
+    "colors": ["Black", "Gray", "Navy"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": true,
+    "type": "lower",
+    "fabric": "Polyester-Spandex Blend",
+    "sizeGuide": "Regular Fit",
+    "sizeChart": {
+      "S": { "waist": 72, "length": 44, "inseam": 21 },
+      "M": { "waist": 78, "length": 46, "inseam": 22 },
+      "L": { "waist": 84, "length": 48, "inseam": 23 },
+      "XL": { "waist": 90, "length": 50, "inseam": 24 }
+    }
+  },
+  {
+    "id": "women-vital-seamless-shorts",
+    "name": "Vital Seamless Shorts",
+    "price": 649,
+    "originalPrice": 1049,
+    "discount": 38,
+    "image": "/assests/images/VitalSeamlessShortsBlackMarlBlackMarlB1A4J-BBF3-1380_34c3484a-4ea8-42b0-9dc8-313e7626edd6_1920x.webp",
+    "desc": "High-stretch seamless shorts providing comfort and freedom during every move.",
+    "rating": 4.7,
+    "colors": ["Black Marl", "Gray Marl"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": true,
+    "type": "lower",
+    "fabric": "Nylon-Elastane Blend",
+    "sizeGuide": "Slim Fit",
+    "sizeChart": {
+      "S": { "waist": 64, "length": 42, "inseam": 20 },
+      "M": { "waist": 68, "length": 44, "inseam": 21 },
+      "L": { "waist": 72, "length": 46, "inseam": 22 },
+      "XL": { "waist": 76, "length": 48, "inseam": 23 }
+    }
+  },
+  {
+    "id": "fusion-hoodie",
+    "name": "Fusion Hoodie",
+    "price": 1071,
+    "image": "/assests/images/14437515e657ec58eba89b42d0cdac1e--golds-gym-gym-wear.jpg",
+    "desc": "Soft fleece warmth for your training or rest days — style meets comfort.",
+    "rating": 4.8,
+    "colors": ["Black", "Gray", "Olive"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": false,
+    "type": "upper",
+    "fabric": "80% Cotton, 20% Polyester",
+    "sizeGuide": "Relaxed Fit",
+    "sizeChart": {
+      "S": { "chest": 92, "length": 67, "sleeve": 60 },
+      "M": { "chest": 98, "length": 69, "sleeve": 62 },
+      "L": { "chest": 104, "length": 71, "sleeve": 64 },
+      "XL": { "chest": 110, "length": 73, "sleeve": 66 }
+    }
+  }
+]

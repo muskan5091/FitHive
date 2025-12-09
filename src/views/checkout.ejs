@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Checkout | FitHive</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <style>
+        body { display: flex; flex-direction: column; min-height: 100vh; }
+        main { flex: 1; max-width: 1200px; margin: 40px auto; padding: 20px; }
+        .section { display: flex; gap: 30px; flex-wrap: wrap; }
+        .order-summary, .billing-details { flex: 1; min-width: 300px; border: 1px solid #dee2e6; border-radius: 8px; padding: 20px; background-color: #fff; }
+        .order-summary table { width: 100%; border-collapse: collapse; }
+        .order-summary th, .order-summary td { padding: 10px; border-bottom: 1px solid #dee2e6; text-align: left; }
+        .billing-details label { display: block; margin-top: 15px; margin-bottom: 5px; font-weight: bold; }
+        .billing-details input, .billing-details select { width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ced4da; }
+        .btn-checkout { margin-top: 20px; width: 100%; }
+        .btn-remove { background-color: #dc3545; color: #fff; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; }
+        .btn-continue { margin-top: 10px; display: inline-block; }
+        @media (max-width: 991px) { .section { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <main>
+        <!-- Step 1: Address -->
+        <div class="billing-details">
+            <h2>Shipping Address</h2>
+            <form id="addressForm">
+                <label for="address">Address</label>
+                <input type="text" name="address" id="address" placeholder="Enter your shipping address" required>
+                <button type="submit" class="btn btn-success btn-checkout">Continue to Payment</button>
+            </form>
+        </div>
+
+        <!-- Step 2: Order Summary & Payment -->
+        <div class="section" id="checkoutSection" style="display:none;">
+            <!-- Order Summary -->
+            <div class="order-summary">
+                <h2>Order Summary</h2>
+                <% if (cart.length === 0) { %>
+                    <p>Your cart is empty. <a href="/shop">Go shopping!</a></p>
+                <% } else { %>
+                    <table>
+                        <thead>
+                            <tr><th>Product</th><th>Qty</th><th>Subtotal</th><th>Action</th></tr>
+                        </thead>
+                        <tbody id="cartItems">
+                            <% let total = 0; %>
+                            <% cart.forEach((item, index) => { %>
+                                <tr data-index="<%= index %>">
+                                    <td><%= item.name %></td>
+                                    <td><%= item.qty %></td>
+                                    <td>₹<%= item.price * item.qty %></td>
+                                    
+                                </tr>
+                                <% total += item.price * item.qty; %>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                    <h3 id="totalAmount" class="text-end mt-3">Total: ₹<%= total %></h3>
+                    <a href="/shop" class="btn btn-secondary btn-continue">Continue Shopping</a>
+                <% } %>
+            </div>
+
+            <!-- Payment Options -->
+            <div class="billing-details">
+                <h2>Payment Method</h2>
+                <form id="paymentForm">
+                    <input type="hidden" id="addressHidden">
+                    <label for="paymentMethod">Choose Payment Method</label>
+                    <select id="paymentMethod" required>
+                        <option value="COD" selected>Cash on Delivery (COD)</option>
+                        <option value="Card">Credit/Debit Card</option>
+                    </select>
+                    <button type="submit" class="btn btn-success btn-checkout mt-3">Pay Now</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <%- include('partials/footer') %>
+
+    <script>
+        const addressForm = document.getElementById('addressForm');
+        const checkoutSection = document.getElementById('checkoutSection');
+        const addressHidden = document.getElementById('addressHidden');
+        const paymentForm = document.getElementById('paymentForm');
+
+        addressForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const address = document.getElementById('address').value;
+            if(!address) return alert('Enter address!');
+            addressHidden.value = address;
+            addressForm.style.display = 'none';
+            checkoutSection.style.display = 'flex';
+        });
+
+        function removeFromCart(index){
+            fetch('/cart/remove', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ index })
+            }).then(() => location.reload());
+        }
+
+        paymentForm.addEventListener('submit', async function(e){
+            e.preventDefault();
+            const paymentMethod = document.getElementById('paymentMethod').value;
+            const address = addressHidden.value;
+
+            if(paymentMethod === 'COD'){
+                await fetch('/checkout', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ address, paymentMethod })
+                });
+                window.location.href = '/checkout/success';
+            } else {
+                const orderRes = await fetch('/checkout/razorpay', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ address })
+                }).then(res => res.json());
+
+                const options = {
+                    key: "<%= process.env.RAZORPAY_KEY_ID %>",
+                    amount: orderRes.amount,
+                    currency: orderRes.currency,
+                    name: "FitHive",
+                    description: "Order Payment",
+                    order_id: orderRes.id,
+                    handler: async function(response){
+                        const verify = await fetch("/checkout/verify", {
+                            method: "POST",
+                            headers: {"Content-Type": "application/json"},
+                            body: JSON.stringify({ ...response, address })
+                        }).then(res => res.json());
+
+                        if(verify.success){
+                            window.location.href = "/checkout/success";
+                        } else {
+                            alert("Payment verification failed. Try again.");
+                        }
+                    },
+                    theme: { color: "#28a745" }
+                };
+                const rzp = new Razorpay(options);
+                rzp.open();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+ body {
+            background-color: #f3f3f3;
+            font-family: 'Poppins', sans-serif;
+            background-image: url(https://img.freepik.com/premium-photo/contemporary-spotless-fitness-gym-center-interiorgenerative-ai_391052-10889.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+        }
+
+        .login-container h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .form-control {
+            border-radius: 25px;
+        }
+
+        .login-container button {
+            background-color: #c8815f;
+            color: #fff;
+            border-radius: 25px;
+            padding: 10px;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        .login-container button:hover {
+            background-color: grey;
+        }
+
+        .login-container .signup-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .login-container .signup-link a {
+            color: #00aaff;
+        }
+
+        .login-container .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+    color: red;
+    margin-bottom: 10px;
+    font-weight: bold;
+}

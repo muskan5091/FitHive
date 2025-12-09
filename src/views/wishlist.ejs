@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %>
+    <link rel="stylesheet" href="/css/wishlist.css">
+    <title>FitHive Gym Wear</title>
+</head>
+<%- include('partials/header') %>
+
+<main class="wishlist-container">
+  <h2>Your Wishlist</h2>
+
+  <% if (wishlist && wishlist.length > 0) { %>
+    <div class="wishlist-grid">
+      <% wishlist.forEach(item => { %>
+        <div class="wishlist-card">
+          <div class="img-box">
+            <img src="<%= item.img %>" alt="<%= item.title %>">
+          </div>
+          <div class="wishlist-info">
+            <h4><%= item.title %></h4>
+            <p class="price">₹<%= item.price %></p>
+            <form action="/profile/wishlist/remove" method="POST">
+              <input type="hidden" name="id" value="<%= item.id %>">
+              <button type="submit" class="remove-btn">Remove</button>
+            </form>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+    <form action="/profile/wishlist/clear" method="POST" class="clear-form">
+      <button type="submit" class="clear-btn">Clear Wishlist</button>
+    </form>
+  <% } else { %>
+    <p class="empty-msg">Your wishlist is empty.</p>
+  <% } %>
+</main>
+
+
+<%- include('partials/footer') %>
+
+ <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/script.js"></script>
+
+</body>
+</html>

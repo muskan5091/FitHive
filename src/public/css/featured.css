@@ -1,0 +1,377 @@
+/* Header */
+header {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  
+  align-items: center;
+  padding: 14px 50px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* ✅ thin border line */
+  font-family: 'Poppins', sans-serif; /* ✅ clean bold font */
+  letter-spacing: 0.5px; /* ✅ better spacing for uppercase style */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1px;
+}
+
+.logo-fit {
+  color: white;
+}
+
+.logo-hive {
+  color: #c8815f;
+}
+
+/* Navbar links */
+.navlist {
+  margin-top: 10px;
+  display: flex;
+  gap: 30px;
+}
+
+.navlist a {
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Subtle underline animation on hover */
+.navlist a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #c8815f;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s ease;
+}
+
+.navlist a:hover::after {
+  width: 100%;
+}
+
+.navlist a:hover {
+  color: #c8815f;
+}
+
+.login-btn{
+  background-color: #c8815f;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+
+}
+.login-btn:hover {
+  background-color: grey;
+}
+
+/* ---------- Header Right Section Alignment ---------- */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+  margin-top: 10px; /* perfectly aligns with navbar text */
+}
+
+/* ---------- Icons ---------- */
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.icons a {
+  color: white !important;
+  font-size: 1.3rem; /* matches nav height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: color 0.3s ease, transform 0.2s ease;
+  margin-top: 2px; /* slight nudge for baseline alignment */
+}
+
+.icons a:hover {
+  color: #c8815f !important;
+  transform: scale(1.05);
+}
+
+/* ---------- Cart Badge ---------- */
+#cart-item-count {
+  position: absolute;
+  top: -7px;
+  right: -10px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ---------- Logout ---------- */
+.header-right a[href="/logout"] {
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease, transform 0.2s ease;
+  margin-bottom: 20px; /* ✅ aligns with icons */
+}
+
+.header-right a[href="/logout"]:hover {
+  color: #c8815f;
+  transform: scale(1.05);
+}
+
+body {
+  background-image: url('https://wallpapercave.com/wp/Ls3QsJ1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #333;
+}
+
+
+
+/* Main customization container */
+main {
+  display: flex;
+  justify-content: center;
+  padding: 2em;
+}
+
+.customization-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.customization-container h2 {
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.customization-container p {
+  color: #777;
+  margin-bottom: 2em;
+}
+
+/* Customization cards */
+.customization-card {
+  background-color: #f9f9f9;
+  padding: 1.5em;
+  border-radius: 8px;
+  margin-bottom: 1.5em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.customization-card h3 {
+  color: #555;
+  margin-bottom: 0.5em;
+}
+
+.customization-card input,
+.fabric-select {
+  width: 80%;
+  padding: 0.75em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.fabric-select {
+  width: 100%;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.fabric-select:focus,
+.customization-card input:focus {
+  outline: none;
+  border-color: #555;
+}
+
+/* Submit button */
+.submit-button {
+  width: 100%;
+  padding: 1em;
+  margin-top: 2em;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #555;
+}
+
+footer {
+  
+  background-color: #000;
+  color: #ccc;
+  padding: 25px 8%;
+  font-family: "Poppins", sans-serif;
+  border-top: 1px solid #111;
+}
+
+/* Main footer layout */
+.footer-container {
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+/* Each section */
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.footer-logo span {
+  color: #c8815f;
+}
+
+.footer-section h3 {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin: 2px 0;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #aaa;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #c8815f;
+}
+
+.footer-section p {
+  font-size: 0.9rem;
+  color: #aaa;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+/* ✅ Follow Us section aligned */
+.social-links {
+  display: contents;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 5px;
+  padding: 0;
+}
+
+.social-links li {
+  list-style: none;
+}
+
+.social-links li a {
+  color: #aaa;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.social-links li a:hover {
+  color: #c8815f;
+}
+
+/* ✅ Bottom line */
+.footer-bottom {
+  border-top: 1px solid #c8815f;
+  text-align: center;
+  padding-top: 10px;
+  color: #777;
+  font-size: 0.85rem;
+  margin-top: 20px;
+}
+
+/* ✅ Responsive fixes */
+@media (max-width: 992px) {
+  .footer-container {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-section {
+    flex: 1 1 100%;
+    margin-bottom: 10px;
+  }
+
+  .social-links {
+    justify-content: center;
+    margin-top: 5px;
+  }
+}
+

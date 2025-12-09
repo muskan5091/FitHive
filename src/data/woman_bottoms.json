@@ -1,0 +1,134 @@
+[
+  {
+    "id": "women-power-washed-jogger",
+    "name": "Power Washed Jogger",
+    "price": 449,
+    "originalPrice": 749,
+    "discount": 40,
+    "image": "/assests/images/GYMSHARKPOWERWASHEDJOGGERSGSDepthPurpleACIDWASHSMALLBALLB1B7J-PB1R-0007_1920x.webp",
+    "desc": "Soft washed joggers designed for relaxed comfort with a vintage-style fade finish.",
+    "rating": 4.6,
+    "colors": ["Purple", "Black", "Gray"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": false,
+    "type": "lower",
+    "fabric": "Cotton-Polyester Blend",
+    "sizeGuide": "Relaxed Fit",
+    "sizeChart": {
+      "S": { "waist": 70, "length": 95 },
+      "M": { "waist": 76, "length": 97 },
+      "L": { "waist": 82, "length": 99 },
+      "XL": { "waist": 88, "length": 101 }
+    }
+  },
+  {
+    "id": "women-activewear-set",
+    "name": "Women's Activewear Set",
+    "price": 649,
+    "originalPrice": 749,
+    "discount": 13,
+    "image": "/assests/images/7ba5e85ad5edd8adea70acf416261cc6.jpg",
+    "desc": "Premium women's activewear set built for high-stretch comfort and mobility.",
+    "rating": 4.5,
+    "colors": ["Black", "Pink", "Gray"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": true,
+    "type": "coord",
+    "fabric": "Nylon-Spandex Blend",
+    "sizeGuide": "Body Fit",
+    "sizeChart": {
+      "S": { "chest": 82, "waist": 64, "hip": 86, "topLength": 38, "bottomLength": 90 },
+      "M": { "chest": 86, "waist": 68, "hip": 90, "topLength": 39, "bottomLength": 92 },
+      "L": { "chest": 90, "waist": 72, "hip": 94, "topLength": 40, "bottomLength": 94 },
+      "XL": { "chest": 94, "waist": 76, "hip": 98, "topLength": 41, "bottomLength": 96 }
+    }
+  },
+  {
+    "id": "women-vital-seamless-shorts",
+    "name": "Vital Seamless Shorts",
+    "price": 649,
+    "originalPrice": 1049,
+    "discount": 38,
+    "image": "/assests/images/VitalSeamlessShortsBlackMarlBlackMarlB1A4J-BBF3-1380_34c3484a-4ea8-42b0-9dc8-313e7626edd6_1920x.webp",
+    "desc": "High-stretch seamless shorts providing comfort and freedom during every move.",
+    "rating": 4.7,
+    "colors": ["Black Marl", "Gray Marl"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": true,
+    "type": "lower",
+    "fabric": "Nylon-Elastane Blend",
+    "sizeGuide": "Slim Fit",
+    "sizeChart": {
+      "S": { "waist": 64, "length": 42 },
+      "M": { "waist": 68, "length": 44 },
+      "L": { "waist": 72, "length": 46 },
+      "XL": { "waist": 76, "length": 48 }
+    }
+  },
+  {
+    "id": "women-long-sleeve-crop-top",
+    "name": "Long Sleeve Crop Top",
+    "price": 899,
+    "originalPrice": 1349,
+    "discount": 33,
+    "image": "/assests/images/EVERYDAYSEAMLESSLONGSLEEVECROPTOPBlackB7A2S-BB2J-2677_1920x.webp",
+    "desc": "Stylish seamless crop top with long sleeves for superior stretch and comfort.",
+    "rating": 4.8,
+    "colors": ["Black", "Gray", "Olive"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": false,
+    "type": "upper",
+    "fabric": "Seamless Nylon Blend",
+    "sizeGuide": "Slim Fit",
+    "sizeChart": {
+      "S": { "chest": 80, "length": 38, "sleeve": 55 },
+      "M": { "chest": 84, "length": 40, "sleeve": 57 },
+      "L": { "chest": 88, "length": 42, "sleeve": 59 },
+      "XL": { "chest": 92, "length": 44, "sleeve": 61 }
+    }
+  },
+  {
+    "id": "women-oversized-tee",
+    "name": "Oversized Tee",
+    "price": 449,
+    "originalPrice": 849,
+    "discount": 47,
+    "image": "/assests/images/GFXBARBELLHEARTSBETTEROVERSIZEDBAGGYTEEGSBlackB2B1C-BB2J-0953_copy_1920x.webp",
+    "desc": "Relaxed-fit oversized tee perfect for casual comfort or light gym sessions.",
+    "rating": 4.4,
+    "colors": ["Black", "White", "Beige"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": true,
+    "type": "upper",
+    "fabric": "100% Cotton",
+    "sizeGuide": "Oversized Fit",
+    "sizeChart": {
+      "S": { "chest": 94, "length": 66 },
+      "M": { "chest": 100, "length": 68 },
+      "L": { "chest": 106, "length": 70 },
+      "XL": { "chest": 112, "length": 72 }
+    }
+  },
+  {
+    "id": "women-neck-sports-bra",
+    "name": "Neck Sports Bra",
+    "price": 449,
+    "originalPrice": 849,
+    "discount": 47,
+    "image": "/assests/images/nike-dri-fit-indy-womens-light-support-padded-v-neck-sports-bra-diffused-blue-midnight-navy-white-cz4456-491-1518845.jpg",
+    "desc": "Light-support sports bra designed for breathability and freedom during workouts.",
+    "rating": 4.6,
+    "colors": ["Blue", "White", "Gray"],
+    "sizes": ["XS", "S", "M", "L"],
+    "customizable": false,
+    "type": "upper",
+    "fabric": "Polyester-Spandex Blend",
+    "sizeGuide": "Body Fit",
+    "sizeChart": {
+      "XS": { "chest": 76, "length": 28 },
+      "S": { "chest": 80, "length": 29 },
+      "M": { "chest": 84, "length": 30 },
+      "L": { "chest": 88, "length": 31 }
+    }
+  }
+]

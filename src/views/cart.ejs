@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+  <title>Your Cart — FitHive</title>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <style>
+    body {
+      background: #0d0d0d;
+      color: #fff;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .cart-container {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 30px 35px;
+      background: rgba(22,22,22,0.95);
+      border-radius: 18px;
+      box-shadow: 0 0 30px rgba(200,129,95,0.15);
+      border: 1px solid rgba(200,129,95,0.12);
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .cart-container h2 {
+      text-align: center;
+      color: #c8815f;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 10px;
+    }
+
+    th {
+      text-transform: uppercase;
+      background: #111;
+      color: #c8815f;
+      letter-spacing: 0.5px;
+      font-size: 0.9rem;
+      padding: 5px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    td {
+      text-align: center;
+      padding: 16px 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      vertical-align: middle;
+    }
+
+    td img {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 0 8px rgba(200,129,95,0.15);
+    }
+
+    /* Quantity Buttons */
+    .qty-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .qty-btn {
+      background: #1a1a1a;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.1);
+      font-size: 1rem;
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .qty-btn:hover {
+      background: #c8815f;
+      color: #fff;
+    }
+
+    .qty-value {
+      font-weight: 600;
+      font-size: 1rem;
+      min-width: 25px;
+      display: inline-block;
+    }
+
+    /* Remove Button */
+    .remove-btn {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #ff6b6b;
+      padding: 6px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .remove-btn:hover {
+      background: #ff6b6b;
+      color: #fff;
+    }
+
+    /* Summary */
+    .cart-summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .cart-summary h4 {
+      font-size: 1.5rem;
+      color: #fff;
+    }
+
+    .checkout-btn {
+      background: #c8815f;
+      color: white;
+      padding: 12px 26px;
+      border-radius: 10px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 5px 15px rgba(200,129,95,0.25);
+    }
+
+    .checkout-btn:hover {
+      background: #fff;
+      color: #c8815f;
+      transform: translateY(-2px);
+    }
+
+    /* Empty Cart */
+    .empty-cart {
+      text-align: center;
+      padding: 80px 40px;
+      background: transparent;
+    }
+
+    .empty-cart i {
+      font-size: 90px;
+      color: #c8815f;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 4px 8px rgba(200,129,95,0.4));
+    }
+
+    .empty-cart h3 {
+      font-size: 1.8rem;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .empty-cart p {
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+
+    .btn-continue {
+      background: #c8815f;
+      color: white;
+      padding: 12px 26px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 5px 15px rgba(200,129,95,0.25);
+    }
+
+    .btn-continue:hover {
+      background: grey;
+     
+      transform: translateY(-2px);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media(max-width: 768px) {
+      .cart-summary { flex-direction: column; gap: 15px; text-align: center; }
+      td img { width: 60px; height: 60px; }
+    }
+  </style>
+</head>
+
+<body>
+  <%- include('partials/header') %>
+
+  <main class="cart-container">
+    <% if (cart && cart.length > 0) { %>
+      <h2>Your Shopping Cart</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Details</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="cart-body">
+          <% cart.forEach((item, index) => { %>
+          <tr class="cart-item" data-id="<%= item._id %>" data-price="<%= item.price %>">
+
+              <td>
+                <img src="<%= item.image %>" alt="<%= item.name %>">
+                <div><strong><%= item.name %></strong></div>
+              </td>
+              <td>
+                <% if (item.size) { %><div>Size: <%= item.size %></div><% } %>
+                <% if (item.color) { %><div>Color: <%= item.color %></div><% } %>
+                <% if (item.customized) { %><div>Customized Fit ✅</div><% } %>
+              </td>
+              <td>
+                <div class="qty-controls">
+                  <button class="qty-btn qty-minus">−</button>
+                  <span class="qty-value"><%= item.qty %></span>
+                  <button class="qty-btn qty-plus">+</button>
+                </div>
+              </td>
+              <td>₹<span class="item-total"><%= item.price * item.qty %></span></td>
+              <td><button class="remove-btn">Remove</button></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+
+      <div class="cart-summary">
+        <h4>Total: ₹<span id="cart-total"><%= total %></span></h4>
+        <a href="/checkout" class="checkout-btn">Proceed to Checkout</a>
+      </div>
+    <% } else { %>
+      <div class="empty-cart">
+        <i class="fa fa-shopping-cart"></i>
+        <h3>Your cart is empty</h3>
+        <p>Looks like you haven’t added anything yet. Start shopping your next fit!</p>
+        <a href="/shop" class="btn-continue">Continue Shopping</a>
+      </div>
+    <% } %>
+  </main>
+
+  <%- include('partials/footer') %>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const cartBody = document.getElementById("cart-body");
+  const totalElem = document.getElementById("cart-total");
+  const cartCount = document.getElementById("cart-item-count");
+
+  if (!cartBody) return;
+
+  function updateTotal() {
+    let total = 0;
+    document.querySelectorAll(".item-total").forEach(el => {
+      total += parseFloat(el.textContent);
+    });
+    totalElem.textContent = total.toFixed(2);
+  }
+
+  function updateCartCount(newCount) {
+    if (cartCount) cartCount.textContent = newCount;
+  }
+
+  cartBody.addEventListener("click", async (e) => {
+    const row = e.target.closest(".cart-item");
+    if (!row) return;
+
+    const id = row.dataset.id;
+    const qtyElem = row.querySelector(".qty-value");
+    const priceElem = row.querySelector(".item-total");
+    const unitPrice = parseFloat(row.dataset.price);
+    let qty = parseInt(qtyElem.textContent);
+
+    // ➕ Increase
+    if (e.target.classList.contains("qty-plus")) qty++;
+    // ➖ Decrease
+    else if (e.target.classList.contains("qty-minus")) qty = Math.max(1, qty - 1);
+    // 🗑️ Remove
+    else if (e.target.classList.contains("remove-btn")) {
+      if (!confirm("Remove this item?")) return;
+      const res = await fetch(`/cart/remove/${id}`, { method: "DELETE" });
+      const data = await res.json();
+      if (data.success) {
+        row.remove();
+        updateTotal();
+        updateCartCount(data.count);
+        if (data.cart.length === 0) location.reload();
+      }
+      return;
+    } else return;
+
+    // ✅ Update visually
+    qtyElem.textContent = qty;
+    priceElem.textContent = (unitPrice * qty).toFixed(2);
+    updateTotal();
+
+    // ✅ Update backend session
+    const res = await fetch("/cart/update", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id, qty })
+    });
+    const data = await res.json();
+    if (data.success) updateCartCount(data.count);
+  });
+});
+</script>
+
+
+</body>
+</html>

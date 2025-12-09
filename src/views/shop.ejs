@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+  <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/product.css">
+  <title>Shop — FitHive</title>
+</head>
+<body>
+  <%- include('partials/header') %>
+ 
+
+
+  <section class="section__container musthave__container">
+    <h2 class="section__title text-center">Our Products</h2>
+
+    <div class="musthave__nav">
+      <a href="/mens">MEN</a>
+      <a href="/womens">WOMEN</a>
+    </div>
+
+    <div class="musthave__grid">
+      <% products.forEach(product => { %>
+        <article class="musthave__card">
+<% if (product.customizable) { %>
+  <div class="customize-badge"
+       title="Customize Product"
+       data-product-id="<%= product.id %>"
+       data-product-name="<%= product.name %>"
+       data-product-type="<%= product.type ? product.type.toLowerCase() : '' %>">
+    <i class="fa fa-sliders-h"></i>
+  </div>
+<% } %>
+
+
+
+
+          <!-- ✅ Image Click Opens Product Description Page -->
+         <a href="/product/<%= product.id %>" class="product-link">
+  <img src="<%= product.image %>" alt="<%= product.name %>">
+</a>
+
+
+          <div class="card-body">
+            <h5><%= product.name %></h5>
+            <p><%= product.desc %></p>
+
+            <div class="product-price-rating">
+              <span class="price">₹<%= product.price %></span>
+              <span class="rating"><i class="fa fa-star"></i> <%= product.rating %></span>
+            </div>
+          </div>
+        </article>
+      <% }) %>
+    </div>
+  </section>
+
+  <%- include('partials/footer') %>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+  <title>Product Not Found | FitHive</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    main.not-found {
+      text-align: center;
+      padding: 100px 20px;
+    }
+    main.not-found h2 {
+      font-size: 2rem;
+      color: #d9534f;
+    }
+    main.not-found a {
+      display: inline-block;
+      margin-top: 20px;
+      background: black;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+    main.not-found a:hover {
+      background: #222;
+    }
+  </style>
+</head>
+<body>
+  <%- include('partials/header') %>
+  <main class="not-found">
+    <h2>❌ Product Not Found</h2>
+    <p>Sorry, the product you're looking for doesn't exist or has been removed.</p>
+    <a href="/">🏠 Go Back Home</a>
+  </main>
+  <%- include('partials/footer') %>
+</body>
+</html>

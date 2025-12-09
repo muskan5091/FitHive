@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+  <link rel="stylesheet" href="/css/checkout-success.css">
+  <title>Order Success | FitHive</title>
+</head>
+<body class="success-body">
+
+  <main class="checkout-success-container">
+
+    <!-- Success Message -->
+    <div class="success-message">
+      <h1> Thank You, <%= user.name %>!</h1>
+      <p>Your order has been successfully placed.</p>
+      <p>Order ID: <strong><%= orderId %></strong></p>
+      <p>Estimated Delivery: <strong>3–5 business days</strong></p>
+    </div>
+
+    <!-- Buttons -->
+    <div class="actions">
+      <a href="/shop" class="btn btn-primary">Continue Shopping</a>
+      <a href="/my-orders" class="btn btn-outline">View My Orders</a>
+    </div>
+
+    <!-- Order Summary -->
+    <div class="order-summary">
+      <h2>Order Summary</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>
+  <% cart.forEach(item => { %>
+    <tr class="<%= item.customized ? 'customized-row' : '' %>">
+      <td>
+        <%= item.name %>
+        <% if (item.customized) { %>
+          <span class="customized-badge"> Customized</span>
+        <% } %>
+
+        <% if (item.customized && item.customization && Object.keys(item.customization).length > 0) { %>
+          <ul class="custom-details">
+            <% Object.entries(item.customization).forEach(([key, val]) => { %>
+              <% if (val) { %>
+                <li><strong><%= key.replace(/([A-Z])/g, ' $1').trim() %>:</strong> <%= val %></li>
+              <% } %>
+            <% }) %>
+          </ul>
+        <% } %>
+      </td>
+      <td><%= item.qty %></td>
+      <td>₹<%= item.price %></td>
+      <td>₹<%= item.price * item.qty %></td>
+    </tr>
+  <% }) %>
+</tbody>
+
+      </table>
+
+      <p class="total">Total: ₹<%= total %></p>
+    </div>
+
+    <!-- Shipping Address -->
+    <div class="order-summary" style="margin-top: 30px;">
+      <h2>Shipping Address</h2>
+      <p><strong><%= address.fullname %></strong></p>
+      <p><%= address.address1 %>, <%= address.city %>, <%= address.state %> - <%= address.zip %></p>
+      <p><%= address.country %></p>
+      <p> <%= address.phone %></p>
+    </div>
+
+  </main>
+
+</body>
+</html>

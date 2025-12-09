@@ -1,0 +1,467 @@
+/* ==========================
+   PRODUCT PAGE STYLES
+========================== */
+
+.product-page {
+  padding: 60px 8%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.product-container {
+  display: flex;
+  gap: 60px;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* ---------- GALLERY ---------- */
+.product-gallery {
+  flex: 1;
+  min-width: 340px;
+  position: relative;
+}
+
+.main-image {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- INFO SECTION ---------- */
+.product-info {
+  flex: 1;
+  min-width: 320px;
+}
+
+.product-info h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.product-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.price {
+  color: #a5683a;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.rating {
+  color: #f1c40f;
+  font-weight: 600;
+}
+
+.desc {
+  color: #444;
+  margin: 10px 0 20px;
+  line-height: 1.6;
+}
+
+.product-details li {
+  list-style: none;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+/* ---------- QUANTITY & BUTTONS ---------- */
+.quantity-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.quantity-section input {
+  width: 60px;
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.product-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.add-to-cart,
+.wishlist-btn {
+  background-color: #a5683a;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* same hover for cart + wishlist (default state) */
+.add-to-cart:hover,
+.wishlist-btn:hover {
+  background-color: grey;
+}
+
+/* wishlist added state – keep same color, no hover change */
+.wishlist-btn.added,
+.wishlist-btn.added:hover {
+  background-color: #a5683a;
+  color: white;
+  cursor: default;
+}
+
+.product-actions button i {
+  font-size: 1.2rem;
+}
+
+
+/* ---------- CUSTOMIZE ICON (USED ACROSS PAGES) ---------- */
+.musthave__card {
+  position: relative;
+}
+
+.customize-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #a5683a;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  opacity: 1;
+  visibility: visible;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: all 0.3s ease;
+}
+
+.musthave__card:hover .customize-badge,
+.customize-badge:hover {
+  transform: scale(1.08);
+  background: #a5683a;
+  color: white;
+}
+
+/* Remove tooltip text */
+.customize-badge::after {
+  content: none !important;
+}
+
+/* Responsive customization icon */
+@media (max-width: 768px) {
+  .customize-badge {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+}
+
+/* ---------- RESPONSIVE LAYOUT ---------- */
+@media (max-width: 900px) {
+  .product-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .product-info {
+    max-width: 500px;
+  }
+}
+
+
+/* ---------------- SIZE CHART MODAL ---------------- */
+.sizechart-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.sizechart-content {
+  position: relative;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+  animation: fadeIn 0.3s ease;
+}
+
+.sizechart-content h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 500px;
+  text-align: center;
+}
+
+.table-container th,
+.table-container td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 0.95rem;
+}
+
+.table-container th {
+  background-color: #f7f7f7;
+  font-weight: 600;
+}
+
+.table-container tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.table-container tr:hover {
+  background-color: #f1f1f1;
+  transition: 0.2s;
+}
+
+.close-chart {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-size: 1.5rem;
+  color: #444;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: scale(0.95);}
+  to {opacity: 1; transform: scale(1);}
+}
+
+/* Button Style */
+.btn-outline {
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.btn-outline:hover {
+  background: #f5f5f5;
+}
+
+/* ==========================
+   CUSTOMIZATION MODAL STYLES
+========================== */
+
+.custom-modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; 
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(3px);
+}
+
+/* --- MODAL CONTAINER --- */
+.custom-modal-content {
+  background: #fff;
+  padding: 35px 30px;
+  border-radius: 14px;
+  width: 420px;
+  max-width: 90%;
+  position: relative;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  animation: fadeInUp 0.35s ease;
+  max-height: 80vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #a5683a #f1f1f1;
+}
+
+.custom-modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-modal-content::-webkit-scrollbar-thumb {
+  background-color: #a5683a;
+  border-radius: 4px;
+}
+.custom-modal-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* --- CLOSE BUTTON --- */
+.custom-close {
+  position: absolute;
+  top: 12px; 
+  right: 16px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.2s ease;
+}
+.custom-close:hover {
+  color: #a5683a;
+}
+
+/* --- INPUT GROUPS --- */
+.custom-input {
+  margin-bottom: 15px;
+}
+.custom-input label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+.custom-input input,
+.custom-input select,
+.custom-input textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.custom-input input:focus,
+.custom-input select:focus,
+.custom-input textarea:focus {
+  border-color: #a5683a;
+  box-shadow: 0 0 4px rgba(165, 104, 58, 0.3);
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}
+
+/* --- SAVE BUTTON --- */
+.save-custom-btn {
+  background-color: #a5683a;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.save-custom-btn:hover {
+  background-color: grey;
+  transform: translateY(-1px);
+}
+
+/* --- ANIMATION --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.quantity-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 1em 0;
+}
+
+.qty-controls {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.qty-btn {
+  background: #f5f5f5;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 0.2s ease;
+}
+
+.qty-btn:hover {
+  background: #ddd;
+}
+
+#quantity {
+  width: 40px;
+  text-align: center;
+  border: none;
+  outline: none;
+  background: white;
+  font-size: 16px;
+}
+
+.toast-message {
+  position: fixed;
+  top: 70px;      /* a bit below header */
+  right: 25px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 9999;
+}
+
+.toast-message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* brown like cart button */
+.toast-message.success {
+  background-color: #a5683a;
+}
+
+/* darker neutral for “already in wishlist” */
+.toast-message.warning {
+  background-color: #444;
+}

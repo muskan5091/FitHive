@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+  <title>Track Order | FitHive</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #f5f5f5;
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 60px 0;
+    }
+
+    .track-container {
+      width: 90%;
+      max-width: 800px;
+      background: #161616;
+      border-radius: 18px;
+      box-shadow: 0 0 25px rgba(200,129,95,0.15);
+      padding: 40px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .track-container:hover {
+      box-shadow: 0 0 35px rgba(200,129,95,0.25);
+    }
+
+    .track-header h2 {
+      color: #c8815f;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .track-header p {
+      color: #bbb;
+      font-size: 0.95rem;
+      margin-bottom: 30px;
+    }
+
+    .progressbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      margin: 40px 0;
+    }
+
+    .progressbar::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      width: 90%;
+      height: 4px;
+      background: #333;
+      transform: translateY(-50%);
+      z-index: 0;
+      border-radius: 4px;
+    }
+
+    .progress-step {
+      z-index: 2;
+      text-align: center;
+      width: 20%;
+      position: relative;
+    }
+
+    .progress-step .circle {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: #222;
+      border: 3px solid #444;
+      margin: 0 auto 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #aaa;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .progress-step.active .circle {
+      background: #c8815f;
+      color: white;
+      border-color: #c8815f;
+      box-shadow: 0 0 15px rgba(200,129,95,0.5);
+    }
+
+    .progress-step .label {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .progress-step.active .label {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .back-btn {
+      display: inline-block;
+      background: #c8815f;
+      color: white;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 10px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .back-btn:hover {
+      background: #a15a3a;
+      box-shadow: 0 0 10px rgba(200,129,95,0.4);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 600px) {
+      .progress-step .label {
+        font-size: 0.75rem;
+      }
+      .progress-step .circle {
+        width: 38px;
+        height: 38px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="track-container">
+    <div class="track-header">
+      <h2>Tracking Order <span style="color:#f5f5f5;">#<%= order._id %></span></h2>
+      <p>Placed on <%= order.createdAt.toDateString() %></p>
+    </div>
+
+    <div class="progressbar">
+      <% trackingSteps.forEach((step, index) => { %>
+        <div class="progress-step <%= step.completed ? 'active' : '' %>">
+          <div class="circle">
+            <% if (step.completed) { %>
+              <i class="fa-solid fa-check"></i>
+            <% } else { %>
+              <%= index + 1 %>
+            <% } %>
+          </div>
+          <div class="label"><%= step.stage %></div>
+        </div>
+      <% }) %>
+    </div>
+
+    <a href="/my-orders" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to My Orders</a>
+  </div>
+
+</body>
+</html>

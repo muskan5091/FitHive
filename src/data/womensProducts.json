@@ -1,0 +1,327 @@
+[
+  {
+    "id": "women-tshirt",
+    "name": "Women's T-shirt",
+    "price": 599,
+    "image": "/assests/images/OIP.jpeg",
+    "desc": "Soft, breathable cotton-blend T-shirt designed for ultimate comfort and everyday wear.",
+    "rating": 4.6,
+    "colors": ["Pink", "White", "Black"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": true,
+    "type": "upper",
+    "fabric": "Cotton-Polyester Blend",
+    "sizeGuide": "Regular Fit",
+    "sizeChart": {
+      "S": { "chest": 84, "length": 60, "sleeve": 17 },
+      "M": { "chest": 90, "length": 62, "sleeve": 18 },
+      "L": { "chest": 96, "length": 64, "sleeve": 19 },
+      "XL": { "chest": 102, "length": 66, "sleeve": 20 }
+    }
+  },
+  {
+    "id": "women-zipper-top",
+    "name": "Zipper Top",
+    "price": 799,
+    "image": "/assests/images/OIP1.jpeg",
+    "desc": "Athletic zipper top with a sleek silhouette — perfect for layering and workouts.",
+    "rating": 4.7,
+    "colors": ["Black", "Gray", "Maroon"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": true,
+    "type": "upper",
+    "fabric": "92% Polyester, 8% Spandex",
+    "sizeGuide": "Athletic Fit",
+    "sizeChart": {
+      "S": { "chest": 82, "length": 58, "sleeve": 55 },
+      "M": { "chest": 88, "length": 60, "sleeve": 57 },
+      "L": { "chest": 94, "length": 62, "sleeve": 59 },
+      "XL": { "chest": 100, "length": 64, "sleeve": 61 }
+    }
+  },
+  {
+    "id": "women-long-sleeve",
+    "name": "Long Sleeve Fitness Suit",
+    "price": 1000,
+    "image": "/assests/images/0554d3a1c49b45fbf26d4718ab7f92da.jpg",
+    "desc": "Form-fitting long-sleeve top with quick-dry fabric for active performance.",
+    "rating": 4.6,
+    "colors": ["Navy", "Black", "Gray"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": false,
+    "type": "upper",
+    "fabric": "90% Nylon, 10% Elastane",
+    "sizeGuide": "Slim Fit",
+    "sizeChart": {
+      "S": { "chest": 82, "length": 60, "sleeve": 56 },
+      "M": { "chest": 88, "length": 62, "sleeve": 58 },
+      "L": { "chest": 94, "length": 64, "sleeve": 60 },
+      "XL": { "chest": 100, "length": 66, "sleeve": 62 }
+    }
+  },
+  {
+    "id": "women-sweatshirt",
+    "name": "Sweatshirt",
+    "price": 875,
+    "image": "/assests/images/7e3a7a650a94b90fc24ca4d9eb4d484a.jpg",
+    "desc": "Soft, cozy sweatshirt with a relaxed fit — a winter essential.",
+    "rating": 4.4,
+    "colors": ["Beige", "Black", "Pink"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": false,
+    "type": "upper",
+    "fabric": "Fleece Cotton Blend",
+    "sizeGuide": "Relaxed Fit",
+    "sizeChart": {
+      "S": { "chest": 90, "length": 62, "sleeve": 58 },
+      "M": { "chest": 96, "length": 64, "sleeve": 60 },
+      "L": { "chest": 102, "length": 66, "sleeve": 62 },
+      "XL": { "chest": 108, "length": 68, "sleeve": 64 }
+    }
+  },
+  {
+    "id": "women-training-top",
+    "name": "Training Top",
+    "price": 1255,
+    "image": "/assests/images/oip5.jpeg",
+    "desc": "High-performance training top with superior stretch and moisture control.",
+    "rating": 4.7,
+    "colors": ["Black", "Purple", "Gray"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": true,
+    "type": "upper",
+    "fabric": "Nylon-Spandex Blend",
+    "sizeGuide": "Compression Fit",
+    "sizeChart": {
+      "S": { "chest": 82, "length": 60, "sleeve": 55 },
+      "M": { "chest": 88, "length": 62, "sleeve": 57 },
+      "L": { "chest": 94, "length": 64, "sleeve": 59 },
+      "XL": { "chest": 100, "length": 66, "sleeve": 61 }
+    }
+  },
+  {
+    "id": "women-sweat-pants",
+    "name": "Sweat Pants",
+    "price": 799,
+    "image": "/assests/images/75af7fce-bc0f-4b98-b945-7e66bae798ac_1.614a368900cf7af9b7ae2028f87a271c.webp",
+    "desc": "Soft cotton-blend sweatpants built for casual and gym comfort.",
+    "rating": 4.5,
+    "colors": ["Gray", "Beige", "Black"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": false,
+    "type": "lower",
+    "fabric": "Cotton Blend",
+    "sizeGuide": "Relaxed Fit",
+    "sizeChart": {
+      "S": { "waist": 70, "length": 95 },
+      "M": { "waist": 76, "length": 97 },
+      "L": { "waist": 82, "length": 99 },
+      "XL": { "waist": 88, "length": 101 }
+    }
+  },
+  {
+    "id": "women-shorts",
+    "name": "Women's Shorts",
+    "price": 699,
+    "image": "/assests/images/OIP6.jpeg",
+    "desc": "Stretchable, soft gym shorts with a flexible waistband for comfort.",
+    "rating": 4.6,
+    "colors": ["Black", "Gray", "Blue"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": true,
+    "type": "lower",
+    "fabric": "Polyester-Spandex Blend",
+    "sizeGuide": "Slim Fit",
+    "sizeChart": {
+      "S": { "waist": 70, "length": 38 },
+      "M": { "waist": 76, "length": 40 },
+      "L": { "waist": 82, "length": 42 },
+      "XL": { "waist": 88, "length": 44 }
+    }
+  },
+  {
+    "id": "women-track-pants",
+    "name": "Track Pants",
+    "price": 500,
+    "image": "/assests/images/OIP7.jpeg",
+    "desc": "Classic track pants made for all-day comfort and stretchable fit.",
+    "rating": 4.5,
+    "colors": ["Black", "Gray", "Olive"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": true,
+    "type": "lower",
+    "fabric": "Polyester Blend",
+    "sizeGuide": "Straight Fit",
+    "sizeChart": {
+      "S": { "waist": 72, "length": 95 },
+      "M": { "waist": 78, "length": 97 },
+      "L": { "waist": 84, "length": 99 },
+      "XL": { "waist": 90, "length": 101 }
+    }
+  },
+  {
+    "id": "women-2in1-legging",
+    "name": "2 in 1 Legging",
+    "price": 956,
+    "image": "/assests/images/OIP8.jpeg",
+    "desc": "2-in-1 leggings with inner compression layer for enhanced performance.",
+    "rating": 4.7,
+    "colors": ["Black", "Gray"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": false,
+    "type": "lower",
+    "fabric": "Nylon-Spandex Blend",
+    "sizeGuide": "Compression Fit",
+    "sizeChart": {
+      "S": { "waist": 70, "inseam": 66 },
+      "M": { "waist": 76, "inseam": 68 },
+      "L": { "waist": 82, "inseam": 70 },
+      "XL": { "waist": 88, "inseam": 72 }
+    }
+  },
+  {
+    "id": "women-fleece-shorts",
+    "name": "Fleece Shorts - Black",
+    "price": 1259,
+    "image": "/assests/images/1.avif",
+    "desc": "Soft fleece shorts for comfort and warmth during workouts or lounging.",
+    "rating": 4.5,
+    "colors": ["Black", "Gray"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": false,
+    "type": "lower",
+    "fabric": "Fleece Cotton",
+    "sizeGuide": "Regular Fit",
+    "sizeChart": {
+      "S": { "waist": 74, "length": 43 },
+      "M": { "waist": 80, "length": 45 },
+      "L": { "waist": 86, "length": 47 },
+      "XL": { "waist": 92, "length": 49 }
+    }
+  },
+  {
+    "id": "women-sport-tights",
+    "name": "Sports Tight with Phone Pocket",
+    "price": 788,
+    "image": "/assests/images/OIP9.jpeg",
+    "desc": "High-stretch performance tights with side pocket for convenience.",
+    "rating": 4.6,
+    "colors": ["Black", "Gray"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": false,
+    "type": "lower",
+    "fabric": "Spandex Blend",
+    "sizeGuide": "Body Fit",
+    "sizeChart": {
+      "S": { "waist": 72, "inseam": 68 },
+      "M": { "waist": 78, "inseam": 70 },
+      "L": { "waist": 84, "inseam": 72 },
+      "XL": { "waist": 90, "inseam": 74 }
+    }
+  },
+  {
+    "id": "women-training-shoes",
+    "name": "Training Shoes",
+    "price": 899,
+    "image": "/assests/images/OIP10.jpeg",
+    "desc": "Lightweight and breathable shoes for running or gym workouts.",
+    "rating": 4.5,
+    "colors": ["White", "Black", "Pink"],
+    "sizes": ["5", "6", "7", "8"],
+    "customizable": false,
+    "type": "footwear",
+    "fabric": "Mesh + Rubber Sole",
+    "sizeGuide": "True to Size",
+    "sizeChart": {
+      "5": { "footLength": 23.0 },
+      "6": { "footLength": 23.6 },
+      "7": { "footLength": 24.3 },
+      "8": { "footLength": 25.0 }
+    }
+  },
+  {
+    "id": "women-running-shoes",
+    "name": "Running Shoes",
+    "price": 1995,
+    "image": "/assests/images/OIP13.jpeg",
+    "desc": "Cushioned and flexible running shoes built for endurance and comfort.",
+    "rating": 4.8,
+    "colors": ["Gray", "Pink", "Black"],
+    "sizes": ["5", "6", "7", "8"],
+    "customizable": false,
+    "type": "footwear",
+    "fabric": "Mesh + EVA Sole",
+    "sizeGuide": "Comfort Fit",
+    "sizeChart": {
+      "5": { "footLength": 23.0 },
+      "6": { "footLength": 23.6 },
+      "7": { "footLength": 24.3 },
+      "8": { "footLength": 25.0 }
+    }
+  },
+  {
+    "id": "women-minimalist-shoes",
+    "name": "Minimalist Shoes",
+    "price": 2999,
+    "image": "/assests/images/OIP14.jpeg",
+    "desc": "Ultra-light minimalist shoes that enhance natural foot movement.",
+    "rating": 4.7,
+    "colors": ["Black", "Beige", "Gray"],
+    "sizes": ["5", "6", "7", "8"],
+    "customizable": false,
+    "type": "footwear",
+    "fabric": "Mesh + Rubber",
+    "sizeGuide": "Snug Fit",
+    "sizeChart": {
+      "5": { "footLength": 23.0 },
+      "6": { "footLength": 23.6 },
+      "7": { "footLength": 24.3 },
+      "8": { "footLength": 25.0 }
+    }
+  },
+  {
+    "id": "women-ankle-strap",
+    "name": "Ankle Strap",
+    "price": 699,
+    "image": "/assests/images/OIP16.jpeg",
+    "desc": "Durable ankle straps for resistance workouts and strength training.",
+    "rating": 4.4,
+    "colors": ["Black", "Pink"],
+    "sizes": ["Free Size"],
+    "customizable": false,
+    "type": "accessories",
+    "fabric": "Neoprene",
+    "sizeGuide": "Adjustable",
+    "sizeChart": null
+  },
+  {
+    "id": "women-sling-bag",
+    "name": "Sling Bag",
+    "price": 599,
+    "image": "/assests/images/OIP17.jpeg",
+    "desc": "Stylish and compact sling bag ideal for gym and daily carry.",
+    "rating": 4.5,
+    "colors": ["Black", "Gray", "Beige"],
+    "sizes": ["One Size"],
+    "customizable": false,
+    "type": "accessories",
+    "fabric": "Polyester",
+    "sizeGuide": "Free Size",
+    "sizeChart": null
+  },
+  {
+    "id": "women-water-bottle",
+    "name": "Water Bottle",
+    "price": 599,
+    "image": "/assests/images/OIP18.jpeg",
+    "desc": "Leak-proof, BPA-free water bottle for your daily hydration needs.",
+    "rating": 4.6,
+    "colors": ["Pink", "Blue", "Transparent"],
+    "sizes": ["1L"],
+    "customizable": false,
+    "type": "accessories",
+    "fabric": "BPA-Free Plastic",
+    "sizeGuide": "500ml / 1000ml",
+    "sizeChart": null
+  }
+]

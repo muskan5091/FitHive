@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/product.css">
+  <title>Women's Wear — FitHive</title>
+</head>
+
+<body>
+  <%- include('partials/header') %>
+
+  <section class="section__container musthave__container">
+    <h2 class="section__title text-center">Women's Wear</h2>
+
+    <!-- Category Navigation -->
+    <div class="musthave__nav">
+      <a href="#topwear">Topwear</a>
+      <a href="#bottomwear">Bottomwear</a>
+      <a href="#footwear">Footwear</a>
+      <a href="#accessories">Accessories</a>
+    </div>
+
+    <!-- ================= Topwear ================= -->
+    <div id="topwear" class="category-section">
+      <h3 class="category-title">Topwear</h3>
+      <div class="musthave__grid">
+        <% womensTopwear.forEach(product => { %>
+          <article class="musthave__card">
+            <% if (product.customizable) { %>
+              <div class="customize-badge" title="Customizable Product">
+                <i class="fa fa-sliders-h"></i>
+              </div>
+            <% } %>
+            <a href="/product/<%= product.id %>" class="product-link">
+              <img src="<%= product.image %>" alt="<%= product.name %>">
+            </a>
+            <div class="card-body">
+              <h5><%= product.name %></h5>
+              <p><%= product.desc %></p>
+              <div class="product-price-rating">
+                <span class="price">₹<%= product.price %></span>
+                <span class="rating"><i class="fa fa-star"></i> <%= product.rating %></span>
+              </div>
+            </div>
+          </article>
+        <% }) %>
+      </div>
+    </div>
+
+    <!-- ================= Bottomwear ================= -->
+    <div id="bottomwear" class="category-section">
+      <h3 class="category-title">Bottomwear</h3>
+      <div class="musthave__grid">
+        <% womensBottomwear.forEach(product => { %>
+          <article class="musthave__card">
+            <% if (product.customizable) { %>
+              <div class="customize-badge" title="Customizable Product">
+                <i class="fa fa-sliders-h"></i>
+              </div>
+            <% } %>
+            <a href="/product/<%= product.id %>" class="product-link">
+              <img src="<%= product.image %>" alt="<%= product.name %>">
+            </a>
+            <div class="card-body">
+              <h5><%= product.name %></h5>
+              <p><%= product.desc %></p>
+              <div class="product-price-rating">
+                <span class="price">₹<%= product.price %></span>
+                <span class="rating"><i class="fa fa-star"></i> <%= product.rating %></span>
+              </div>
+            </div>
+          </article>
+        <% }) %>
+      </div>
+    </div>
+
+    <!-- ================= Footwear ================= -->
+    <div id="footwear" class="category-section">
+      <h3 class="category-title">Footwear</h3>
+      <div class="musthave__grid">
+        <% womensFootwear.forEach(product => { %>
+          <article class="musthave__card">
+            <a href="/product/<%= product.id %>" class="product-link">
+              <img src="<%= product.image %>" alt="<%= product.name %>">
+            </a>
+            <div class="card-body">
+              <h5><%= product.name %></h5>
+              <p><%= product.desc %></p>
+              <div class="product-price-rating">
+                <span class="price">₹<%= product.price %></span>
+                <span class="rating"><i class="fa fa-star"></i> <%= product.rating %></span>
+              </div>
+            </div>
+          </article>
+        <% }) %>
+      </div>
+    </div>
+
+    <!-- ================= Accessories ================= -->
+    <div id="accessories" class="category-section">
+      <h3 class="category-title">Accessories</h3>
+      <div class="musthave__grid">
+        <% womensAccessories.forEach(product => { %>
+          <article class="musthave__card">
+            <a href="/product/<%= product.id %>" class="product-link">
+              <img src="<%= product.image %>" alt="<%= product.name %>">
+            </a>
+            <div class="card-body">
+              <h5><%= product.name %></h5>
+              <p><%= product.desc %></p>
+              <div class="product-price-rating">
+                <span class="price">₹<%= product.price %></span>
+                <span class="rating"><i class="fa fa-star"></i> <%= product.rating %></span>
+              </div>
+            </div>
+          </article>
+        <% }) %>
+      </div>
+    </div>
+  </section>
+
+  <%- include('partials/footer') %>
+
+  <!-- ✅ Redirect customization icon to open chart -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Customization badge → open product with ?showCustomization=true
+    document.body.addEventListener("click", (e) => {
+      const badge = e.target.closest(".customize-badge");
+      if (!badge) return;
+
+      const card = badge.closest(".musthave__card");
+      const productLink = card?.querySelector("a.product-link");
+
+      if (productLink) {
+        const productUrl = productLink.getAttribute("href");
+        window.location.href = `${productUrl}?showCustomization=true`;
+      }
+    });
+
+    // 🔗 Handle /womens?type=upper|lower|footwear|accessories
+    const params = new URLSearchParams(window.location.search);
+    const type = params.get("type");
+
+    const typeToSection = {
+      upper: "topwear",
+      lower: "bottomwear",
+      footwear: "footwear",
+      accessories: "accessories"
+    };
+
+    const targetId = typeToSection[type];
+    if (targetId) {
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      // highlight the active tab in the category nav
+      const navLinks = document.querySelectorAll(".musthave__nav a");
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        const href = link.getAttribute("href");
+        if (href === `#${targetId}`) {
+          link.classList.add("active");
+        }
+      });
+    }
+  });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/script.js"></script>
+
+  <!-- Optional: style for active nav link (if not already in CSS) -->
+  <style>
+    .musthave__nav a.active {
+      color: grey;
+    }
+    .musthave__nav a.active::after {
+      width: 100%;
+    }
+  </style>
+</body>
+</html>

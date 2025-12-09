@@ -1,0 +1,183 @@
+/* =========================
+   HERO SECTION
+========================= */
+.about-hero {
+  position: relative;
+  background: url('https://wallpapercave.com/wp/Ls3QsJ1.jpg') center/cover no-repeat;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+.about-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.55);
+}
+.about-content-center {
+  z-index: 2;
+  max-width: 7000px;
+  padding: 0 20px;
+}
+.about-content-center h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.about-content-center span {
+  color: #a5683a;
+}
+.about-content-center p {
+  margin: 20px 0;
+  font-size: 1.2rem;
+}
+.hero-btn {
+  background: #a5683a;
+  padding: 12px 30px;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+.hero-btn:hover {
+  background: #854b25;
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+.about-section {
+  padding: 80px 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+.about-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 60px;
+  max-width: 1200px;
+}
+.about-img img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+.about-text {
+  flex: 1;
+}
+.about-text h2 {
+  font-size: 2.2rem;
+  color: #111;
+  margin-bottom: 15px;
+}
+.about-text span {
+  color: #a5683a;
+}
+.about-text p {
+  color: #444;
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+
+/* =========================
+   VALUES SECTION
+========================= */
+.values-section {
+  background: #fafafa;
+  text-align: center;
+  padding: 80px 8%;
+}
+.values-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #222;
+}
+.values-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.value-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  padding: 30px 20px;
+  flex: 1 1 280px;
+  max-width: 320px;
+  transition: all 0.3s ease;
+}
+.value-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+.value-card i {
+  color: #a5683a;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   TEAM SECTION
+========================= */
+.team-section {
+  padding: 80px 8%;
+  text-align: center;
+}
+.team-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #222;
+}
+.team-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.team-member {
+  background: #fff;
+  border-radius: 14px;
+  padding: 25px;
+  width: 240px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+.team-member:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+.team-member img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+.team-member h4 {
+  font-weight: 600;
+}
+.team-member p {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .about-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-text {
+    max-width: 600px;
+  }
+}

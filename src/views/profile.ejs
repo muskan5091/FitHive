@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>FitHive Gym Wear</title>
+</head>
+<body><%- include('partials/header') %>
+
+<div class="profile-container">
+  <div class="profile-header">
+    <h1>Your Profile</h1>
+  </div>
+  <% if (query && query.success) { %>
+    <p id="profile-success" class="profile-message auto-hide success">Profile updated successfully.</p>
+    <script>
+      // hide success message after 3 seconds (max)
+      (function(){
+        const el = document.getElementById('profile-success');
+        if (!el) return;
+        // duration in ms
+        const D = 3000;
+        // fade then remove
+        setTimeout(()=>{
+          el.classList.add('hidden');
+          // remove from DOM after animation completes (match CSS 500ms)
+          setTimeout(()=> el.remove(), 600);
+        }, D);
+      })();
+    </script>
+  <% } %>
+
+  <% if (user) { %>
+    <div class="profile-card">
+      <div class="profile-info">
+        <p><strong>Name:</strong> <%= user.name %></p>
+        <p><strong>Email:</strong> <%= user.email %></p>
+        <% if (user.phone) { %>
+          <p><strong>Phone:</strong> <%= user.phone %></p>
+        <% } %>
+      </div>
+
+      <div class="profile-actions">
+        <a href="/my-orders" class="profile-btn">My Orders</a>
+        <a href="/profile/wishlist" class="profile-btn">Wishlist</a>
+        <a href="/profile/edit" class="profile-btn outline">Edit Profile</a>
+      </div>
+    </div>
+  <% } else { %>
+    <p class="profile-message">You are not logged in. <a href="/login">Login here</a>.</p>
+  <% } %>
+</div>
+
+<%- include('partials/footer') %>
+
+ <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/script.js"></script>
+
+</body>
+</html>

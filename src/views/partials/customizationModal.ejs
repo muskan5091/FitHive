@@ -1,0 +1,68 @@
+<!-- partials/customizationModal.ejs -->
+<div id="customizationModal" class="custom-modal">
+  <div class="custom-modal-content">
+    <span class="custom-close">&times;</span>
+    <h4>Customize <span id="customProductName">Product</span></h4>
+
+    <form id="customizationForm">
+      <input type="hidden" name="productId" id="customProductId">
+      <input type="hidden" name="productType" id="customProductType">
+
+      <!-- UPPER BODY OPTIONS -->
+      <div id="upperBodyFields" class="custom-fields hidden">
+        <div class="custom-input">
+          <label>Chest (in cm)</label>
+          <input type="number" name="chest" min="60" max="140" placeholder="e.g. 90">
+        </div>
+        <div class="custom-input">
+          <label>Sleeve Length (in cm)</label>
+          <input type="number" name="sleeveLength" min="50" max="80" placeholder="e.g. 60">
+        </div>
+        <div class="custom-input">
+          <label>Shoulder (in cm)</label>
+          <input type="number" name="shoulder" min="30" max="60" placeholder="e.g. 45">
+        </div>
+      </div>
+
+      <!-- LOWER BODY OPTIONS -->
+      <div id="lowerBodyFields" class="custom-fields hidden">
+        <div class="custom-input">
+          <label>Waist (in cm)</label>
+          <input type="number" name="waist" min="50" max="120" placeholder="e.g. 80">
+        </div>
+        <div class="custom-input">
+          <label>Inseam (in cm)</label>
+          <input type="number" name="inseam" min="60" max="110" placeholder="e.g. 85">
+        </div>
+        <div class="custom-input">
+          <label>Length (in cm)</label>
+          <input type="number" name="length" min="70" max="130" placeholder="e.g. 100">
+        </div>
+      </div>
+
+      <!-- CO-ORD SET OPTIONS -->
+      <div id="coordFields" class="custom-fields hidden">
+        <p style="font-size: 0.9rem; color: #666;">
+          This co-ord set includes both top & bottom — please specify your preferred fit or any special requests below.
+        </p>
+      </div>
+
+      <div class="custom-input">
+        <label>Fit Type</label>
+        <select name="fit">
+          <option value="regular">Regular</option>
+          <option value="slim">Slim</option>
+          <option value="loose">Loose</option>
+        </select>
+      </div>
+
+      <div class="custom-input">
+        <label>Additional Notes</label>
+        <textarea name="notes" rows="3" placeholder="Any special customization request..."></textarea>
+      </div>
+
+      <button type="submit" class="btn save-custom-btn">Save Customization</button>
+    </form>
+  </div>
+</div>
+

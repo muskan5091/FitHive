@@ -1,0 +1,453 @@
+<!-- ========== HEADER (use this whole block) ========== -->
+<header class="main-header">
+  <a href="/" class="logo">
+    <span class="logo-fit">FIT</span><span class="logo-hive">HIVE</span>
+  </a>
+
+  <ul class="navlist">
+    <a href="/shop">Shop All</a>
+    <a href="/mens">Men's</a>
+    <a href="/womens">Women's</a>
+    <a href="/featured">Featured</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </ul>
+
+  <div class="header-right">
+    <% if (!user) { %>
+      <!-- When NOT logged in -->
+      <a href="/login" class="login-btn">Login</a>
+    <% } else { %>
+      <!-- When logged in -->
+      <div class="icons">
+        <!-- Search icon (opens SIDE PANEL) -->
+        <div class="search-container" id="openSearch" aria-label="Search" title="Search">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        </div>
+
+        <a href="/profile" title="Profile" class="profile-link">
+          <i class="fa-regular fa-user"></i>
+        </a>
+
+        <a href="/checkout/address" class="cart-link" title="Cart">
+          <i class="fa fa-shopping-cart"></i>
+          <span id="cart-count"><%= cartCount || 0 %></span>
+        </a>
+      </div>
+
+      <a href="/logout">Logout</a>
+    <% } %>
+  </div>
+</header>
+<!-- ========== end header ========== -->
+
+<!-- 🔳 OVERLAY BEHIND SIDE PANEL -->
+<div class="search-overlay" id="searchOverlay"></div>
+
+<!-- 🧭 SIDE SEARCH / CATEGORY PANEL -->
+<aside class="search-side-panel" id="searchSidePanel" aria-hidden="true">
+  <!-- Top bar: title + close -->
+  <div class="side-panel-top">
+    <div class="side-panel-title">
+      <span class="side-panel-label">Search</span>
+      <span class="side-panel-sub">Find products, categories & more</span>
+    </div>
+    <button class="side-close-btn" id="sideSearchClose" aria-label="Close search">
+      &times;
+    </button>
+  </div>
+
+  <!-- 🔍 Search bar -->
+  <form id="inlineSearchForm"
+        class="side-search-form"
+        role="search"
+        action="/search"
+        method="get"
+        onsubmit="return submitInlineSearch(event);">
+    <div class="side-search-input-wrap">
+      <i class="fa-solid fa-magnifying-glass side-search-icon" aria-hidden="true"></i>
+      <input id="inlineSearchInput"
+             name="query"
+             type="search"
+             placeholder="Search for products, brands and more..."
+             aria-label="Search products"
+             autocomplete="off" />
+    </div>
+    <button type="submit" id="inlineSearchSubmit">Search</button>
+  </form>
+
+  <!-- 💡 Hint updated to match real data -->
+  <p class="side-search-hint">Try “women running shoes”, “training top”, “men shorts”, “track pants”...</p>
+
+  <!-- 🔥 Trending searches (REAL products from your JSON) -->
+  <section class="side-section">
+    <h3 class="side-section-title">Trending Searches</h3>
+    <div class="side-chip-row">
+      <button type="button" class="side-chip" data-search="women running shoes">Women's Running Shoes</button>
+      <button type="button" class="side-chip" data-search="training top">Training Top</button>
+      <button type="button" class="side-chip" data-search="men shorts">Men's Shorts</button>
+      <button type="button" class="side-chip" data-search="men running shoes">Men's Running Shoes</button>
+      
+    </div>
+  </section>
+
+  <!-- 📂 Categories -->
+  <section class="side-section">
+    <h3 class="side-section-title">Browse Categories</h3>
+
+    <!-- MEN -->
+    <div class="side-category-card">
+      <div class="side-category-card-header">
+        <div class="side-category-icon">
+          <i class="fa-solid fa-person-running"></i>
+        </div>
+        <div>
+          <div class="side-category-title">Men</div>
+          <div class="side-category-sub">Performance tees, hoodies & more</div>
+        </div>
+      </div>
+      <ul class="side-category-links">
+        <li>
+          <a href="/mens">
+            <span>All Men's</span><i class="fa-solid fa-angle-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/mens?type=upper">
+            <span>Tops & T-Shirts</span><i class="fa-solid fa-angle-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/mens?type=lower">
+            <span>Joggers & Shorts</span><i class="fa-solid fa-angle-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/mens?type=footwear">
+            <span>Footwear</span><i class="fa-solid fa-angle-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/mens?type=accessories">
+            <span>Accessories</span><i class="fa-solid fa-angle-right"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- WOMEN -->
+    <div class="side-category-card">
+      <div class="side-category-card-header">
+        <div class="side-category-icon">
+          <i class="fa-solid fa-dumbbell"></i>
+        </div>
+        <div>
+          <div class="side-category-title">Women</div>
+          <div class="side-category-sub">Tops, leggings, shoes & more</div>
+        </div>
+      </div>
+      <ul class="side-category-links">
+        <li>
+          <a href="/womens">
+            <span>All Women's</span><i class="fa-solid fa-angle-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/womens?type=upper">
+            <span>Tops & T-Shirts</span><i class="fa-solid fa-angle-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/womens?type=lower">
+            <span>Leggings & Bottoms</span><i class="fa-solid fa-angle-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/womens?type=footwear">
+            <span>Footwear</span><i class="fa-solid fa-angle-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/womens?type=accessories">
+            <span>Accessories</span><i class="fa-solid fa-angle-right"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- COLLECTIONS -->
+    <div class="side-category-card">
+      <div class="side-category-card-header">
+        <div class="side-category-icon">
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <div>
+          <div class="side-category-title">Collections</div>
+          <div class="side-category-sub">Popular picks from FitHive</div>
+        </div>
+      </div>
+      <ul class="side-category-links">
+        <li><a href="/shop"><span>Shop All</span><i class="fa-solid fa-angle-right"></i></a></li>
+        <li><a href="/featured"><span>Featured</span><i class="fa-solid fa-angle-right"></i></a></li>
+        <li><a href="/about"><span>About FitHive</span><i class="fa-solid fa-angle-right"></i></a></li>
+        <li><a href="/contact"><span>Contact Us</span><i class="fa-solid fa-angle-right"></i></a></li>
+      </ul>
+    </div>
+  </section>
+</aside>
+
+<!-- ========== JS ========== -->
+<script>
+(function () {
+  const openSearchTrigger = document.getElementById('openSearch'); // search icon
+  const sidePanel         = document.getElementById('searchSidePanel');
+  const sideCloseBtn      = document.getElementById('sideSearchClose');
+  const overlay           = document.getElementById('searchOverlay');
+  const searchInput       = document.getElementById('inlineSearchInput');
+
+  if (!openSearchTrigger || !sidePanel || !overlay || !searchInput) {
+    console.warn('Side search: required elements not found.');
+    return;
+  }
+
+  function openSideSearch() {
+    sidePanel.classList.add('open');
+    overlay.classList.add('show');
+    sidePanel.setAttribute('aria-hidden', 'false');
+    setTimeout(() => searchInput.focus(), 80);
+    document.documentElement.classList.add('header-search-active');
+  }
+
+  function closeSideSearch() {
+    sidePanel.classList.remove('open');
+    overlay.classList.remove('show');
+    sidePanel.setAttribute('aria-hidden', 'true');
+    if (searchInput) {
+      searchInput.value = '';
+      searchInput.blur();
+    }
+    document.documentElement.classList.remove('header-search-active');
+  }
+
+  openSearchTrigger.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (sidePanel.classList.contains('open')) {
+      searchInput.focus();
+      return;
+    }
+    openSideSearch();
+  });
+
+  sideCloseBtn.addEventListener('click', closeSideSearch);
+  overlay.addEventListener('click', closeSideSearch);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && sidePanel.classList.contains('open')) {
+      closeSideSearch();
+    }
+  });
+
+  // 🌐 Expose submitInlineSearch for the form
+  window.submitInlineSearch = function (e) {
+    e.preventDefault();
+
+    const q = (searchInput.value || "").trim().toLowerCase();
+    if (!q) return false;
+
+    // 🔥 CATEGORY SHORTCUTS → direct redirect (REAL ROUTES)
+    const keywordRoutes = {
+      men: "/mens",
+      mens: "/mens",
+      man: "/mens",
+
+      women: "/womens",
+      womens: "/womens",
+      woman: "/womens",
+
+      shop: "/shop",
+      all: "/shop",
+      featured: "/featured",
+
+      contact: "/contact",
+      about: "/about"
+    };
+
+    if (keywordRoutes[q]) {
+      closeSideSearch();
+      window.location.href = keywordRoutes[q];
+      return false;
+    }
+
+    // Normal search
+    closeSideSearch();
+    window.location.href = "/search?query=" + encodeURIComponent(q);
+    return false;
+  };
+
+})();
+</script>
+
+<!-- 🔍 AUTOCOMPLETE / SEARCH SUGGESTIONS (works with side search input) -->
+<script>
+const searchInputGlobal = document.getElementById("inlineSearchInput");
+if (searchInputGlobal) {
+  const suggestionBox = document.createElement("div");
+
+  suggestionBox.id = "searchSuggestBox";
+  suggestionBox.style.position = "fixed";
+  suggestionBox.style.maxHeight = "300px";
+  suggestionBox.style.overflowY = "auto";
+  suggestionBox.style.zIndex = "999999";
+  suggestionBox.style.borderRadius = "10px";
+  suggestionBox.style.boxShadow = "0 4px 12px rgba(0,0,0,0.25)";
+  suggestionBox.style.background = "#fff";
+  suggestionBox.style.display = "none";
+
+  document.body.appendChild(suggestionBox);
+
+  // Fetch suggestions while typing
+  searchInputGlobal.addEventListener("input", async () => {
+    const q = searchInputGlobal.value.trim();
+
+    if (!q) {
+      suggestionBox.style.display = "none";
+      return;
+    }
+
+    // Position dropdown just under the input (even inside side panel)
+    const rect = searchInputGlobal.getBoundingClientRect();
+    suggestionBox.style.left = rect.left + "px";
+    suggestionBox.style.top  = (rect.bottom + 4) + "px";
+    suggestionBox.style.width = rect.width + "px";
+
+    try {
+      const res = await fetch(`/search/suggest?q=${encodeURIComponent(q)}`);
+      const data = await res.json();
+      suggestionBox.innerHTML = "";
+
+      if (data.suggestions && data.suggestions.length > 0) {
+        data.suggestions.forEach((s) => {
+          const row = document.createElement("div");
+          row.style.padding = "10px 15px";
+          row.style.cursor = "pointer";
+          row.style.borderBottom = "1px solid #f0f0f0";
+          row.style.fontFamily = "Poppins";
+          row.style.fontSize = "14px";
+
+          row.innerHTML = `
+            <strong style="color:black">${s.name}</strong><br>
+            <small style="color:gray">${s.category || ""}</small>
+          `;
+
+          row.onclick = () => {
+            window.location.href = s.url;
+          };
+          suggestionBox.appendChild(row);
+        });
+
+        suggestionBox.style.display = "block";
+      } else {
+        suggestionBox.style.display = "none";
+      }
+    } catch (err) {
+      console.error("Suggestion error:", err);
+      suggestionBox.style.display = "none";
+    }
+  });
+
+  // Hide suggestions when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!searchInputGlobal.contains(e.target) &&
+        !suggestionBox.contains(e.target)) {
+      suggestionBox.style.display = "none";
+    }
+  });
+}
+</script>
+
+<script>
+// ================================
+// 🔥 TRENDING SEARCH → DIRECT PRODUCT OPEN
+// ================================
+const trendingSearchMap = {
+  // ---- WOMEN (from your JSON) ----
+  "women running shoes": "/product/women-running-shoes",
+  "training top": "/product/women-training-top",
+
+  // ---- MEN (from your JSON) ----
+  "men running shoes": "/product/men-running-shoes",
+  "men shorts": "/product/men-shorts"
+};
+
+// ================================
+// 🔥 WHEN TRENDING CHIP IS CLICKED
+// ================================
+document.addEventListener("click", (e) => {
+  const chip = e.target.closest(".side-chip");
+  if (!chip) return;
+
+  const keyword = chip.getAttribute("data-search").toLowerCase().trim();
+
+  if (trendingSearchMap[keyword]) {
+    window.location.href = trendingSearchMap[keyword];
+    return;
+  }
+
+  const input = document.getElementById("inlineSearchInput");
+  if (input) input.value = keyword;
+
+  if (typeof window.submitInlineSearch === "function") {
+    const fakeEvent = new Event("submit");
+    window.submitInlineSearch(fakeEvent);
+  }
+});
+</script>
+
+<!-- ✅ JS to update cart count dynamically -->
+<script>
+function updateCartCount(count) {
+  const cartCountEl = document.getElementById("cart-count");
+  if (cartCountEl) {
+    cartCountEl.textContent = count;
+    cartCountEl.classList.add("cart-bounce");
+    setTimeout(() => cartCountEl.classList.remove("cart-bounce"), 400);
+  }
+}
+</script>
+
+<!-- ✅ Cart badge style (can move to main CSS file) -->
+<style>
+.cart-link {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+}
+.cart-link i {
+  font-size: 20px;
+}
+/* 🔴 Cart Count Badge */
+#cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: #c8815f;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 50%;
+  padding: 2px 6px;
+  min-width: 18px;
+  text-align: center;
+  line-height: 1.2;
+}
+/* ✅ Optional bounce animation */
+.cart-bounce {
+  animation: bounce 0.4s ease;
+}
+@keyframes bounce {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+</style>

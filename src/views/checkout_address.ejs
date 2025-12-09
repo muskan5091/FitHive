@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %>
+    <link rel="stylesheet" href="/css/address.css">
+    <title>Shipping Address | FitHive</title>
+</head>
+<body>
+   
+
+    <main class="container">
+<h2>Shipping Address</h2>
+<% if(error) { %><p class="text-danger"><%= error %></p><% } %>
+<form method="POST" action="/checkout/address">
+  <input type="text" name="fullname" placeholder="Full Name" required>
+  <input type="email" name="email" placeholder="Email" required>
+ <input type="tel" name="phone" pattern="[0-9]{10}" placeholder="Phone" required>
+  <input type="text" name="address1" placeholder="Address Line 1" required>
+  <input type="text" name="address2" placeholder="Address Line 2">
+  <input type="text" name="city" placeholder="City" required>
+  <input type="text" name="state" placeholder="State" required>
+  <input type="text" name="zip" pattern="[0-9]{6}"  placeholder="ZIP Code" required>
+  <input type="text" name="country" placeholder="Country" required>
+  <button type="submit" class="btn btn-success">Continue to Payment</button>
+</form>
+</main>
+
+ 
+</body>
+</html>

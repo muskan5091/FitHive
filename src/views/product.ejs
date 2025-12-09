@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/product.css">
+  <title><%= product.name %> — FitHive</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <%- include('partials/header') %>
+
+  <section class="product-page">
+    <div class="product-container">
+
+      <!-- 🖼️ PRODUCT GALLERY -->
+      <div class="product-gallery">
+        <% if (product.customizable) { %>
+          <div class="customize-badge"
+               title="Customize Product"
+               data-product-id="<%= product.id %>"
+               data-product-name="<%= product.name %>"
+               data-product-type="<%= product.type ? product.type.toLowerCase() : 'upper' %>">
+            <i class="fa fa-sliders-h"></i>
+          </div>
+        <% } %>
+
+        <div class="slider" id="productSlider">
+          <div class="slide active">
+            <img src="<%= product.image %>" alt="<%= product.name %>" class="main-image">
+          </div>
+        </div>
+        <div class="slider-dots"><span class="dot active"></span></div>
+      </div>
+
+      <!-- 🧾 PRODUCT INFO -->
+      <div class="product-info">
+        <h2><%= product.name %></h2>
+        <div class="product-meta">
+          <span class="price">₹<%= product.price.toLocaleString() %></span>
+          <span class="rating"><i class="fa fa-star"></i> <%= product.rating %></span>
+        </div>
+
+        <p class="desc"><%= product.desc %></p>
+
+        <ul class="product-details">
+          <li><strong>Fabric:</strong> <%= product.fabric || 'N/A' %></li>
+          <li><strong>Fit:</strong> <%= product.sizeGuide || 'Standard Fit' %></li>
+
+          <% if(product.sizes?.length > 0){ %>
+            <li>
+              <strong>Available Sizes:</strong>
+              <select id="sizeSelect">
+                <% product.sizes.forEach(size => { %>
+                  <option value="<%= size %>"><%= size %></option>
+                <% }) %>
+              </select>
+            </li>
+          <% } %>
+
+          <% if(product.colors?.length > 0){ %>
+            <li>
+              <strong>Colors:</strong>
+              <select id="colorSelect">
+                <% product.colors.forEach(color => { %>
+                  <option value="<%= color %>"><%= color %></option>
+                <% }) %>
+              </select>
+            </li>
+          <% } %>
+
+          <!-- ✅ Size chart button -->
+          <% if(product.sizeChart && Object.keys(product.sizeChart).length > 0){ %>
+            <li>
+              <button id="viewSizeChartBtn" class="btn-outline">
+                <% if (product.type === 'footwear') { %>
+                  View Shoe Size Chart
+                <% } else if (product.type === 'lower') { %>
+                  View Bottomwear Size Chart
+                <% } else { %>
+                  View Topwear Size Chart
+                <% } %>
+              </button>
+            </li>
+          <% } %>
+
+          <% if(product.customizable){ %>
+            <li><strong>Customization:</strong> Available if standard sizes/colors don’t fit</li>
+          <% } %>
+
+          <% if (product.type === 'accessories') { %>
+            <li><strong>Size:</strong> One Size / Adjustable</li>
+          <% } %>
+        </ul>
+
+       <div class="quantity-section">
+  <label for="quantity">Qty:</label>
+  <div class="qty-controls">
+    <button type="button" class="qty-btn" id="decreaseQty">−</button>
+    <input id="quantity" type="text" value="1" readonly>
+    <button type="button" class="qty-btn" id="increaseQty">+</button>
+  </div>
+</div>
+
+        <div class="product-actions">
+          <form id="addToCartForm" class="inline-form">
+            <input type="hidden" name="size" id="formSize">
+            <input type="hidden" name="color" id="formColor">
+            <button type="submit" class="btn add-to-cart" data-product-id="<%= product.id %>">
+              <i class="fa fa-cart-plus"></i> Add to Cart
+            </button>
+          </form>
+
+          <button 
+            class="btn wishlist-btn"
+            title="Add to Wishlist"
+            data-product-id="<%= product.id %>"
+            data-product-name="<%= product.name %>"
+            data-product-price="<%= product.price %>"
+            data-product-image="<%= product.image %>">
+            <i class="fa fa-heart"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ SIZE CHART MODAL -->
+  <% if(product.sizeChart && Object.keys(product.sizeChart).length > 0){ %>
+    <div class="sizechart-modal" id="sizeChartModal">
+      <div class="sizechart-content">
+        <span class="close-chart">&times;</span>
+        <h3>
+          <% if (product.type === 'footwear') { %>
+            Shoe Size Chart (cm)
+          <% } else if (product.type === 'lower') { %>
+            Bottomwear Size Chart (cm)
+          <% } else { %>
+            Topwear Size Chart (cm)
+          <% } %>
+        </h3>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Size</th>
+
+                <% if (product.type === 'upper') { %>
+                  <% if (Object.values(product.sizeChart)[0]?.chest !== undefined) { %><th>Chest</th><% } %>
+                  <% if (Object.values(product.sizeChart)[0]?.length !== undefined) { %><th>Length</th><% } %>
+                  <% if (Object.values(product.sizeChart)[0]?.sleeve !== undefined) { %><th>Sleeve</th><% } %>
+                <% } else if (product.type === 'lower') { %>
+                  <% if (Object.values(product.sizeChart)[0]?.waist !== undefined) { %><th>Waist</th><% } %>
+                  <% if (Object.values(product.sizeChart)[0]?.hip !== undefined) { %><th>Hip</th><% } %>
+                  <% if (Object.values(product.sizeChart)[0]?.length !== undefined) { %><th>Length</th><% } %>
+                  <% if (Object.values(product.sizeChart)[0]?.inseam !== undefined) { %><th>Inseam</th><% } %>
+                <% } else if (product.type === 'footwear') { %>
+                  <th>Foot Length</th>
+                <% } %>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% Object.entries(product.sizeChart).forEach(([size, data]) => { %>
+                <tr>
+                  <td><%= size %></td>
+
+                  <% if (product.type === 'upper') { %>
+                    <% if (Object.values(product.sizeChart)[0]?.chest !== undefined) { %><td><%= data.chest || '-' %></td><% } %>
+                    <% if (Object.values(product.sizeChart)[0]?.length !== undefined) { %><td><%= data.length || '-' %></td><% } %>
+                    <% if (Object.values(product.sizeChart)[0]?.sleeve !== undefined) { %><td><%= data.sleeve || '-' %></td><% } %>
+                  <% } else if (product.type === 'lower') { %>
+                    <% if (Object.values(product.sizeChart)[0]?.waist !== undefined) { %><td><%= data.waist || '-' %></td><% } %>
+                    <% if (Object.values(product.sizeChart)[0]?.hip !== undefined) { %><td><%= data.hip || '-' %></td><% } %>
+                    <% if (Object.values(product.sizeChart)[0]?.length !== undefined) { %><td><%= data.length || '-' %></td><% } %>
+                    <% if (Object.values(product.sizeChart)[0]?.inseam !== undefined) { %><td><%= data.inseam || '-' %></td><% } %>
+                  <% } else if (product.type === 'footwear') { %>
+                    <td><%= data.footLength || '-' %></td>
+                  <% } %>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  <% } %>
+
+  <!-- ✅ CUSTOMIZATION MODAL & FOOTER -->
+  <%- include('partials/customizationModal') %>
+  <%- include('partials/footer') %>
+
+  <!-- ✅ JS -->
+   <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const decreaseBtn = document.getElementById("decreaseQty");
+  const increaseBtn = document.getElementById("increaseQty");
+  const qtyInput = document.getElementById("quantity");
+
+  // ✅ Quantity increment/decrement logic
+  if (decreaseBtn && increaseBtn && qtyInput) {
+    decreaseBtn.addEventListener("click", () => {
+      let value = parseInt(qtyInput.value);
+      if (value > 1) qtyInput.value = value - 1;
+    });
+
+    increaseBtn.addEventListener("click", () => {
+      let value = parseInt(qtyInput.value);
+      qtyInput.value = value + 1;
+    });
+  }
+
+  // ✅ Size chart modal logic (keep your existing one)
+  const btn = document.getElementById("viewSizeChartBtn");
+  const modal = document.getElementById("sizeChartModal");
+  const closeBtn = document.querySelector(".close-chart");
+
+  if (btn && modal) {
+    btn.addEventListener("click", () => modal.style.display = "flex");
+    closeBtn.addEventListener("click", () => modal.style.display = "none");
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) modal.style.display = "none";
+    });
+  }
+});
+</script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("viewSizeChartBtn");
+      const modal = document.getElementById("sizeChartModal");
+      const closeBtn = document.querySelector(".close-chart");
+
+      if(btn && modal){
+        btn.addEventListener("click", () => modal.style.display = "flex");
+        closeBtn.addEventListener("click", () => modal.style.display = "none");
+        window.addEventListener("click", (e) => {
+          if(e.target === modal) modal.style.display = "none";
+        });
+      }
+    });
+  </script>
+
+  <script src="/js/product.js"></script>
+</body>
+</html>

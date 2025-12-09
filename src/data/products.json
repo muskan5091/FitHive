@@ -1,0 +1,102 @@
+[
+  {
+    "id": "training-hoodie",
+    "name": "Training Hoodie",
+    "price": 1499,
+    "originalPrice": 1799,
+    "discount": 17,
+    "image": "/assests/images/cc5f69945be715979f604d78e333a310.jpg",
+    "gallery": [
+      "/assests/images/cc5f69945be715979f604d78e333a310.jpg",
+      "/assests/images/cc5f69945be715979f604d78e333a310-2.jpg"
+    ],
+    "desc": "Comfortable training hoodie paired for high-intensity workouts.",
+    "longDesc": "<p>Perfect for gym and outdoor training. The hoodie is soft, breathable, and moisture-wicking — ideal for both performance and comfort.</p>",
+    "rating": 4.5,
+    "type": "upper",
+    "colors": ["Black", "White", "Navy", "Gray"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "customizable": true,
+    "customCharge": 0,
+    "fabric": "95% Polyester, 5% Spandex",
+    "sizeGuide": "Standard Fit",
+    "sizeChart": {
+      "S":  { "chest": 92, "length": 66, "sleeve": 62 },
+      "M":  { "chest": 96, "length": 68, "sleeve": 63 },
+      "L":  { "chest": 100, "length": 70, "sleeve": 64 },
+      "XL": { "chest": 104, "length": 72, "sleeve": 65 },
+      "XXL": { "chest": 108, "length": 74, "sleeve": 66 }
+    }
+  },
+  {
+    "id": "black-gym-legging",
+    "name": "Black Gym Legging",
+    "price": 899,
+    "originalPrice": 1049,
+    "discount": 14,
+    "image": "/assests/images/b496788557d9e982417fad426337cda3.jpg",
+    "gallery": [
+      "/assests/images/b496788557d9e982417fad426337cda3.jpg"
+    ],
+    "desc": "High-performance black gym leggings with four-way stretch for flexibility and comfort.",
+    "longDesc": "<p>Designed for women who value both style and performance. Breathable, moisture-wicking fabric ensures total freedom during workouts.</p>",
+    "rating": 4.7,
+    "type": "lower",
+    "colors": ["Black"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": false,
+    "customCharge": 0,
+    "fabric": "90% Polyester, 10% Spandex",
+    "sizeGuide": "Body-Hugging Fit",
+    "sizeChart": {
+      "S":  { "waist": 66, "hip": 90, "length": 88, "inseam": 68 },
+      "M":  { "waist": 70, "hip": 94, "length": 89, "inseam": 69 },
+      "L":  { "waist": 74, "hip": 98, "length": 90, "inseam": 70 },
+      "XL": { "waist": 78, "hip": 102, "length": 91, "inseam": 71 }
+    }
+  },
+  {
+    "id": "women-water-bottle",
+    "name": "Water Bottle",
+    "price": 599,
+    "originalPrice": 699,
+    "discount": 14,
+    "image": "/assests/images/OIP18.jpeg",
+    "gallery": [
+      "/assests/images/OIP18.jpeg"
+    ],
+    "desc": "Leak-proof, BPA-free water bottle for your daily hydration needs.",
+    "longDesc": "<p>Stay hydrated with this premium BPA-free water bottle. Lightweight, durable, and stylish — perfect for workouts and daily use.</p>",
+    "rating": 4.6,
+    "type": "accessories",
+    "colors": ["Pink", "Blue", "Transparent"],
+    "sizes": ["1L"],
+    "customizable": false,
+    "customCharge": 0,
+    "fabric": "BPA-Free Plastic",
+    "sizeGuide": "500ml / 1000ml",
+    "sizeChart": null
+  },
+  {
+    "id": "men-gym-bag",
+    "name": "Gym Bag",
+    "price": 725,
+    "originalPrice": 899,
+    "discount": 19,
+    "image": "/assests/images/DSC_2708.jpg",
+    "gallery": [
+      "/assests/images/DSC_2708.jpg"
+    ],
+    "desc": "Durable and stylish gym bag with multiple compartments for organized storage.",
+    "longDesc": "<p>Spacious and strong — this gym bag keeps your essentials organized. Features durable zippers, waterproof lining, and breathable compartments.</p>",
+    "rating": 4.5,
+    "type": "accessories",
+    "colors": ["Black", "Gray"],
+    "sizes": ["One Size"],
+    "customizable": false,
+    "customCharge": 0,
+    "fabric": "Polyester",
+    "sizeGuide": "Free Size",
+    "sizeChart": null
+  }
+]

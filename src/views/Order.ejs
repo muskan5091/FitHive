@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+  <title>My Orders | FitHive</title>
+  <link rel="stylesheet" href="/css/Order.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #c8815f;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 4px solid #a14f2c;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    header a:hover {
+      background: #fff;
+      color: #c8815f;
+    }
+
+    .no-orders {
+      text-align: center;
+      margin-top: 100px;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .order-card {
+      background: #fff;
+      margin: 30px auto;
+      border-radius: 14px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+      padding: 25px;
+      max-width: 900px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .order-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 12px;
+      margin-bottom: 12px;
+    }
+
+    .status {
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .status-paid {
+      background: #28a745;
+      color: white;
+    }
+    .status-cancelled {
+      background: #dc3545;
+      color: white;
+    }
+    .status-failed {
+      background: #ff9800;
+      color: white;
+    }
+    .status-created {
+      background: #6c757d;
+      color: white;
+    }
+
+    .items-list {
+      border-top: 1px solid #eee;
+      padding-top: 10px;
+    }
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #f3f3f3;
+    }
+
+    .item-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .item-left img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .item-info span {
+      display: block;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .customized-badge {
+      background: #fff3cd;
+      color: #856404;
+      font-size: 0.8rem;
+      padding: 2px 6px;
+      border-radius: 6px;
+      margin-left: 6px;
+      font-weight: 600;
+    }
+
+    .total {
+      text-align: right;
+      font-size: 1.1rem;
+      margin-top: 10px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .order-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .btn {
+      border: none;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-cancel {
+      background: #dc3545;
+      color: white;
+    }
+    .btn-cancel:hover {
+      background: #b02a37;
+    }
+
+    .btn-track {
+      background: #c8815f;
+      color: white;
+    }
+    .btn-track:hover {
+      background: #a14f2c;
+    }
+
+    .btn-disabled {
+      background: #ccc;
+      color: white;
+      cursor: not-allowed;
+    }
+   /* Fix: Remove link styles from "Track Order" button */
+.order-actions a {
+  text-decoration: none;
+}
+
+.order-actions a button {
+  all: unset; /* removes default button/link styles */
+  display: inline-block;
+  background: #c8815f;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.order-actions a button:hover {
+  background: #a14f2c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(200, 129, 95, 0.3);
+}
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>My Orders</h1>
+    <a href="/">⬅ Back to Home</a>
+  </header>
+
+  <main>
+    <% if (!orders || orders.length === 0) { %>
+      <p class="no-orders">
+        You haven’t placed any orders yet. Start shopping and enjoy your FitHive experience!
+      </p>
+    <% } else { %>
+      <% orders.forEach(order => { %>
+        <div class="order-card">
+          <div class="order-header">
+            <div><strong>Order ID:</strong> <%= order._id %></div>
+            <div><strong>Date:</strong> <%= order.createdAt.toLocaleString() %></div>
+            <div>
+              <strong>Status:</strong>
+              <% if (order.status==="Cancelled") { %>
+                <span class="status status-cancelled">Cancelled</span>
+              <% } else if (order.status==="paid") { %>
+                <span class="status status-paid">Paid</span>
+              <% } else if (order.status==="failed") { %>
+                <span class="status status-failed">Failed</span>
+              <% } else { %>
+                <span class="status status-created">Created</span>
+              <% } %>
+            </div>
+          </div>
+
+          <div class="items-list">
+            <% order.items.forEach(item => { %>
+              <div class="item">
+                <div class="item-left">
+                  <% if (item.image) { %>
+                    <img src="<%= item.image %>" alt="<%= item.name %>">
+                  <% } %>
+                  <div class="item-info">
+                    <div>
+                      <strong><%= item.name %></strong>
+                      <% if (item.customized) { %>
+                        <span class="customized-badge">Customized </span>
+                      <% } %>
+                    </div>
+                    <% if (item.size) { %><span>Size: <%= item.size %></span><% } %>
+                    <% if (item.color) { %><span>Color: <%= item.color %></span><% } %>
+                  </div>
+                </div>
+                <div>₹<%= item.price * item.qty %></div>
+              </div>
+            <% }) %>
+          </div>
+
+          <div class="total"><strong>Total: ₹<%= order.totalAmount %></strong></div>
+
+          <div class="order-actions">
+  <% if (order.status==="created") { %>
+    <form action="/cancel-order/<%= order._id %>" method="POST">
+      <button type="submit" class="btn btn-cancel">Cancel Order</button>
+    </form>
+  <% } else { %>
+    <button class="btn btn-disabled" disabled>Cancel Not Allowed</button>
+  <% } %>
+
+  <% if (order.status==="paid") { %>
+    <a href="/track-order/<%= order._id %>">
+      <button>Track Order</button>
+    </a>
+  <% } %>
+</div>
+
+        </div>
+      <% }) %>
+    <% } %>
+  </main>
+</body>
+</html>

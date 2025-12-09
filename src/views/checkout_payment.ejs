@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+  <link rel="stylesheet" href="/css/checkout.css">
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <title>Payment | FitHive</title>
+</head>
+
+<body class="payment-body">
+<main class="checkout-container">
+  <h2 class="page-title">Complete Your Payment</h2>
+
+  <% if (cart && cart.length > 0) { %>
+    <!-- ✅ ORDER SUMMARY SECTION -->
+    <section class="order-summary">
+      <h3>Order Summary</h3>
+      <ul class="checkout-list">
+        <% cart.forEach(item => { %>
+          <li class="checkout-item" data-id="<%= item._id %>">
+            <div class="item-left">
+              <strong class="item-name"><%= item.name %></strong>
+
+              <% if (item.customized && item.customization && Object.keys(item.customization).length > 0) { %>
+                <div class="customized-box">
+                  <strong class="customized-label">Customized Product</strong>
+                  <% if (item.color && item.color !== 'default') { %>
+                    <div class="color-info">Color: <%= item.color %></div>
+                  <% } %>
+                  <ul class="custom-list">
+                    <% Object.entries(item.customization).forEach(([key, val]) => { %>
+                      <% if (val) { %>
+                        <li><%= key.replace(/([A-Z])/g, ' $1').trim().replace(/^./, c => c.toUpperCase()) %>: <%= val %></li>
+                      <% } %>
+                    <% }) %>
+                  </ul>
+                </div>
+              <% } else { %>
+                <div class="variant-info">
+                  <% if (item.size) { %><span>Size: <%= item.size %></span><% } %>
+                  <% if (item.color && item.color !== 'default') { %><span> | Color: <%= item.color %></span><% } %>
+                </div>
+              <% } %>
+
+              <div class="item-actions">
+                <button class="qty-btn decrease">−</button>
+                <input type="text" class="qty-input" value="<%= item.qty %>" readonly>
+                <button class="qty-btn increase">+</button>
+                <button class="remove-btn" title="Remove item"><i class="fa fa-trash"></i></button>
+              </div>
+            </div>
+
+            <div class="item-right">
+              <small class="item-price">₹<%= (item.price * item.qty).toFixed(2) %></small>
+            </div>
+          </li>
+        <% }) %>
+      </ul>
+
+      <div class="summary-footer">
+        <p><strong>Subtotal:</strong> ₹<%= subtotal.toFixed(2) %></p>
+        <p><strong>Platform Fee (3%):</strong> ₹<%= platformFee.toFixed(2) %></p>
+        <p><strong>Shipping:</strong> <%= shippingCharge === 0 ? "Free" : "₹" + shippingCharge %></p>
+        <hr>
+        <p class="total"><strong>Total:</strong> ₹<%= totalAmount.toFixed(2) %></p>
+      </div>
+    </section>
+
+    <!-- ✅ PAYMENT FORM -->
+    <form id="paymentForm" class="payment-form">
+      <label for="paymentMethod">Select Payment Method</label>
+      <select id="paymentMethod" name="paymentMethod" required>
+        <option value="UPI">UPI</option>
+        <option value="Card">Credit/Debit Card</option>
+        <option value="NetBanking">Net Banking</option>
+      </select>
+      <button type="button" id="payBtn" class="btn btn-success">
+        Pay ₹<%= totalAmount.toFixed(2) %> Securely
+      </button>
+    </form>
+
+  <% } else { %>
+    <!-- 🚫 EMPTY CART MESSAGE -->
+    <div class="empty-cart">
+      <i class="fa fa-shopping-cart" style="font-size: 80px; color: #c8815f; margin-bottom: 20px;"></i>
+      <h3>Your Cart is Empty</h3>
+      <p>Looks like you’ve removed all items. Please add something before proceeding to checkout.</p>
+      <a href="/shop" class="btn btn-success" style="padding:12px 24px; border-radius:8px;">Return to Shop</a>
+    </div>
+  <% } %>
+</main>
+
+<!-- ======================= -->
+<!-- JS LOGIC -->
+<!-- ======================= -->
+<script>
+const payBtn = document.getElementById('payBtn');
+  payBtn.addEventListener('click', async () => {
+    payBtn.disabled = true;
+    payBtn.innerText = 'Processing...';
+
+    try {
+      const res = await fetch('/checkout/razorpay', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({})
+      });
+      const order = await res.json();
+
+      if (!order.id) {
+        alert("⚠️ Failed to create Razorpay order.");
+        return;
+      }
+
+      const options = {
+        key: "<%= razorpayKey %>",
+        amount: order.amount,
+        currency: order.currency,
+        name: "FitHive",
+        description: "Purchase",
+        order_id: order.id,
+        prefill: {
+          name: "<%= address.fullname %>",
+          email: "<%= address.email %>",
+          contact: "<%= address.phone %>"
+        },
+        handler: async function(response) {
+          const verify = await fetch('/checkout/verify', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(response)
+          });
+          const result = await verify.json();
+          if (result.success) window.location.href = '/checkout/success';
+          else alert("❌ Payment verification failed.");
+        },
+        theme: { color: "#c8815f" }
+      };
+      const rzp = new Razorpay(options);
+      rzp.open();
+    } catch (err) {
+      console.error("Payment Error:", err);
+      alert("⚠️ Something went wrong. Please try again.");
+    } finally {
+      payBtn.disabled = false;
+      payBtn.innerText = `Pay ₹<%= totalAmount.toFixed(2) %> Securely`;
+    }
+  });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const payBtn = document.getElementById("payBtn");
+
+  if (!payBtn) return; // ✅ stop script if cart empty
+
+  function updateTotals() {
+    let subtotal = 0;
+    document.querySelectorAll('.checkout-item').forEach(el => {
+      const priceText = el.querySelector('.item-price')?.textContent.replace('₹', '') || '0';
+      subtotal += parseFloat(priceText);
+    });
+    const platformFee = subtotal * 0.03;
+    const shipping = subtotal > 1000 ? 0 : 50;
+    const total = subtotal + platformFee + shipping;
+
+    document.querySelector('.summary-footer').innerHTML = `
+      <p><strong>Subtotal:</strong> ₹${subtotal.toFixed(2)}</p>
+      <p><strong>Platform Fee (3%):</strong> ₹${platformFee.toFixed(2)}</p>
+      <p><strong>Shipping:</strong> ${shipping === 0 ? "Free" : "₹" + shipping}</p>
+      <hr>
+      <p class="total"><strong>Total:</strong> ₹${total.toFixed(2)}</p>
+    `;
+
+    payBtn.innerText = "Pay ₹" + total.toFixed(2) + " Securely";
+  }
+
+  document.querySelectorAll('.checkout-item').forEach(itemEl => {
+    const itemId = itemEl.dataset.id;
+    const qtyInput = itemEl.querySelector('.qty-input');
+    const priceEl = itemEl.querySelector('.item-price');
+    const unitPrice = parseFloat(priceEl.textContent.replace('₹', '')) / parseInt(qtyInput.value);
+    const decreaseBtn = itemEl.querySelector('.decrease');
+    const increaseBtn = itemEl.querySelector('.increase');
+    const removeBtn = itemEl.querySelector('.remove-btn');
+
+    decreaseBtn.addEventListener('click', async () => {
+      let qty = parseInt(qtyInput.value);
+      if (qty > 1) {
+        qtyInput.value = qty - 1;
+        priceEl.textContent = "₹" + (unitPrice * qtyInput.value).toFixed(2);
+        updateTotals();
+        await fetch('/cart/update', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: itemId, qty: qtyInput.value })
+        });
+      }
+    });
+
+    increaseBtn.addEventListener('click', async () => {
+      let qty = parseInt(qtyInput.value);
+      qtyInput.value = qty + 1;
+      priceEl.textContent = "₹" + (unitPrice * qtyInput.value).toFixed(2);
+      updateTotals();
+      await fetch('/cart/update', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: itemId, qty: qtyInput.value })
+      });
+    });
+
+    removeBtn.addEventListener('click', async () => {
+      if (!confirm("Remove this item from your order?")) return;
+      const res = await fetch(`/cart/remove/${itemId}`, { method: "DELETE" });
+      const data = await res.json();
+      if (data.success) {
+        itemEl.remove();
+        updateTotals();
+        if (data.cart.length === 0) window.location.href = "/checkout/payment";
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>

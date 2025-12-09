@@ -1,0 +1,156 @@
+[
+  {
+    "id": "men-neck-tee",
+    "name": "Neck Tee Dusk Purple",
+    "price": 799,
+    "originalPrice": 849,
+    "discount": 6,
+    "image": "/assests/images/IMG_2309.webp",
+    "desc": "Soft cotton neck tee in dusk purple — versatile, breathable, and made for gym or casual wear.",
+    "rating": 4.5,
+    "colors": ["Purple", "Black", "Gray"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": true,
+    "type": "upper",
+    "fabric": "100% Cotton",
+    "sizeGuide": "Regular Fit",
+    "sizeChart": {
+      "S": { "chest": 90, "length": 67, "sleeve": 21 },
+      "M": { "chest": 96, "length": 69, "sleeve": 22 },
+      "L": { "chest": 102, "length": 71, "sleeve": 23 },
+      "XL": { "chest": 108, "length": 73, "sleeve": 24 }
+    }
+  },
+  {
+    "id": "men-legacy-stringer",
+    "name": "Legacy Stringer Peach",
+    "price": 649,
+    "originalPrice": 749,
+    "discount": 13,
+    "image": "/assests/images/Fuaark-Legacy-Stringer-Peach-_6.webp",
+    "desc": "Premium peach-colored stringer with minimal seams for maximum comfort and mobility.",
+    "rating": 4.4,
+    "colors": ["Peach", "Black", "White"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": false,
+    "type": "upper",
+    "fabric": "95% Cotton, 5% Spandex",
+    "sizeGuide": "Slim Fit",
+    "sizeChart": {
+      "S": { "chest": 88, "length": 68, "sleeve": 0 },
+      "M": { "chest": 94, "length": 70, "sleeve": 0 },
+      "L": { "chest": 100, "length": 72, "sleeve": 0 },
+      "XL": { "chest": 106, "length": 74, "sleeve": 0 }
+    }
+  },
+  {
+    "id": "men-venture-shorts",
+    "name": "Venture Shorts Black",
+    "price": 649,
+    "originalPrice": 1049,
+    "discount": 38,
+    "image": "/assests/images/fuaark-venture-shorts-black-5.webp",
+    "desc": "Lightweight performance shorts designed for flexibility and endurance training.",
+    "rating": 4.6,
+    "colors": ["Black", "Gray"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": true,
+    "type": "lower",
+    "fabric": "Polyester-Spandex Blend",
+    "sizeGuide": "Athletic Fit",
+    "sizeChart": {
+      "S": { "waist": 74, "length": 43, "inseam": 21 },
+      "M": { "waist": 80, "length": 45, "inseam": 22 },
+      "L": { "waist": 86, "length": 47, "inseam": 23 },
+      "XL": { "waist": 92, "length": 49, "inseam": 24 }
+    }
+  },
+  {
+    "id": "men-sea-green-tee",
+    "name": "T-shirt Sea Green",
+    "price": 899,
+    "originalPrice": 1349,
+    "discount": 33,
+    "image": "/assests/images/NylonCompressionTshirtgreenhalf_1.webp",
+    "desc": "Stretchy sea-green compression tee with quick-dry technology for high-intensity sessions.",
+    "rating": 4.7,
+    "colors": ["Sea Green", "Black", "Gray"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": true,
+    "type": "upper",
+    "fabric": "88% Nylon, 12% Spandex",
+    "sizeGuide": "Muscle Fit",
+    "sizeChart": {
+      "S": { "chest": 88, "length": 67, "sleeve": 21 },
+      "M": { "chest": 94, "length": 69, "sleeve": 22 },
+      "L": { "chest": 100, "length": 71, "sleeve": 23 },
+      "XL": { "chest": 106, "length": 73, "sleeve": 24 }
+    }
+  },
+  {
+    "id": "men-oversized-shorts-green",
+    "name": "Oversized Shorts Green",
+    "price": 449,
+    "originalPrice": 849,
+    "discount": 47,
+    "image": "/assests/images/fuaark-oversize-shorts-green-2_e222ea49-bae2-4e58-ab6f-4fba5a9f3924.webp",
+    "desc": "Relaxed-fit oversized gym shorts made for movement and breathability.",
+    "rating": 4.5,
+    "colors": ["Green", "Black", "Gray"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": false,
+    "type": "lower",
+    "fabric": "Cotton-Poly Blend",
+    "sizeGuide": "Loose Fit",
+    "sizeChart": {
+      "S": { "waist": 72, "length": 46, "inseam": 22 },
+      "M": { "waist": 78, "length": 48, "inseam": 23 },
+      "L": { "waist": 84, "length": 50, "inseam": 24 },
+      "XL": { "waist": 90, "length": 52, "inseam": 25 }
+    }
+  },
+  {
+    "id": "men-ultra-tracks",
+    "name": "Ultra Tracks Black",
+    "price": 799,
+    "originalPrice": 1149,
+    "discount": 30,
+    "image": "/assests/images/fuaark-ultra-track-pant-grey-1.webp",
+    "desc": "High-performance track pants with modern tapering and breathable stretch fabric.",
+    "rating": 4.6,
+    "colors": ["Black", "Gray"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": false,
+    "type": "lower",
+    "fabric": "Nylon-Spandex Blend",
+    "sizeGuide": "Tapered Fit",
+    "sizeChart": {
+      "S": { "waist": 74, "length": 98, "inseam": 68 },
+      "M": { "waist": 80, "length": 100, "inseam": 70 },
+      "L": { "waist": 86, "length": 102, "inseam": 72 },
+      "XL": { "waist": 92, "length": 104, "inseam": 74 }
+    }
+  },
+  {
+    "id": "men-oversized-hoodie",
+    "name": "Oversized Hoodie",
+    "price": 1071,
+    "originalPrice": 1949,
+    "discount": 45,
+    "image": "/assests/images/14437515e657ec58eba89b42d0cdac1e--golds-gym-gym-wear.jpg",
+    "desc": "Signature oversized hoodie — warm, soft, and premium.",
+    "rating": 4.8,
+    "colors": ["Black", "Beige", "Gray"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": true,
+    "type": "upper",
+    "fabric": "Cotton-Fleece Blend",
+    "sizeGuide": "Oversized Fit",
+    "sizeChart": {
+      "S": { "chest": 102, "length": 70, "sleeve": 62 },
+      "M": { "chest": 108, "length": 72, "sleeve": 63 },
+      "L": { "chest": 114, "length": 74, "sleeve": 64 },
+      "XL": { "chest": 120, "length": 76, "sleeve": 65 }
+    }
+  }
+]

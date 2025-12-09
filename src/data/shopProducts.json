@@ -1,0 +1,138 @@
+[
+  {
+    "id": "men-bottom-wear",
+    "name": "Men Training Joggers",
+    "price": 799,
+    "originalPrice": 999,
+    "discount": 20,
+    "image": "/assests/images/image_98f4bfc7-da04-4b09-a8a1-5c8303735764_345x345@2x.webp",
+    "desc": "Tapered-fit training joggers crafted from breathable stretch fabric for complete mobility and comfort.",
+    "rating": 4.4,
+    "colors": ["Black", "Navy", "Olive"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "customizable": false,
+    "type": "lower",
+    "fabric": "90% Polyester, 10% Spandex",
+    "sizeGuide": "Slim Tapered Fit",
+    "sizeChart": {
+      "S": { "waist": 72, "hip": 92, "length": 95, "inseam": 70 },
+      "M": { "waist": 76, "hip": 96, "length": 97, "inseam": 72 },
+      "L": { "waist": 80, "hip": 100, "length": 99, "inseam": 74 },
+      "XL": { "waist": 84, "hip": 104, "length": 101, "inseam": 76 },
+      "XXL": { "waist": 88, "hip": 108, "length": 103, "inseam": 78 }
+    }
+  },
+  {
+    "id": "men-tshirt",
+    "name": "Men Performance T-shirt",
+    "price": 899,
+    "originalPrice": 1099,
+    "discount": 18,
+    "image": "/assests/images/f1be608872cb56f30df7d252e3971562.png",
+    "desc": "Breathable quick-dry performance tee built with sweat-wicking fabric to keep you cool and fresh through intense sessions.",
+    "rating": 4.6,
+    "colors": ["Black", "Gray", "Blue", "White"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": true,
+    "type": "upper",
+    "fabric": "95% Polyester, 5% Elastane",
+    "sizeGuide": "Athletic Fit — Slightly Tapered",
+    "sizeChart": {
+      "S": { "chest": 90, "length": 67, "sleeve": 21 },
+      "M": { "chest": 96, "length": 69, "sleeve": 22 },
+      "L": { "chest": 102, "length": 71, "sleeve": 23 },
+      "XL": { "chest": 108, "length": 73, "sleeve": 24 }
+    }
+  },
+  {
+    "id": "training-shoes",
+    "name": "Men Training Shoes",
+    "price": 1299,
+    "originalPrice": 1599,
+    "discount": 19,
+    "image": "/assests/images/60731f919f3e37a8acacf73e27c48d10.jpg",
+    "desc": "Lightweight mesh trainers with cushioned soles for all-surface workouts and supreme comfort.",
+    "rating": 4.3,
+    "colors": ["Black", "White", "Gray"],
+    "sizes": ["7", "8", "9", "10", "11"],
+    "customizable": false,
+    "type": "footwear",
+    "fabric": "Synthetic Mesh Upper + Rubber Sole",
+    "sizeGuide": "True to Size",
+    "sizeChart": {
+      "7": { "footLength": 25.0 },
+      "8": { "footLength": 26.0 },
+      "9": { "footLength": 27.0 },
+      "10": { "footLength": 28.0 },
+      "11": { "footLength": 29.0 }
+    }
+  },
+  {
+    "id": "running-shoes",
+    "name": "Women Running Shoes",
+    "price": 1995,
+    "originalPrice": 2499,
+    "discount": 20,
+    "image": "/assests/images/asics_gel-excite_6_ladies_running_shoes_asics_gel-excite_6_ladies_running_shoes23d_2000x2000.jpg",
+    "desc": "High-cushion endurance runners designed with breathable mesh and shock-absorbing soles for maximum stride comfort.",
+    "rating": 4.8,
+    "colors": ["Gray", "Blue", "Black"],
+    "sizes": ["6", "7", "8", "9", "10", "11"],
+    "customizable": false,
+    "type": "footwear",
+    "fabric": "Engineered Mesh + EVA Foam Sole",
+    "sizeGuide": "Neutral Cushioning Fit",
+    "sizeChart": {
+      "6": { "footLength": 24.3 },
+      "7": { "footLength": 25.0 },
+      "8": { "footLength": 26.0 },
+      "9": { "footLength": 27.0 },
+      "10": { "footLength": 28.0 },
+      "11": { "footLength": 29.0 }
+    }
+  },
+  {
+    "id": "women-coord",
+    "name": "Women Seamless Co-ord Set",
+    "price": 1995,
+    "originalPrice": 2599,
+    "discount": 23,
+    "image": "/assests/images/PBS-Boutique-com-Women-Seamless-Workout-Set-Yoga-Co-ord-Fitness-Leggings-and-Cropped-Shirts-blue-gray.jpg",
+    "desc": "Seamless co-ord set featuring a supportive crop top and high-waist leggings for total comfort and flexibility during workouts.",
+    "rating": 4.7,
+    "colors": ["Blue Gray", "Lavender", "Black"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": true,
+    "type": "coord",
+    "fabric": "88% Nylon, 12% Spandex",
+    "sizeGuide": "Top: Slim Fit | Bottom: Body Fit",
+    "sizeChart": {
+      "S": { "chest": 82, "waist": 64, "hip": 88, "topLength": 36, "bottomLength": 86 },
+      "M": { "chest": 86, "waist": 68, "hip": 92, "topLength": 37, "bottomLength": 88 },
+      "L": { "chest": 90, "waist": 72, "hip": 96, "topLength": 38, "bottomLength": 90 },
+      "XL": { "chest": 94, "waist": 76, "hip": 100, "topLength": 39, "bottomLength": 92 }
+    }
+  },
+  {
+    "id": "women-topwear",
+    "name": "Women Crop Training Top",
+    "price": 599,
+    "originalPrice": 799,
+    "discount": 25,
+    "image": "/assests/images/b01c18ed666a5bdd48d3b7d91926a518.jpg",
+    "desc": "Breathable crop top with stretch-fit design offering comfort and support during yoga or high-intensity training.",
+    "rating": 4.5,
+    "colors": ["Black", "Peach", "White"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": false,
+    "type": "upper",
+    "fabric": "95% Cotton, 5% Lycra",
+    "sizeGuide": "Slim Fit with 4-Way Stretch",
+    "sizeChart": {
+      "S": { "chest": 82, "length": 44, "sleeve": 16 },
+      "M": { "chest": 86, "length": 46, "sleeve": 17 },
+      "L": { "chest": 90, "length": 48, "sleeve": 18 },
+      "XL": { "chest": 94, "length": 50, "sleeve": 19 }
+    }
+  }
+]

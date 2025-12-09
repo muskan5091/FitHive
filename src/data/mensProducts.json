@@ -1,0 +1,312 @@
+[
+  {
+    "id": "men-tshirt",
+    "name": "Men's T-shirt",
+    "price": 899,
+    "image": "/assests/images/d0be26edbc469cc2d2bc79d0087d8e16.jpg",
+    "desc": "Classic performance T-shirt made with breathable, sweat-wicking fabric — perfect for workouts or casual wear.",
+    "rating": 4.6,
+    "colors": ["Black", "Gray", "White"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "customizable": false,
+    "type": "upper",
+    "fabric": "Polyester-Cotton Blend",
+    "sizeGuide": "Regular Fit",
+    "sizeChart": {
+      "S": { "chest": 90, "length": 67, "sleeve": 20 },
+      "M": { "chest": 96, "length": 69, "sleeve": 21 },
+      "L": { "chest": 102, "length": 71, "sleeve": 22 },
+      "XL": { "chest": 108, "length": 73, "sleeve": 23 },
+      "XXL": { "chest": 114, "length": 75, "sleeve": 24 }
+    }
+  },
+  {
+    "id": "men-zipper",
+    "name": "1/4 Zip Funnel Neck",
+    "price": 999,
+    "image": "/assests/images/ab4ea3904a3509f21742fd3d8c47e20c.jpg",
+    "desc": "Lightweight funnel-neck zipper with a sleek athletic fit, ideal for layering during cool workouts.",
+    "rating": 4.7,
+    "colors": ["Black", "Navy", "Charcoal"],
+    "sizes": ["S", "M", "L", "XL"],
+    "type": "upper",
+    "fabric": "92% Polyester, 8% Spandex",
+    "sizeGuide": "Athletic Fit",
+    "sizeChart": {
+      "S": { "chest": 88, "length": 66, "sleeve": 59 },
+      "M": { "chest": 94, "length": 68, "sleeve": 61 },
+      "L": { "chest": 100, "length": 70, "sleeve": 63 },
+      "XL": { "chest": 106, "length": 72, "sleeve": 65 }
+    }
+  },
+  {
+    "id": "men-tanktops",
+    "name": "Top Tanks",
+    "price": 600,
+    "image": "/assests/images/867eef88eed157a75f7da82659e621a2.jpg",
+    "desc": "Breathable muscle tank designed for maximum mobility and sweat-free comfort during intense sessions.",
+    "rating": 4.5,
+    "colors": ["Black", "White", "Gray"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": true,
+    "type": "upper",
+    "fabric": "95% Cotton, 5% Lycra",
+    "sizeGuide": "Relaxed Fit",
+    "sizeChart": {
+      "S": { "chest": 92, "length": 68 },
+      "M": { "chest": 98, "length": 70 },
+      "L": { "chest": 104, "length": 72 },
+      "XL": { "chest": 110, "length": 74 }
+    }
+  },
+  {
+    "id": "men-long-sleeve",
+    "name": "Long Sleeve Muscle Fit Top",
+    "price": 1000,
+    "image": "/assests/images/570a4f1f6113add768e64249012d37ef.jpg",
+    "desc": "Stretchy long-sleeve top that enhances your physique while offering breathability and comfort.",
+    "rating": 4.6,
+    "colors": ["Black", "Maroon", "Gray"],
+    "sizes": ["S", "M", "L", "XL"],
+    "type": "upper",
+    "fabric": "88% Polyester, 12% Elastane",
+    "sizeGuide": "Slim Fit",
+    "sizeChart": {
+      "S": { "chest": 88, "length": 67, "sleeve": 61 },
+      "M": { "chest": 94, "length": 69, "sleeve": 63 },
+      "L": { "chest": 100, "length": 71, "sleeve": 65 },
+      "XL": { "chest": 106, "length": 73, "sleeve": 67 }
+    }
+  },
+  {
+    "id": "men-sleeveless-hoodie",
+    "name": "Sleeveless Hoodie",
+    "price": 875,
+    "image": "/assests/images/f9f4dd0ff88a24baabfd016f79b71ca6.jpg",
+    "desc": "Stylish sleeveless hoodie built for performance and flexibility — the ultimate gym essential.",
+    "rating": 4.4,
+    "colors": ["Gray", "Black", "Olive"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": false,
+    "type": "upper",
+    "fabric": "Cotton Blend",
+    "sizeGuide": "Relaxed Fit",
+    "sizeChart": {
+      "S": { "chest": 94, "length": 68 },
+      "M": { "chest": 100, "length": 70 },
+      "L": { "chest": 106, "length": 72 },
+      "XL": { "chest": 112, "length": 74 }
+    }
+  },
+  {
+    "id": "men-jersey-tee",
+    "name": "Jersey Tee - Black",
+    "price": 725,
+    "image": "/assests/images/20a2b6388f904e1a6d77d3154dd4acce.jpg",
+    "desc": "Soft cotton jersey T-shirt for breathable comfort — ideal for training or leisure wear.",
+    "rating": 4.3,
+    "colors": ["Black", "Navy", "White"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": false,
+    "type": "upper",
+    "fabric": "100% Cotton",
+    "sizeGuide": "Regular Fit",
+    "sizeChart": {
+      "S": { "chest": 92, "length": 68 },
+      "M": { "chest": 98, "length": 70 },
+      "L": { "chest": 104, "length": 72 },
+      "XL": { "chest": 110, "length": 74 }
+    }
+  },
+  {
+    "id": "men-sweat-pants",
+    "name": "Sweat Pants",
+    "price": 799,
+    "image": "/assests/images/5809dde4013f47cbecfb1e3bacf03dad.jpg",
+    "desc": "Soft cotton-blend sweatpants built for comfort and durability in gym or casual wear.",
+    "rating": 4.5,
+    "colors": ["Gray", "Black"],
+    "sizes": ["S", "M", "L", "XL"],
+    "type": "lower",
+    "fabric": "Cotton-Polyester Blend",
+    "sizeGuide": "Tapered Fit",
+    "sizeChart": {
+      "S": { "waist": 74, "length": 97, "inseam": 72 },
+      "M": { "waist": 80, "length": 99, "inseam": 74 },
+      "L": { "waist": 86, "length": 101, "inseam": 76 },
+      "XL": { "waist": 92, "length": 103, "inseam": 78 }
+    }
+  },
+  {
+    "id": "men-shorts",
+    "name": "Men's Shorts",
+    "price": 699,
+    "image": "/assests/images/5a90118c5c10d2fe162a0e8487786f26.jpg",
+    "desc": "Lightweight workout shorts with a modern cut, designed for maximum comfort and breathability.",
+    "rating": 4.6,
+    "colors": ["Black", "Olive", "Gray"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": true,
+    "type": "lower",
+    "fabric": "90% Polyester, 10% Elastane",
+    "sizeGuide": "Slim Fit",
+    "sizeChart": {
+      "S": { "waist": 72, "length": 44, "inseam": 20 },
+      "M": { "waist": 78, "length": 46, "inseam": 21 },
+      "L": { "waist": 84, "length": 48, "inseam": 22 },
+      "XL": { "waist": 90, "length": 50, "inseam": 23 }
+    }
+  },
+  {
+    "id": "men-track-pants",
+    "name": "Track Pants",
+    "price": 500,
+    "image": "/assests/images/082376bb10340f274e7fbdc4873bb4b8.jpg",
+    "desc": "Everyday track pants for active movement and casual comfort with stretch-fit waist.",
+    "rating": 4.4,
+    "colors": ["Black", "Blue", "Gray"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "customizable": false,
+    "type": "lower",
+    "fabric": "Polyester Blend",
+    "sizeGuide": "Straight Fit",
+    "sizeChart": {
+      "S": { "waist": 74, "length": 98, "inseam": 73 },
+      "M": { "waist": 80, "length": 100, "inseam": 75 },
+      "L": { "waist": 86, "length": 102, "inseam": 77 },
+      "XL": { "waist": 92, "length": 104, "inseam": 79 },
+      "XXL": { "waist": 98, "length": 106, "inseam": 81 }
+    }
+  },
+  {
+    "id": "men-2in1-legging",
+    "name": "2 in 1 Legging",
+    "price": 956,
+    "image": "/assests/images/668c139663c78acef3f8a32dd32cd2a4.jpg",
+    "desc": "Versatile 2-in-1 leggings with an outer short layer for enhanced comfort and coverage.",
+    "rating": 4.7,
+    "colors": ["Black", "Gray"],
+    "sizes": ["S", "M", "L", "XL"],
+    "type": "lower",
+    "fabric": "Nylon-Spandex Blend",
+    "sizeGuide": "Compression Fit",
+    "sizeChart": {
+      "S": { "waist": 70, "inseam": 66 },
+      "M": { "waist": 76, "inseam": 68 },
+      "L": { "waist": 82, "inseam": 70 },
+      "XL": { "waist": 88, "inseam": 72 }
+    }
+  },
+  {
+    "id": "men-fleece-shorts",
+    "name": "Fleece Shorts - Black",
+    "price": 1259,
+    "image": "/assests/images/image.webp",
+    "desc": "Soft fleece shorts with a premium finish, perfect for training or lounging in style.",
+    "rating": 4.5,
+    "colors": ["Black", "Gray"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": false,
+    "type": "lower",
+    "fabric": "100% Cotton Fleece",
+    "sizeGuide": "Regular Fit",
+    "sizeChart": {
+      "S": { "waist": 74, "length": 43, "inseam": 20 },
+      "M": { "waist": 80, "length": 45, "inseam": 21 },
+      "L": { "waist": 86, "length": 47, "inseam": 22 },
+      "XL": { "waist": 92, "length": 49, "inseam": 23 }
+    }
+  },
+  {
+    "id": "men-sport-tights",
+    "name": "Sports Tight with Phone Pocket",
+    "price": 788,
+    "image": "/assests/images/f7821ab5d9584dfeb61e609e840bdab4.jpg",
+    "desc": "High-performance compression tights with phone pocket for hands-free workouts.",
+    "rating": 4.6,
+    "colors": ["Black", "Gray"],
+    "sizes": ["S", "M", "L", "XL"],
+    "customizable": true,
+    "type": "lower",
+    "fabric": "Spandex Blend",
+    "sizeGuide": "Body Fit",
+    "sizeChart": {
+      "S": { "waist": 72, "inseam": 68 },
+      "M": { "waist": 78, "inseam": 70 },
+      "L": { "waist": 84, "inseam": 72 },
+      "XL": { "waist": 90, "inseam": 74 }
+    }
+  },
+  {
+    "id": "men-training-shoes",
+    "name": "Training Shoes",
+    "price": 899,
+    "image": "/assests/images/60731f919f3e37a8acacf73e27c48d10.jpg",
+    "desc": "Lightweight, breathable shoes with durable grip soles — perfect for training and running.",
+    "rating": 4.4,
+    "colors": ["Black", "White", "Blue"],
+    "sizes": ["7", "8", "9", "10", "11"],
+    "customizable": false,
+    "type": "footwear",
+    "fabric": "Mesh Upper + Rubber Sole",
+    "sizeGuide": "True to Size",
+    "sizeChart": {
+      "7": { "footLength": 25.4 },
+      "8": { "footLength": 26.0 },
+      "9": { "footLength": 26.7 },
+      "10": { "footLength": 27.3 },
+      "11": { "footLength": 28.0 }
+    }
+  },
+  {
+    "id": "men-running-shoes",
+    "name": "Running Shoes",
+    "price": 1995,
+    "image": "/assests/images/71TQTSBqfPL._AC_SL1200_.jpg",
+    "desc": "Premium cushioned running shoes built for long-distance comfort and endurance.",
+    "rating": 4.8,
+    "colors": ["Gray", "Blue", "Black"],
+    "sizes": ["7", "8", "9", "10", "11"],
+    "customizable": false,
+    "type": "footwear",
+    "fabric": "Engineered Mesh + EVA Sole",
+    "sizeGuide": "Comfort Fit",
+    "sizeChart": {
+      "7": { "footLength": 25.4 },
+      "8": { "footLength": 26.0 },
+      "9": { "footLength": 26.7 },
+      "10": { "footLength": 27.3 },
+      "11": { "footLength": 28.0 }
+    }
+  },
+  {
+    "id": "men-gym-bag",
+    "name": "Gym Bag",
+    "price": 725,
+    "image": "/assests/images/DSC_2708.jpg",
+    "desc": "Durable and stylish gym bag with multiple compartments for organized storage.",
+    "rating": 4.5,
+    "colors": ["Black", "Gray"],
+    "sizes": ["One Size"],
+    "customizable": false,
+    "type": "accessories",
+    "fabric": "Polyester",
+    "sizeGuide": "Free Size",
+    "sizeChart": null
+  },
+  {
+    "id": "men-sports-cap",
+    "name": "Sports Cap",
+    "price": 599,
+    "image": "/assests/images/adidas-sport-fitness-cap.jpeg",
+    "desc": "Lightweight sports cap with breathable mesh and adjustable back strap.",
+    "rating": 4.3,
+    "colors": ["Black", "Navy", "Gray"],
+    "sizes": ["Free Size"],
+    "customizable": false,
+    "type": "accessories",
+    "fabric": "Polyester Mesh",
+    "sizeGuide": "Adjustable Fit",
+    "sizeChart": null
+  }
+]

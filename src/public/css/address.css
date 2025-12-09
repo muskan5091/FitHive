@@ -1,0 +1,140 @@
+/* ===============================
+   FitHive Checkout / Address Page
+   =============================== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color:grey;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main container */
+main.container {
+    max-width: 650px;
+    margin: 60px auto;
+    padding: 35px 40px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    position: relative;
+    overflow: hidden;
+    border-top: 6px solid #c8815f; /* FitHive brand accent */
+}
+
+/* Decorative background */
+main.container::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 200px;
+    height: 200px;
+    background: rgba(200,129,95,0.15);
+    border-radius: 50%;
+    z-index: 0;
+}
+main.container::after {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: -50px;
+    width: 150px;
+    height: 150px;
+    background: rgba(128,128,128,0.1);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+/* Headings */
+main h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #222;
+    font-size: 26px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+}
+
+main p.subtext {
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Form styling */
+form {
+    position: relative;
+    z-index: 1;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+    font-size: 15px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 22px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    background: #fafafa;
+}
+
+form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #c8815f;
+    background: #fff;
+    box-shadow: 0 0 8px rgba(200,129,95,0.2);
+    outline: none;
+}
+
+/* Button */
+form button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #c8815f, #8c5238);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+form button:hover {
+    background: linear-gradient(135deg, #8c5238, #c8815f);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+/* Error message */
+form .error {
+    color: #e63946;
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-align: center;
+    background: rgba(230,57,70,0.1);
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(230,57,70,0.3);
+}

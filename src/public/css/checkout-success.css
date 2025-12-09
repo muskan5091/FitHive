@@ -1,0 +1,183 @@
+/* ======================================
+   FIT HIVE — Checkout Success Page
+   ====================================== */
+
+.success-body {
+    background-color: #0d0d0d;
+    background-image: linear-gradient(to bottom right, #0d0d0d, #141414);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 20px;
+    color: #f4f4f4;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Container */
+.checkout-success-container {
+    width: 100%;
+    max-width: 850px;
+    background: #1a1a1a;
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Success Message */
+.success-message {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.success-message h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #c8815f; /* FitHive accent */
+    margin-bottom: 12px;
+}
+
+.success-message p {
+    font-size: 17px;
+    color: #dcdcdc;
+    margin: 4px 0;
+}
+
+/* Buttons */
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.btn {
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #c8815f;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: grey;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 2px solid #c8815f;
+    color: #c8815f;
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background-color: grey;
+    color: #fff;
+}
+
+/* Order Summary */
+.order-summary {
+    margin-top: 40px;
+    background: #121212;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.order-summary h2 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #f4f4f4;
+    margin-bottom: 20px;
+}
+
+.order-summary table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    color: #f4f4f4;
+}
+
+.order-summary th,
+.order-summary td {
+    padding: 14px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 15px;
+}
+
+.order-summary th {
+    background: #1f1f1f;
+    color: #c8815f;
+}
+
+.order-summary td {
+    background: #181818;
+}
+
+.order-summary .total {
+    text-align: right;
+    font-size: 20px;
+    font-weight: 700;
+    color: #c8815f;
+    margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .checkout-success-container {
+        padding: 30px 20px;
+    }
+
+    .success-message h1 {
+        font-size: 26px;
+    }
+
+    .order-summary h2 {
+        font-size: 20px;
+    }
+
+    .btn {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+}
+
+
+/* Highlight customized items */
+.customized-row {
+  background: rgba(200, 129, 95, 0.1);
+  transition: 0.3s ease;
+}
+
+.customized-badge {
+  background-color: #c8815f;
+  color: white;
+  font-size: 0.8rem;
+  padding: 2px 6px;
+  border-radius: 6px;
+  margin-left: 6px;
+}
+
+.custom-details {
+  list-style: none;
+  padding-left: 10px;
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.custom-details li {
+  margin-bottom: 3px;
+}

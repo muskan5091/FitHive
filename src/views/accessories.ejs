@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/product.css">
+  <title>Accessories — FitHive</title>
+</head>
+
+<body>
+  <%- include('partials/header') %>
+
+  <section class="section__container musthave__container">
+    <h2 class="section__title text-center">Hot Sales — Accessories</h2>
+
+    <div class="musthave__grid">
+      <% accessories.forEach(product => { %>
+        <article class="musthave__card">
+          <% if (product.customizable) { %>
+            <div class="customize-badge"
+                 title="Customize Product"
+                 data-product-id="<%= product.id %>"
+                 data-product-name="<%= product.name %>"
+                 data-product-type="<%= product.type ? product.type.toLowerCase() : 'accessory' %>">
+              <i class="fa fa-sliders-h"></i>
+            </div>
+          <% } %>
+
+          <a href="/product/<%= product.id %>" class="product-link">
+            <img src="<%= product.image %>" alt="<%= product.name %>">
+          </a>
+
+          <div class="card-body">
+            <h5><%= product.name %></h5>
+            <p><%= product.desc %></p>
+
+            <div class="product-price-rating">
+              <span class="price">₹<%= product.price %></span>
+              <span class="rating"><i class="fa fa-star"></i> <%= product.rating %></span>
+            </div>
+
+            <% if (product.discount) { %>
+              <p class="discount-info">
+                <span class="original-price">₹<%= product.originalPrice %></span>
+                <span class="discount-percentage">-<%= product.discount %>%</span>
+              </p>
+            <% } %>
+          </div>
+        </article>
+      <% }) %>
+    </div>
+  </section>
+
+  <%- include('partials/footer') %>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.body.addEventListener("click", (e) => {
+      const badge = e.target.closest(".customize-badge");
+      if (!badge) return;
+      const productLink = badge.closest(".musthave__card")?.querySelector("a.product-link");
+      if (productLink) {
+        const productUrl = productLink.getAttribute("href");
+        window.location.href = `${productUrl}?showCustomization=true`;
+      }
+    });
+  });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

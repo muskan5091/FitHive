@@ -1,0 +1,94 @@
+[
+  {
+    "id": "fitness-gloves",
+    "name": "Fitness Gloves",
+    "price": 799,
+    "originalPrice": 999,
+    "discount": 20,
+    "image": "/assests/images/817-qalF8sL._AC_SL1500_.jpg",
+    "desc": "Durable fitness gloves offering superior grip and protection during workouts.",
+    "rating": 4.6,
+    "colors": ["Black", "Gray"],
+    "sizes": ["Free Size"],
+    "customizable": false,
+    "type": "accessory",
+    "fabric": "Synthetic Leather & Mesh",
+    "sizeGuide": "Universal Fit",
+    "sizeChart": {
+      "Free Size": { "palmWidth": 9.5, "length": 18 }
+    }
+  },
+  {
+    "id": "workout-water-bottle",
+    "name": "Workout Water Bottle",
+    "price": 599,
+    "originalPrice": 699,
+    "discount": 20,
+    "image": "/assests/images/ivDZs6QJ9h54h6QZudwETf-768-80.jpg",
+    "desc": "Leak-proof bottle with easy-grip design, perfect for gym hydration.",
+    "rating": 4.5,
+    "colors": ["Black", "Blue", "Transparent"],
+    "sizes": ["1L"],
+    "customizable": false,
+    "type": "accessory",
+    "fabric": "BPA-Free Plastic",
+    "sizeGuide": "Standard Capacity",
+    "sizeChart": {
+      "1L": { "height": 28, "diameter": 8 }
+    }
+  },
+  {
+    "id": "sports-cap",
+    "name": "Sports Cap",
+    "price": 479,
+    "originalPrice": 599,
+    "discount": 20,
+    "image": "/assests/images/adidas-sport-fitness-cap.jpeg",
+    "desc": "Lightweight cap that keeps you cool and dry during workouts or outdoor runs.",
+    "rating": 4.4,
+    "colors": ["Black", "White", "Navy"],
+    "sizes": ["Free Size"],
+    "customizable": false,
+    "type": "accessory",
+    "fabric": "100% Polyester",
+    "sizeGuide": "Adjustable Strap Fit",
+    "sizeChart": {
+      "Free Size": { "headCircumference": "54–60 cm" }
+    }
+  },
+  {
+    "id": "gym-bag",
+    "name": "Gym Bag",
+    "price": 959,
+    "originalPrice": 1199,
+    "discount": 20,
+    "image": "/assests/images/Amazon-basics-gym-bag.webp",
+    "desc": "Spacious and durable gym bag with compartments for shoes and accessories.",
+    "rating": 4.7,
+    "colors": ["Black", "Gray"],
+    "sizes": ["One Size"],
+    "customizable": false,
+    "type": "accessory",
+    "fabric": "Polyester Canvas",
+    "sizeGuide": "Standard Gym Bag"
+  },
+  {
+    "id": "resistance-bands",
+    "name": "Resistance Bands",
+    "price": 719,
+    "originalPrice": 899,
+    "discount": 20,
+    "image": "/assests/images/shutterstock_2149309917-2.webp",
+    "desc": "Set of premium resistance bands for strength training and flexibility.",
+    "rating": 4.8,
+    "colors": ["Multicolor"],
+    "sizes": ["One Set"],
+    "customizable": false,
+    "type": "accessory",
+    "fabric": "Natural Latex Rubber",
+    "sizeGuide": "Elastic Stretch Bands (Varied Resistance)",
+    "sizeChart": {
+      "One Set": { "bands": 5, "resistanceRange": "5–35 kg" }
+    }
+  }
+]
