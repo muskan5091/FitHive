@@ -75,6 +75,11 @@ app.use('/checkout', checkoutRoutes);
 app.use(orderRoutes);
 app.use(contactRoutes);
 app.use('/api/customize', customizeRoutes);
+// in app.js / server.js
+const apiRoutes = require('./routes/api');
+app.use(express.json());
+app.use('/api', apiRoutes);
+
 
 
 // fallback 404 for anything else (render views/404.ejs)
@@ -84,4 +89,6 @@ app.use((req, res) => {
 
 // start
 app.listen(port, ()=>console.log(`Server running at http://localhost:${port}`));
+
+
 
