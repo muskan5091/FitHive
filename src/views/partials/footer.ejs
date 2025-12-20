@@ -1,7 +1,6 @@
 <footer>
-  <!-- Chatbot widget (placed in footer) -->
+  <!-- ================= CHATBOT WIDGET ================= -->
   <style>
-    /* chatbot styles - improved, responsive, and limited height */
     #chatbotButton {
       position: fixed;
       right: 18px;
@@ -23,13 +22,12 @@
     .chat-modal {
       position: fixed;
       right: 18px;
-      bottom: 90px;                  /* stays above the floating button/footer */
+      bottom: 90px;
       width: 360px;
       max-width: calc(100% - 36px);
-      height: auto;
-      max-height: 60vh;              /* prevents full-page coverage */
+      max-height: 60vh;
       min-height: 260px;
-      display: none;                 /* toggled by JS via .open class */
+      display: none;
       background: #fff;
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
@@ -50,7 +48,7 @@
     }
 
     .chat-body {
-      flex: 1 1 auto;
+      flex: 1;
       padding: 14px;
       overflow-y: auto;
       background: #f6f6f6;
@@ -59,13 +57,7 @@
       gap: 10px;
     }
 
-    .msg {
-      display: flex;
-      align-items: flex-end;
-      gap: 8px;
-      width: 100%;
-    }
-
+    .msg { display: flex; gap: 8px; }
     .msg.bot { justify-content: flex-start; }
     .msg.user { justify-content: flex-end; }
 
@@ -73,16 +65,12 @@
       max-width: 76%;
       padding: 10px 12px;
       border-radius: 12px;
-      line-height: 1.35;
-      word-break: break-word;
-      white-space: pre-wrap;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
       font-size: 14px;
+      line-height: 1.35;
     }
 
     .msg.bot .bubble {
       background: #fff;
-      color: #222;
       border: 1px solid #eaeaea;
       border-bottom-left-radius: 4px;
     }
@@ -91,208 +79,146 @@
       background: #a5683a;
       color: #fff;
       border-bottom-right-radius: 4px;
-      text-align: right;
     }
-
-    .avatar {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      flex: 0 0 36px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-      color: #fff;
-      font-size: 13px;
-    }
-    .avatar.bot { background: #e9e9e9; color: #222; }
-    .avatar.user { background: #a5683a; }
 
     .chat-footer {
       padding: 10px;
       border-top: 1px solid #eee;
       display: flex;
       gap: 8px;
-      background: #fff;
     }
 
     .chat-input {
       flex: 1;
-      padding: 10px 12px;
+      padding: 10px;
       border-radius: 8px;
       border: 1px solid #ddd;
-      outline: none;
-      font-size: 14px;
+      pointer-events: auto;
     }
 
     .chat-send {
       background: #a5683a;
-      color: white;
+      color: #fff;
       border: none;
       padding: 8px 12px;
       border-radius: 8px;
       cursor: pointer;
+      pointer-events: auto;
     }
 
-    .chat-send:disabled { opacity: 0.7; cursor: default; }
-
-    .chat-loading {
-      font-size: 13px;
-      color: #666;
-      margin-top: 6px;
-    }
-
-    @media (max-width: 480px) {
-      .chat-modal { right: 10px; left: 10px; width: auto; height: 60vh; bottom: 80px; }
-      .bubble { font-size: 13px; }
+    .footer-wrapper {
+      text-align: center;
     }
   </style>
 
-  <div id="chatbotButton" aria-label="Open chat" title="Chat with us">💬</div>
+  <!-- Floating chat button -->
+  <div id="chatbotButton" title="Chat with us">💬</div>
 
-  <div class="chat-modal" id="chatModal" role="dialog" aria-modal="true" aria-label="Chat with us" aria-hidden="true">
+  <!-- Chat modal -->
+  <div class="chat-modal" id="chatModal">
     <div class="chat-header">
-      <div>Helper</div>
-      <button id="closeChat" aria-label="Close chat" style="background:transparent;border:none;color:white;font-size:18px;cursor:pointer">✕</button>
+      <span>Helper</span>
+      <button id="closeChat" style="background:none;border:none;color:white;font-size:18px;cursor:pointer">✕</button>
     </div>
 
-    <div class="chat-body" id="chatBody" aria-live="polite"></div>
+    <div class="chat-body" id="chatBody"></div>
 
     <div class="chat-footer">
-      <input id="chatInput" class="chat-input" placeholder="Type a question..." autocomplete="off" aria-label="Chat message input" />
-      <button id="chatSend" class="chat-send" aria-label="Send message">Send</button>
+      <input id="chatInput" class="chat-input" placeholder="Type a question..." />
+      <button id="chatSend" class="chat-send">Send</button>
     </div>
   </div>
 
+  <!-- ================= CHATBOT SCRIPT ================= -->
   <script>
-    (function(){
-      const btn = document.getElementById('chatbotButton');
-      const modal = document.getElementById('chatModal');
-      const closeBtn = document.getElementById('closeChat');
-      const sendBtn = document.getElementById('chatSend');
-      const input = document.getElementById('chatInput');
-      const body = document.getElementById('chatBody');
+    (function () {
+      const btn = document.getElementById("chatbotButton");
+      const modal = document.getElementById("chatModal");
+      const closeBtn = document.getElementById("closeChat");
+      const sendBtn = document.getElementById("chatSend");
+      const input = document.getElementById("chatInput");
+      const body = document.getElementById("chatBody");
 
-      const INITIAL_MESSAGE = 'Hi — I can help with product info, orders or sizing. Ask me anything.';
+      const INITIAL_MESSAGE =
+        "Hi 👋 I can help with orders, delivery, sizing, returns, and payments.";
 
-      function open() {
-        modal.classList.add('open');
-        modal.setAttribute('aria-hidden', 'false');
-        ensureInitialMessage();
-        // focus input after small delay so mobile keyboards behave better
-        setTimeout(() => input.focus(), 80);
-      }
-      function close() {
-        modal.classList.remove('open');
-        modal.setAttribute('aria-hidden', 'true');
-      }
-      function isOpen() {
-        return modal.classList.contains('open');
-      }
+      const FAQS = [
+        { keywords: ["order", "track"], answer: "Track your order from the My Orders section after login." },
+        { keywords: ["return", "refund"], answer: "Returns are allowed within 7 days of delivery." },
+        { keywords: ["delivery", "shipping"], answer: "Delivery usually takes 3–5 business days." },
+        { keywords: ["payment", "upi", "card"], answer: "We support UPI, debit/credit cards, and net banking." },
+        { keywords: ["size", "fit"], answer: "You can find the size chart on each product page." },
+        { keywords: ["custom"], answer: "Some products support measurement-based customization." },
+        { keywords: ["contact", "help"], answer: "Visit the Contact Us page or ask here for support." }
+      ];
 
-      // toggle on floating button click
-      btn.addEventListener('click', () => {
-        if (isOpen()) close();
-        else open();
-      });
-
-      // close button closes
-      closeBtn.addEventListener('click', close);
-
-      // allow ESC key to close
-      window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && isOpen()) close();
-      });
-
-      // Add initial bot message only once
-      function ensureInitialMessage() {
-        const hasBot = body.querySelector('.msg.bot');
-        if (!hasBot) appendMessage(INITIAL_MESSAGE, 'bot', true);
-      }
-
-      function appendMessage(text, who='bot', noAvatar=false) {
-        const wrapper = document.createElement('div');
-        wrapper.className = 'msg ' + (who === 'user' ? 'user' : 'bot');
-
-        const avatar = document.createElement('div');
-        avatar.className = 'avatar ' + (who === 'user' ? 'user' : 'bot');
-        avatar.textContent = ''; // empty circle - you can add initials
-
-        const bubble = document.createElement('div');
-        bubble.className = 'bubble';
-        bubble.textContent = text;
-
-        if (who === 'bot') {
-          if (!noAvatar) wrapper.appendChild(avatar);
-          wrapper.appendChild(bubble);
-        } else {
-          wrapper.appendChild(bubble);
-          if (!noAvatar) wrapper.appendChild(avatar);
+      function getFaqReply(msg) {
+        msg = msg.toLowerCase();
+        for (const f of FAQS) {
+          if (f.keywords.some(k => msg.includes(k))) return f.answer;
         }
+        return null;
+      }
 
-        body.appendChild(wrapper);
+      function appendMessage(text, who) {
+        const wrap = document.createElement("div");
+        wrap.className = "msg " + who;
+        const bubble = document.createElement("div");
+        bubble.className = "bubble";
+        bubble.textContent = text;
+        wrap.appendChild(bubble);
+        body.appendChild(wrap);
         body.scrollTop = body.scrollHeight;
       }
 
-      function showLoading() {
-        const l = document.createElement('div');
-        l.className = 'chat-loading';
-        l.id = 'chatLoading';
-        l.textContent = 'Typing...';
-        body.appendChild(l);
-        body.scrollTop = body.scrollHeight;
+      function openChat() {
+        modal.classList.add("open");
+        if (!body.innerHTML) appendMessage(INITIAL_MESSAGE, "bot");
+        setTimeout(() => input.focus(), 100);
       }
-      function hideLoading() {
-        const l = document.getElementById('chatLoading');
-        if (l) l.remove();
+
+      function closeChat() {
+        modal.classList.remove("open");
       }
+
+      btn.addEventListener("click", openChat);
+      closeBtn.addEventListener("click", closeChat);
 
       async function sendMessage() {
         const text = input.value.trim();
         if (!text) return;
 
-        appendMessage(text, 'user');
-        input.value = '';
-        sendBtn.disabled = true;
-        input.disabled = true;
+        appendMessage(text, "user");
+        input.value = "";
 
-        showLoading();
+        const faq = getFaqReply(text);
+        if (faq) {
+          appendMessage(faq, "bot");
+          return;
+        }
 
         try {
-          const res = await fetch('/api/chat', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+          const res = await fetch("/api/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ message: text })
           });
-
-          const json = await res.json();
-          hideLoading();
-
-          const reply = (json && (json.reply || json.message || json.error)) || 'Sorry, no response.';
-          appendMessage(reply, 'bot');
-
-        } catch (err) {
-          hideLoading();
-          appendMessage('Network error — please try again.', 'bot');
-          console.error(err);
-        } finally {
-          sendBtn.disabled = false;
-          input.disabled = false;
-          input.focus();
+          const data = await res.json();
+          appendMessage(data.reply || "Sorry, no response.", "bot");
+        } catch {
+          appendMessage("Network error. Please try again.", "bot");
         }
       }
 
-      sendBtn.addEventListener('click', sendMessage);
-      input.addEventListener('keydown', (e) => { if (e.key === 'Enter') sendMessage(); });
-
-      // ensure initial message exists (if modal opened programmatically)
-      ensureInitialMessage();
+      sendBtn.addEventListener("click", sendMessage);
+      input.addEventListener("keydown", e => {
+        if (e.key === "Enter") sendMessage();
+      });
     })();
   </script>
 
-  <!-- keep your existing footer content below (unchanged) -->
-  <center>
+  <!-- ================= FOOTER CONTENT ================= -->
+  <div class="footer-wrapper">
     <div class="footer-container">
       <div class="footer-section about">
         <h2 class="footer-logo">FIT<span>HIVE</span></h2>
@@ -302,9 +228,9 @@
       <div class="footer-section">
         <h3>SHOP</h3>
         <ul>
-          <li><a href="/mens">Men's Collection</a></li>
-          <li><a href="/womens">Women's Collection</a></li>
-          <li><a href="/featured">Featured Items</a></li>
+          <li><a href="/mens">Men</a></li>
+          <li><a href="/womens">Women</a></li>
+          <li><a href="/featured">Featured</a></li>
         </ul>
       </div>
 
@@ -312,7 +238,7 @@
         <h3>COMPANY</h3>
         <ul>
           <li><a href="/about">About Us</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="/contact">Contact Us</a></li>
           <li><a href="/privacy">Privacy Policy</a></li>
           <li><a href="/terms">Terms of Service</a></li>
         </ul>
@@ -320,7 +246,7 @@
 
       <div class="footer-section">
         <h3>FOLLOW US</h3>
-        <ul class="social-links">
+        <ul>
           <li><a href="#">Instagram</a></li>
           <li><a href="#">Facebook</a></li>
           <li><a href="#">Twitter</a></li>
@@ -331,5 +257,7 @@
     <div class="footer-bottom">
       <p>© 2025 FitHive. All rights reserved.</p>
     </div>
-  </center>
+  </div>
 </footer>
+
+
